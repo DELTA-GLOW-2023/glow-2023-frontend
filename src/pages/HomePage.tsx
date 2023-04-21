@@ -12,7 +12,10 @@ export const HomePage = () => {
       >
         Hello Glow!
       </motion.h1>
-      <Button label="Click me!" onClick={() => alert("Button clicked!")} />
+      <Button
+        label="Click me!"
+        onClick={() => console.log("Button clicked!")}
+      />
     </div>
   );
 };
