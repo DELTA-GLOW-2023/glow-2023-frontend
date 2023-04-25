@@ -1,11 +1,16 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/HomePage.tsx";
+import DisplayPage from "./pages/DisplayPage.tsx";
+import { InputPage } from "./pages/InputPage.tsx";
 
 function App() {
   const router = createBrowserRouter([
     {
-      element: <HomePage />,
+      element: <InputPage />,
       path: "/",
+    },
+    {
+      element: <DisplayPage />,
+      path: "/display",
     },
   ]);
   return (

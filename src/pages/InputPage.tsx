@@ -1,9 +1,10 @@
+import { FC } from "react";
 import { motion } from "framer-motion";
-import Button from "../components/Button.tsx";
+import { Button } from "../components/Button.tsx";
 
-export const HomePage = () => {
+export const InputPage: FC = () => {
   return (
-    <div className="bg-gray-200 min-h-screen flex flex-col justify-center items-center">
+    <div className="bg-white min-h-screen flex flex-col justify-center items-center">
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -12,12 +13,7 @@ export const HomePage = () => {
       >
         Hello Glow!
       </motion.h1>
-      <Button
-        label="Click me!"
-        onClick={() => console.log("Button clicked!")}
-      />
+      <Button onClick={console.log}>Click me</Button>
     </div>
   );
 };
-
-export default HomePage;

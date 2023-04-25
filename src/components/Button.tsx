@@ -1,30 +1,22 @@
-import { FunctionComponent } from "react";
+import { FC, ReactNode } from "react";
 import { motion } from "framer-motion";
 
-type ButtonProps = {
-  label: string;
-  onClick?: () => void;
+interface ButtonProps {
+  onClick: () => void;
   disabled?: boolean;
-};
+  children: ReactNode;
+}
 
-const Button: FunctionComponent<ButtonProps> = ({
-  label,
-  onClick,
-  disabled = false,
-}) => {
+export const Button: FC<ButtonProps> = ({ onClick, disabled, children }) => {
   return (
     <motion.button
-      onClick={onClick}
+      className="bg-gray-800 text-white px-4 py-2 rounded-md shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
       disabled={disabled}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className={`bg-blue-500 text-white font-semibold py-2 px-4 rounded ${
-        disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"
-      }`}
+      onClick={onClick}
     >
-      {label}
+      {children}
     </motion.button>
   );
 };
-
-export default Button;
