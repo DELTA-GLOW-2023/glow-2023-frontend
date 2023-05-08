@@ -32,7 +32,7 @@ export const InputPage: FC = () => {
       try {
         const response = await UploadImage(
           imageCropped,
-          `I am ${actor}, ${setting}, ${action},  wearing ${object}`
+          `${actor}, ${setting}, ${action} ${object}`
         );
         setProcessedImage(response.image);
       } catch (e) {

@@ -29,7 +29,7 @@ export const ActionStep: FC<{
         transition={{ delay: 0.5 }}
         className="text-6xl text-white font-bold text-center mb-16"
       >
-        Where are you?
+        What are you doing?
       </motion.h1>
       <div className="flex flex-col md:flex-row justify-center md:justify-end items-center md:space-x-24 space-y-8 md:space-y-0">
         <div className="grid grid-cols-4 grid-rows-2 gap-24">
