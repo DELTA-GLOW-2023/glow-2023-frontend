@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { motion } from "framer-motion";
-import { setting } from "../../../assets/options.json";
+import { settings } from "../../../assets/options.json";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CardComponent } from "../../core/CardComponent.tsx";
@@ -31,14 +31,14 @@ export const SettingStep: FC<{
       >
         Where are you?
       </motion.h1>
-      <div className="flex flex-col md:flex-row justify-center md:justify-end items-center md:space-x-24 space-y-8 md:space-y-0">
+      <div className="flex flex-col justify-center md:justify-end items-center gap-24">
         <div className="grid grid-cols-4 grid-rows-2 gap-24">
-          {setting.map((setting) => (
+          {settings.map((setting) => (
             <CardComponent
-              key={setting}
-              onClick={() => handleSettingClick(setting)}
+              key={setting.title}
+              onClick={() => handleSettingClick(setting.title)}
               selectedValue={selectedSetting}
-              value={setting}
+              value={setting.title}
             />
           ))}
         </div>
