@@ -6,7 +6,7 @@ import { ActorStep } from "../components/steps/actor/ActorStep.tsx";
 import { AnimatePresence } from "framer-motion";
 import { UploadImage } from "../services/uploadImageService.ts";
 import { ImagePreviewStep } from "../components/steps/imagePreview/ImagePreview.tsx";
-import {StyleStep} from "../components/steps/style/StyleStep.tsx";
+import { StyleStep } from "../components/steps/style/StyleStep.tsx";
 
 export const InputPage: FC = () => {
   const [step, setStep] = useState(0);
@@ -28,12 +28,7 @@ export const InputPage: FC = () => {
       setStep(step + 1);
       const imageCropped = image.split(",")[1];
       try {
-        const response = await UploadImage(
-          imageCropped,
-          actor,
-          setting,
-          style
-        );
+        const response = await UploadImage(imageCropped, actor, setting, style);
         setProcessedImage(response.image);
       } catch (e) {
         setError("Whoops Something went wrong!");
