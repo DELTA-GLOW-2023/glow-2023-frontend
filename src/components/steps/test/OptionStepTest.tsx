@@ -1,30 +1,30 @@
 import { FC, useState } from "react";
 import { motion } from "framer-motion";
-import { styles } from "../../../assets/options.json";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CardComponent } from "../../core/CardComponent.tsx";
+import {CardComponent} from "../../core/CardComponent";
 
-export const StyleStepTest: FC<{
-  onActionSelected: (val: string[]) => void;
+export const OptionStepTest: FC<{
+  onSelected: (val: string[]) => void;
   onHandleNext: () => void;
-}> = ({ onHandleNext, onActionSelected }) => {
-  const [selectedStyle, setSelectedStyle] = useState<string[]>([]);
+  optionArray: {title: string, prompt: string}[];
+  title: string
+
+}> = ({ onHandleNext, onSelected, optionArray, title, }) => {
+  const [selectedSetting, setSelectedSetting] = useState<string[]>([]);
 
   const handleSettingClick = (setting: string) => {
-    if (selectedStyle.includes(setting))
+    if (selectedSetting.includes(setting))
     {
-      setSelectedStyle((prev) => prev.filter(item => item !== setting))
+      setSelectedSetting((prev) => prev.filter(item => item !== setting))
     }
-    else{
-      setSelectedStyle((prev)=> [...prev, setting]);
+    else {
+      setSelectedSetting((prev) => [...prev, setting]);
     }
-    onActionSelected(selectedStyle);
+    onSelected([...selectedSetting, setting]);
   };
   const handleClick = () => {
-    if (selectedStyle) {
-      console.log(selectedStyle)
-      onActionSelected(selectedStyle);
+    if (selectedSetting) {
       onHandleNext();
     }
   };
@@ -37,16 +37,16 @@ export const StyleStepTest: FC<{
         transition={{ delay: 0.5 }}
         className="text-6xl text-white font-bold text-center mb-16"
       >
-        In what style?
+        {title}
       </motion.h1>
-      <div className="flex flex-col justify-center md:justify-end items-center gap-24">
+      <div className="flex flex-col md:flex-row justify-center md:justify-end items-center md:space-x-24 space-y-8 md:space-y-0">
         <div className="grid grid-cols-4 grid-rows-2 gap-24">
-          {styles.map((style) => (
+          {optionArray.map((option) => (
             <CardComponent
-              key={style.title}
-              onClick={() => handleSettingClick(style.title)}
-              selectedValue={selectedStyle.includes(style.title) ? style.title : ""}
-              value={style.title}
+              key={option.title}
+              onClick={() => handleSettingClick(option.title)}
+              selectedValue={selectedSetting.includes(option.title) ? option.title : ""}
+              value={option.title}
             />
           ))}
         </div>
