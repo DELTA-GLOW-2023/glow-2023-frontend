@@ -1,12 +1,11 @@
 import React, { FC, useState } from "react";
 import { CameraStep } from "../components/steps/camera/CameraStep.tsx";
-import { SettingStep } from "../components/steps/setting/SettingStep.tsx";
+import { OptionStep } from "../components/steps/option/OptionStep.tsx";
 import { GradientBackgroundComponent } from "../components/core/GradientBackgroundComponent.tsx";
-import { ActorStep } from "../components/steps/actor/ActorStep.tsx";
 import { AnimatePresence } from "framer-motion";
 import { UploadImage } from "../services/uploadImageService.ts";
 import { ImagePreviewStep } from "../components/steps/imagePreview/ImagePreview.tsx";
-import {StyleStep} from "../components/steps/style/StyleStep.tsx";
+import {styles, actors, settings} from "../assets/options.json";
 
 export const InputPage: FC = () => {
   const [step, setStep] = useState(0);
@@ -51,21 +50,27 @@ export const InputPage: FC = () => {
             <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />
           )}
           {step === 1 && (
-            <SettingStep
-              onSettingSelected={setSetting}
+            <OptionStep
+              optionArray={settings}
+              onSelected={setSetting}
               onHandleNext={handleNextStep}
+              title={"Where are you?"}
             />
           )}
           {step === 2 && (
-            <ActorStep
-              onActorSelected={setActor}
+            <OptionStep
+              optionArray={actors}
+              onSelected={setActor}
               onHandleNext={handleNextStep}
+              title={"What are you?"}
             />
           )}
           {step === 3 && (
-            <StyleStep
-              onActionSelected={setStyle}
+            <OptionStep
+              optionArray={styles}
+              onSelected={setStyle}
               onHandleNext={handleNextStep}
+              title={"Select a style"}
             />
           )}
           {step === 4 && (
