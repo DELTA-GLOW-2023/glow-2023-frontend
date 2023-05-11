@@ -2,19 +2,18 @@ import React, { FC, useState } from "react";
 import { CameraStep } from "../components/steps/camera/CameraStep.tsx";
 import { GradientBackgroundComponent } from "../components/core/GradientBackgroundComponent.tsx";
 import { AnimatePresence } from "framer-motion";
-import {StyleStepTest} from "../components/steps/test/StyleStepTest";
-import {ActorStepTest} from "../components/steps/test/ActorStepTest";
-import {SettingStepTest} from "../components/steps/test/SettingStepTest";
-import {UploadImage} from "../services/uploadImageService";
-import {ImagePreviewStep} from "../components/steps/imagePreview/ImagePreview";
+//import {UploadImage} from "../services/uploadImageService";
+import {OptionStepTest} from "../components/steps/test/OptionStepTest";
+import {styles, actors, settings} from "../assets/options.json";
+import {ImagePreviewStepTest} from "../components/steps/test/ImagePreviewTest";
 
 
 export const PromptTestPage: FC = () => {
     const [step, setStep] = useState(0);
     const [image, setImage] = useState<string>();
-    const [settings, setSettings] = useState<string[]>();
-    const [actors, setActors] = useState<string[]>();
-    const [styles, setStyles] = useState<string[]>();
+    const [selectedSettings, setSelectedSettings] = useState<string[]>();
+    const [selectedActors, setSelectedActors] = useState<string[]>();
+    const [selectedStyles, setSelectedStyles] = useState<string[]>();
     const [processedImage, setProcessedImage] = useState<string[]>([]);
     const [error, setError] = useState<string>();
 
@@ -25,24 +24,23 @@ export const PromptTestPage: FC = () => {
 
     const handleNextStep = async () => {
         if (step + 1 === 4) {
-            if (!settings || !actors || !styles || !image) return;
+            if (!selectedSettings || !selectedActors || !selectedStyles || !image) return;
             setStep(step + 1);
-            const imageCropped = image.split(",")[1];
-            console.log(actors, settings, styles)
+            //const imageCropped = image.split(",")[1];
             try {
-                for(let i = 0; i <= actors.length; i++){
-                    const actor = actors[i];
-                    for(let x = 0; x <= settings?.length; x++){
-                        const setting = settings[x];
-                        for(let y = 0; y <= styles?.length; y++){
-                            const style = styles[y];
+                console.log(selectedActors, selectedSettings, selectedStyles)
+                for(let i = 0; i < selectedActors.length; i++){
+                    const actor = selectedActors[i];
+                    for(let x = 0; x < selectedSettings?.length; x++){
+                        const setting = selectedSettings[x];
+                        for(let y = 0; y < selectedStyles?.length; y++){
+                            const style = selectedStyles[y];
                             console.log(actor, setting, style)
-                            console.log(i,x,y)
-                            const response = await UploadImage(imageCropped, actor, setting, style);
+                            /*const response = await UploadImage(imageCropped, actor, setting, style);
                             setProcessedImage((prev) => {
                                 prev.push(response.image);
                                 return prev;
-                            });
+                            });*/
                         }
                     }
                 }
@@ -62,32 +60,38 @@ export const PromptTestPage: FC = () => {
                         <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />
                     )}
                     {step === 1 && (
-                        <SettingStepTest
-                            onSettingSelected={setSettings}
+                        <OptionStepTest
+                            optionArray={settings}
+                            onSelected={setSelectedSettings}
                             onHandleNext={handleNextStep}
+                            title={"Where are you?"}
                         />
                     )}
                     {step === 2 && (
-                        <ActorStepTest
-                            onActorSelected={setActors}
+                        <OptionStepTest
+                            optionArray={actors}
+                            onSelected={setSelectedActors}
                             onHandleNext={handleNextStep}
+                            title={"What are you?"}
                         />
                     )}
                     {step === 3 && (
-                        <StyleStepTest
-                            onActionSelected={setStyles}
+                        <OptionStepTest
+                            optionArray={styles}
+                            onSelected={setSelectedStyles}
                             onHandleNext={handleNextStep}
+                            title={"Select a style"}
                         />
                     )}
                     {step === 4 && (
-                        <ImagePreviewStep
+                        <ImagePreviewStepTest
                             error={error}
-                            image={processedImage[0]}
+                            images={processedImage}
                             handleDenyImage={() => {
                                 setImage(undefined);
-                                setSettings(undefined);
-                                setActors(undefined);
-                                setStyles(undefined);
+                                setSelectedSettings(undefined);
+                                setSelectedActors(undefined);
+                                setSelectedStyles(undefined);
                                 setProcessedImage([]);
                                 setError(undefined);
                                 setStep(0);
