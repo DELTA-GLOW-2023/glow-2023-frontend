@@ -2,23 +2,22 @@ import { FC, useState } from "react";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {CardComponent} from "../../core/CardComponent";
+import { CardComponent } from "../../core/CardComponent";
 
 export const OptionStep: FC<{
   onSelected: (val: string) => void;
   onHandleNext: () => void;
-  optionArray: {title: string, prompt: string}[];
-  title: string
+  optionArray: { title: string; prompt: string }[];
+  title: string;
+}> = ({ onHandleNext, onSelected, optionArray, title }) => {
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-}> = ({ onHandleNext, onSelected, optionArray, title, }) => {
-  const [selectedSetting, setSelectedSetting] = useState<string | null>(null);
-
-  const handleSettingClick = (setting: string) => {
-    setSelectedSetting(setting);
-    onSelected(setting);
+  const handleOptionClick = (Option: string) => {
+    setSelectedOption(Option);
+    onSelected(Option);
   };
   const handleClick = () => {
-    if (selectedSetting) {
+    if (selectedOption) {
       onHandleNext();
     }
   };
@@ -38,8 +37,8 @@ export const OptionStep: FC<{
           {optionArray.map((option) => (
             <CardComponent
               key={option.title}
-              onClick={() => handleSettingClick(option.title)}
-              selectedValue={selectedSetting}
+              onClick={() => handleOptionClick(option.title)}
+              selectedValue={selectedOption}
               value={option.title}
             />
           ))}
