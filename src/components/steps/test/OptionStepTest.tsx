@@ -2,29 +2,27 @@ import { FC, useState } from "react";
 import { motion } from "framer-motion";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {CardComponent} from "../../core/CardComponent";
+import { CardComponent } from "../../core/CardComponent";
 
 export const OptionStepTest: FC<{
   onSelected: (val: string[]) => void;
   onHandleNext: () => void;
-  optionArray: {title: string, prompt: string}[];
-  title: string
+  optionArray: { title: string; prompt: string }[];
+  title: string;
+}> = ({ onHandleNext, onSelected, optionArray, title }) => {
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
-}> = ({ onHandleNext, onSelected, optionArray, title, }) => {
-  const [selectedSetting, setSelectedSetting] = useState<string[]>([]);
-
-  const handleSettingClick = (setting: string) => {
-    if (selectedSetting.includes(setting))
-    {
-      setSelectedSetting((prev) => prev.filter(item => item !== setting))
+  const handleOptionClick = (option: string) => {
+    if (selectedOptions.includes(option)) {
+      setSelectedOptions((prev) => prev.filter((item) => item !== option));
+    } else {
+      setSelectedOptions((prev) => [...prev, option]);
     }
-    else {
-      setSelectedSetting((prev) => [...prev, setting]);
-    }
-    onSelected([...selectedSetting, setting]);
+    onSelected([...selectedOptions, option]);
   };
   const handleClick = () => {
-    if (selectedSetting) {
+    if (selectedOptions) {
+      setSelectedOptions([]);
       onHandleNext();
     }
   };
@@ -44,8 +42,10 @@ export const OptionStepTest: FC<{
           {optionArray.map((option) => (
             <CardComponent
               key={option.title}
-              onClick={() => handleSettingClick(option.title)}
-              selectedValue={selectedSetting.includes(option.title) ? option.title : ""}
+              onClick={() => handleOptionClick(option.title)}
+              selectedValue={
+                selectedOptions.includes(option.title) ? option.title : ""
+              }
               value={option.title}
             />
           ))}

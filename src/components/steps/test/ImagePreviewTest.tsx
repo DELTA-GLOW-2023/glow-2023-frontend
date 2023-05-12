@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Spinner } from "../../core/Spinner.tsx";
 import { motion } from "framer-motion";
 import { Button } from "../../core/Button.tsx";
+import { ImageMeta } from "../../../pages/PromptTestPage";
 
 const containerVariants = {
   hidden: {
@@ -32,9 +33,12 @@ const imageVariants = {
 export const ImagePreviewStepTest: FC<{
   handleDenyImage: () => void;
   handleApproveImage: () => void;
+  counter: number;
+  counterTotal: number;
   error?: string;
-  images: string[];
-}> = ({ handleDenyImage, images, error }) => {
+  images: ImageMeta[];
+}> = ({ handleDenyImage, images, error, counter, counterTotal }) => {
+  console.log(images);
   if (error) {
     return (
       <motion.div
@@ -63,9 +67,14 @@ export const ImagePreviewStepTest: FC<{
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative w-full h-full flex items-center justify-center"
+        className="relative w-full h-full flex flex  items-center justify-center"
       >
-        <Spinner />
+        <motion.div className="flex gap-24 flex-col">
+          <motion.h1 className="m-auto p-2 font-bold font-color-white text-white">
+            {counter + "/" + counterTotal}
+          </motion.h1>
+          <Spinner />
+        </motion.div>
       </motion.div>
     );
   }
@@ -79,15 +88,22 @@ export const ImagePreviewStepTest: FC<{
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative w-full h-full flex items-center justify-center"
+        className="grid grid-cols-5 m-5 grid-rows-1 gap-10 overflow-auto"
       >
-        {images.map((image, index) => <motion.img
-            key={index}
-          src={`data:image/png;base64,${image}`}
-          alt="preview-image"
-          className="rounded-lg shadow-lg"
-          variants={imageVariants}
-        />)}
+        {images.map((image, index) => (
+          <div className="bg-purple-600 rounded-lg">
+            <motion.img
+              key={index}
+              src={`data:image/png;base64,${image.image}`}
+              alt="preview-image"
+              className="rounded-lg shadow-lg"
+              variants={imageVariants}
+            />
+            <motion.h2 className="p-2 font-bold font-color-white text-white">
+              {image.title}
+            </motion.h2>
+          </div>
+        ))}
       </motion.div>
       <Button onClick={handleDenyImage}>Restart</Button>
     </motion.div>
