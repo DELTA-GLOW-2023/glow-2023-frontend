@@ -91,7 +91,7 @@ export const ImagePreviewStepTest: FC<{
         className="grid grid-cols-5 m-5 grid-rows-1 gap-10 overflow-auto"
       >
         {images.map((image, index) => (
-          <div className="bg-purple-600 rounded-lg">
+          <div className=" rounded-lg">
             <motion.img
               key={index}
               src={`data:image/png;base64,${image.image}`}
