@@ -67,7 +67,7 @@ export const ImagePreviewStepTest: FC<{
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative w-full h-full flex flex  items-center justify-center"
+        className="relative w-full h-full flex items-center justify-center"
       >
         <motion.div className="flex gap-24 flex-col">
           <motion.h1 className="m-auto p-2 font-bold font-color-white text-white">
@@ -90,22 +90,26 @@ export const ImagePreviewStepTest: FC<{
         animate="visible"
         className="grid grid-cols-5 m-5 grid-rows-1 gap-10 overflow-auto"
       >
-        {images.map((image, index) => (
-          <div className=" rounded-lg">
+        {images.map(({ image, title }, index) => (
+          <div className="z-10 rounded-lg">
             <motion.img
               key={index}
-              src={`data:image/png;base64,${image.image}`}
+              src={`data:image/png;base64,${image}`}
               alt="preview-image"
               className="rounded-lg shadow-lg"
               variants={imageVariants}
+              initial="hidden"
+              animate="visible"
             />
             <motion.h2 className="p-2 font-bold font-color-white text-white">
-              {image.title}
+              {title}
             </motion.h2>
           </div>
         ))}
       </motion.div>
-      <Button onClick={handleDenyImage}>Restart</Button>
+      <div className={"flex flex-row w-screen justify-center"}>
+        <Button onClick={handleDenyImage}>Restart</Button>
+      </div>
     </motion.div>
   );
 };
