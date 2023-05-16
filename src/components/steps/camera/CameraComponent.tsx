@@ -33,7 +33,7 @@ export const CameraComponent = ({
   const handleStartCapture = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
-        video: { width: 640, height: 480 },
+        video: { width: 512 * 1.5, height: 512 * 1.5 },
       });
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
@@ -90,7 +90,7 @@ export const CameraComponent = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               ref={videoRef}
-              className="w-full h-full"
+              className="h-full w-full"
               style={{ transform: "scaleX(-1)" }}
             />
             {counter !== null && (

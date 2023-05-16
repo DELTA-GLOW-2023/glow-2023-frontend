@@ -1,23 +1,71 @@
 {
-  "setting": [
-    "In a forest",
-    "In a haunted mansion",
-    "In a snowy landscape",
-    "In a concert hall",
-    "In a library",
-    "In a museum",
-    "In a sports stadium",
-    "In a classroom"
+  "settings": [
+    {
+      "title": "In a forest",
+      "prompt": "forest, trees, pines, leaves, autumn"
+    },
+    {
+      "title": "A museum",
+      "prompt": "museum, marble, gallery, greek statues in the background"
+    },
+    {
+      "title": "A snowy landscape",
+      "prompt": "snowy landscape, snow, hills, cabin, winter, snowman, snowflakes"
+    },
+    {
+      "title": "A concert hall",
+      "prompt": "concert hall, stage, audience, seats, lights, microphone, instruments"
+    },
+    {
+      "title": "A library",
+      "prompt": "library, books, bookshelves"
+    },
+    {
+      "title": "In a cityscape",
+      "prompt": "city, new york, taxi, skyscrapers, buildings, traffic, cars"
+    },
+    {
+      "title": "A sports stadium",
+      "prompt": "sports stadium, stadium, crowd, seats, lights, scoreboard, field, grass"
+    },
+    {
+      "title": "On a beach",
+      "prompt": "beach, sunny, summer, sand, ocean, waves, palm trees, seagulls"
+    }
   ],
   "actors": [
-    "A dog",
-    "A dinosaur",
-    "A dragon",
-    "A unicorn",
-    "A knight",
-    "A soldier",
-    "A scientist",
-    "A chef"
+    {
+      "title": "A doctor",
+      "prompt": "doctor, surgeon, wearing white scrubs, white coat, stethoscope on neck, medical mask on mouth, wearing medical gloves"
+    },
+    {
+      "title": "A pirate",
+      "prompt": "pirate, eyepatch over one eye, parrot on shoulder, hook on hand, peg leg, pirate hat on head, treasure chest with gold coins on the background"
+    },
+    {
+      "title": "A farmer",
+      "prompt": "farmer, holding a pitchfork, wearing a straw hat, wearing overalls"
+    },
+    {
+      "title": "A wizard",
+      "prompt": "wizard, mage, enchanter, wearing a wizard hat, holding a staff and a spellbook"
+    },
+    {
+      "title": "A knight",
+      "prompt": "knight, wearing knight armor, holding a sword and a shield, knight helmet, medieval"
+    },
+    {
+      "title": "A soldier",
+      "prompt": "soldier, army, military, camouflage, soldier helmet, holding a rifle, dog tag"
+    },
+    {
+      "title": "A scientist",
+      "prompt": "scientist, lab coat, goggles, holding a test tube and a beaker, safety goggles"
+    },
+    {
+      "title": "A chef",
+      "prompt": "chef, cook, wearing an apron and a chef's hat, holding a knife and a spatula, wearing oven mitts"
+    }
   ],
   "actions": [
     "Flying",
@@ -30,12 +78,38 @@
     "Skateboarding"
   ],
   "styles": [
-    "Realistic",
-    "Cartoonish",
-    "Abstract",
-    "Watercolor",
-    "Oil painting",
-    "Photorealistic"
+    {
+      "title": "Realistic",
+      "prompt": "photo, dslr, ultra quality, sharp focus, Fujifilm XT3, crystal clear, 8K UHD, high detailed"
+    },
+    {
+      "title": "Cartoonish",
+      "prompt": "in the style of cartoon, cartoonish style, lines, bold, colorful, flat, simple, minimalistic, 2D"
+    },
+    {
+      "title": "Graffiti",
+      "prompt": "in the style of graffiti, graffiti style, colorful, spray paint, street art, urban"
+    },
+    {
+      "title": "Watercolor",
+      "prompt": "in the style of a watercolor painting, watercolor style paint, brush, paper, dry, colorful"
+    },
+    {
+      "title": "Oil painting",
+      "prompt": "in the style of a oil painting, oil painting style, colorful, thick, textured"
+    },
+    {
+      "title": "Digital Art",
+      "prompt": "in the style of digital art, digital art style, photoshop, illustrator, colorful, sharp, detailed"
+    },
+    {
+      "title": "Anime",
+      "prompt": "in the style of anime, in the style of manga, lines, bold, colorful, flat, simple, minimalistic, 2D"
+    },
+    {
+      "title": "Pixel Art",
+      "prompt": "in the style of pixel art, pixels, 16 bit"
+    }
   ],
   "objects": [
     "A red apple",

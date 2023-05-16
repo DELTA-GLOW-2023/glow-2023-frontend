@@ -1,22 +1,28 @@
 import { FC, useState } from "react";
 import { motion } from "framer-motion";
-import { actions } from "../../../assets/options.json";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CardComponent } from "../../core/CardComponent.tsx";
+import { CardComponent } from "../../core/CardComponent";
 
-export const ActionStep: FC<{
-  onActionSelected: (val: string) => void;
+export const OptionStepTest: FC<{
+  onSelected: (val: string[]) => void;
   onHandleNext: () => void;
-}> = ({ onHandleNext, onActionSelected }) => {
-  const [selectedSetting, setSelectedSetting] = useState<string | null>(null);
+  optionArray: { title: string; prompt: string }[];
+  title: string;
+}> = ({ onHandleNext, onSelected, optionArray, title }) => {
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
-  const handleSettingClick = (setting: string) => {
-    setSelectedSetting(setting);
-    onActionSelected(setting);
+  const handleOptionClick = (option: string) => {
+    if (selectedOptions.includes(option)) {
+      setSelectedOptions((prev) => prev.filter((item) => item !== option));
+    } else {
+      setSelectedOptions((prev) => [...prev, option]);
+    }
+    onSelected([...selectedOptions, option]);
   };
   const handleClick = () => {
-    if (selectedSetting) {
+    if (selectedOptions) {
+      setSelectedOptions([]);
       onHandleNext();
     }
   };
@@ -29,16 +35,18 @@ export const ActionStep: FC<{
         transition={{ delay: 0.5 }}
         className="text-6xl text-white font-bold text-center mb-16"
       >
-        What are you doing?
+        {title}
       </motion.h1>
       <div className="flex flex-col md:flex-row justify-center md:justify-end items-center md:space-x-24 space-y-8 md:space-y-0">
         <div className="grid grid-cols-4 grid-rows-2 gap-24">
-          {actions.map((action) => (
+          {optionArray.map((option) => (
             <CardComponent
-              key={action}
-              onClick={() => handleSettingClick(action)}
-              selectedValue={selectedSetting}
-              value={action}
+              key={option.title}
+              onClick={() => handleOptionClick(option.title)}
+              selectedValue={
+                selectedOptions.includes(option.title) ? option.title : ""
+              }
+              value={option.title}
             />
           ))}
         </div>

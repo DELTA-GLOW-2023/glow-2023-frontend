@@ -1,22 +1,23 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { motion } from "framer-motion";
-import { actors } from "../../../assets/options.json";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CardComponent } from "../../core/CardComponent.tsx";
+import { CardComponent } from "../../core/CardComponent";
 
-export const ActorStep: FC<{
-  onActorSelected: (val: string) => void;
+export const OptionStep: FC<{
+  onSelected: (val: string) => void;
   onHandleNext: () => void;
-}> = ({ onHandleNext, onActorSelected }) => {
-  const [selectedActor, setSelectedActor] = useState<string | null>(null);
+  optionArray: { title: string; prompt: string }[];
+  title: string;
+}> = ({ onHandleNext, onSelected, optionArray, title }) => {
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-  const handleSettingClick = (actor: string) => {
-    setSelectedActor(actor);
-    onActorSelected(actor);
+  const handleOptionClick = (Option: string) => {
+    setSelectedOption(Option);
+    onSelected(Option);
   };
   const handleClick = () => {
-    if (selectedActor) {
+    if (selectedOption) {
       onHandleNext();
     }
   };
@@ -29,16 +30,16 @@ export const ActorStep: FC<{
         transition={{ delay: 0.5 }}
         className="text-6xl text-white font-bold text-center mb-16"
       >
-        Who are you?
+        {title}
       </motion.h1>
       <div className="flex flex-col md:flex-row justify-center md:justify-end items-center md:space-x-24 space-y-8 md:space-y-0">
         <div className="grid grid-cols-4 grid-rows-2 gap-24">
-          {actors.map((actor) => (
+          {optionArray.map((option) => (
             <CardComponent
-              key={actor}
-              onClick={() => handleSettingClick(actor)}
-              selectedValue={selectedActor}
-              value={actor}
+              key={option.title}
+              onClick={() => handleOptionClick(option.title)}
+              selectedValue={selectedOption}
+              value={option.title}
             />
           ))}
         </div>
@@ -47,7 +48,7 @@ export const ActorStep: FC<{
           animate={{ opacity: 1 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="z-10 flex items-center justify-center text-white bg-purple-600 w-48 h-48 rounded-full shadow-lg"
+          className="flex items-center justify-center text-white bg-purple-600 w-48 h-48 rounded-full shadow-lg"
           onClick={handleClick}
         >
           <FontAwesomeIcon icon={faArrowRight} className="h-24" />
