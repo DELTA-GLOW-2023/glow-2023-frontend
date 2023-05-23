@@ -1,10 +1,9 @@
-import React, { FC, useState } from "react";
-import { CameraStep } from "../components/steps/camera/CameraStep.tsx";
-import { OptionStep } from "../components/steps/option/OptionStep.tsx";
-import { GradientBackgroundComponent } from "../components/core/GradientBackgroundComponent.tsx";
-import { AnimatePresence } from "framer-motion";
-import { UploadImage } from "../services/uploadImageService.ts";
-import { ImagePreviewStep } from "../components/steps/imagePreview/ImagePreview.tsx";
+import React, {FC, useState} from "react";
+import {CameraStep} from "../components/steps/camera/CameraStep.tsx";
+import {OptionStep} from "../components/steps/option/OptionStep.tsx";
+import {GradientBackgroundComponent} from "../components/core/GradientBackgroundComponent.tsx";
+import {AnimatePresence} from "framer-motion";
+import {ProcessImage} from "../services/processImageService.ts";
 import {styles, actors, settings} from "../assets/options.json";
 
 export const InputPage: FC = () => {
@@ -13,9 +12,6 @@ export const InputPage: FC = () => {
   const [setting, setSetting] = useState<string>();
   const [actor, setActor] = useState<string>();
   const [style, setStyle] = useState<string>();
-  const [processedImage, setProcessedImage] = useState<string>();
-  const [error, setError] = useState<string>();
-
   const handlePhotoTaken = async (photoData: string) => {
     setImage(photoData);
     await handleNextStep();
@@ -27,27 +23,36 @@ export const InputPage: FC = () => {
       setStep(step + 1);
       const imageCropped = image.split(",")[1];
       try {
-        const response = await UploadImage(
+        const response = await ProcessImage(
           imageCropped,
           actor,
           setting,
           style
         );
-        setProcessedImage(response.image);
+        console.log(response)
       } catch (e) {
-        setError("Whoops Something went wrong!");
+        console.log(e)
       }
+      reset();
       return;
     }
     setStep(step + 1);
   };
+
+  const reset = () => {
+    setImage(undefined);
+    setSetting(undefined);
+    setActor(undefined);
+    setStyle(undefined);
+    setStep(0);
+  }
 
   return (
     <div className="relative w-screen h-screen">
       <AnimatePresence>
         <GradientBackgroundComponent>
           {step === 0 && (
-            <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />
+            <CameraStep onPhotoTaken={handlePhotoTaken} image={image}/>
           )}
           {step === 1 && (
             <OptionStep
@@ -71,22 +76,6 @@ export const InputPage: FC = () => {
               onSelected={setStyle}
               onHandleNext={handleNextStep}
               title={"Select a style"}
-            />
-          )}
-          {step === 4 && (
-            <ImagePreviewStep
-              error={error}
-              image={processedImage}
-              handleDenyImage={() => {
-                setImage(undefined);
-                setSetting(undefined);
-                setActor(undefined);
-                setStyle(undefined);
-                setProcessedImage(undefined);
-                setError(undefined);
-                setStep(0);
-              }}
-              handleApproveImage={console.log}
             />
           )}
         </GradientBackgroundComponent>

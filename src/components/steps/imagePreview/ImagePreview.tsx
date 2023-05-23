@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { Spinner } from "../../core/Spinner.tsx";
-import { motion } from "framer-motion";
-import { Button } from "../../core/Button.tsx";
+import {FC} from "react";
+import {Spinner} from "../../core/Spinner.tsx";
+import {motion} from "framer-motion";
+import {Button} from "../../core/Button.tsx";
 
 const containerVariants = {
   hidden: {
@@ -34,7 +34,7 @@ export const ImagePreviewStep: FC<{
   handleApproveImage: () => void;
   error?: string;
   image?: string;
-}> = ({ handleDenyImage, image, error }) => {
+}> = ({handleDenyImage, handleApproveImage, image, error}) => {
   if (error) {
     return (
       <motion.div
@@ -46,8 +46,8 @@ export const ImagePreviewStep: FC<{
         <div className="bg-white text-red-600 rounded-lg py-2 px-4 text-4xl shadow-md">
           <span>{error}</span>
           <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{scale: 1.1}}
+            whileTap={{scale: 0.9}}
             onClick={handleDenyImage}
             className="z-10 ml-4 bg-red-600 text-white py-2 px-4 rounded-md shadow-xl"
           >
@@ -65,7 +65,7 @@ export const ImagePreviewStep: FC<{
         animate="visible"
         className="relative w-full h-full flex items-center justify-center"
       >
-        <Spinner />
+        <Spinner/>
       </motion.div>
     );
   }
@@ -88,7 +88,8 @@ export const ImagePreviewStep: FC<{
           variants={imageVariants}
         />
       </motion.div>
-      <Button onClick={handleDenyImage}>Restart</Button>
+        <Button onClick={handleDenyImage}>Restart</Button>
+        <Button onClick={handleApproveImage}>Approve</Button>
     </motion.div>
   );
 };
