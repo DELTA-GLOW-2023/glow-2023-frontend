@@ -5,6 +5,7 @@ import {GradientBackgroundComponent} from "../components/core/GradientBackground
 import {AnimatePresence} from "framer-motion";
 import {ProcessImage} from "../services/processImageService.ts";
 import {styles, actors, settings} from "../assets/options.json";
+import {motion} from "framer-motion";
 
 export const InputPage: FC = () => {
   const [step, setStep] = useState(0);
@@ -12,6 +13,7 @@ export const InputPage: FC = () => {
   const [setting, setSetting] = useState<string>();
   const [actor, setActor] = useState<string>();
   const [style, setStyle] = useState<string>();
+  const [loading, setLoading] = useState<boolean>(false);
   const handlePhotoTaken = async (photoData: string) => {
     setImage(photoData);
     await handleNextStep();
@@ -23,6 +25,7 @@ export const InputPage: FC = () => {
       setStep(step + 1);
       const imageCropped = image.split(",")[1];
       try {
+        setLoading(true);
         const response = await ProcessImage(
           imageCropped,
           actor,
@@ -30,6 +33,7 @@ export const InputPage: FC = () => {
           style
         );
         console.log(response)
+        setLoading(false)
       } catch (e) {
         console.log(e)
       }
@@ -45,39 +49,45 @@ export const InputPage: FC = () => {
     setActor(undefined);
     setStyle(undefined);
     setStep(0);
+    setLoading(false)
+  }
+  const showStep = () => {
+    switch (step) {
+      case 0:
+        return <CameraStep onPhotoTaken={handlePhotoTaken} image={image}/>
+      case 1:
+        return <OptionStep
+          optionArray={settings}
+          onSelected={setSetting}
+          onHandleNext={handleNextStep}
+          title={"Where are you?"}
+        />
+      case 2:
+        return <OptionStep
+          optionArray={actors}
+          onSelected={setActor}
+          onHandleNext={handleNextStep}
+          title={"What are you?"}
+        />
+      case 3:
+        return <OptionStep
+          optionArray={styles}
+          onSelected={setStyle}
+          onHandleNext={handleNextStep}
+          title={"Select a style"}
+        />
+    }
   }
 
   return (
     <div className="relative w-screen h-screen">
       <AnimatePresence>
         <GradientBackgroundComponent>
-          {step === 0 && (
-            <CameraStep onPhotoTaken={handlePhotoTaken} image={image}/>
-          )}
-          {step === 1 && (
-            <OptionStep
-              optionArray={settings}
-              onSelected={setSetting}
-              onHandleNext={handleNextStep}
-              title={"Where are you?"}
-            />
-          )}
-          {step === 2 && (
-            <OptionStep
-              optionArray={actors}
-              onSelected={setActor}
-              onHandleNext={handleNextStep}
-              title={"What are you?"}
-            />
-          )}
-          {step === 3 && (
-            <OptionStep
-              optionArray={styles}
-              onSelected={setStyle}
-              onHandleNext={handleNextStep}
-              title={"Select a style"}
-            />
-          )}
+          {
+            loading ? <motion.div>
+              yo
+            </motion.div> : showStep()
+          }
         </GradientBackgroundComponent>
       </AnimatePresence>
     </div>

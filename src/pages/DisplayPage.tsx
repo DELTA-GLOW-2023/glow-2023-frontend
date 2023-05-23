@@ -22,7 +22,7 @@ export const DisplayPage = () => {
       }
     };
 
-    const interval = setInterval(fetchImage, 3000);
+    const interval = setInterval(fetchImage, 300);
 
     return () => {
       clearInterval(interval);
