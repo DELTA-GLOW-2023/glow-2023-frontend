@@ -2,35 +2,51 @@
   "settings": [
     {
       "title": "In a forest",
-      "prompt": "forest, trees, pines, leaves, autumn"
+      "prompt": "forest, trees, pines, leaves, autumn",
+      "secondTitle": "In a destroyed forest",
+      "secondPrompt": "burnt forest, cut trees, charcoaled wood, burn marks"
     },
     {
       "title": "A museum",
-      "prompt": "museum, marble, gallery, greek statues in the background"
+      "prompt": "museum, marble, gallery, greek statues in the background",
+      "secondTitle": "In an abandoned museum",
+      "secondPrompt": "dusty exhibits, broken artifacts, cracked walls, eerie silence"
     },
     {
       "title": "A snowy landscape",
-      "prompt": "snowy landscape, snow, hills, cabin, winter, snowman, snowflakes"
+      "prompt": "snowy landscape, snow, hills, cabin, winter, snowman, snowflakes",
+      "secondTitle": "At the foot of a volcano",
+      "secondPrompt": "molten lava, ash-covered ground, billowing smoke, intense heat"
     },
     {
       "title": "A concert hall",
-      "prompt": "concert hall, stage, audience, seats, lights, microphone, instruments"
+      "prompt": "concert hall, stage, audience, seats, lights, microphone, instruments",
+      "secondTitle": "In a deserted concert hall",
+      "secondPrompt": "empty seats, dusty stage, broken equipment, haunting echoes"
     },
     {
       "title": "A library",
-      "prompt": "library, books, bookshelves"
+      "prompt": "library, books, bookshelves",
+      "secondTitle": "In a ruined library",
+      "secondPrompt": "torn pages, crumbling shelves, shattered windows, forgotten knowledge"
     },
     {
       "title": "In a cityscape",
-      "prompt": "city, new york, taxi, skyscrapers, buildings, traffic, cars"
+      "prompt": "city, new york, taxi, skyscrapers, buildings, traffic, cars",
+      "secondTitle": "In a post-apocalyptic city",
+      "secondPrompt": "ruined buildings, overgrown vegetation, deserted streets, ominous silence"
     },
     {
       "title": "A sports stadium",
-      "prompt": "sports stadium, stadium, crowd, seats, lights, scoreboard, field, grass"
+      "prompt": "sports stadium, stadium, crowd, seats, lights, scoreboard, field, grass",
+      "secondTitle": "In an abandoned sports stadium",
+      "secondPrompt": "cracked bleachers, overgrown field, faded scoreboard, eerie atmosphere"
     },
     {
       "title": "On a beach",
-      "prompt": "beach, sunny, summer, sand, ocean, waves, palm trees, seagulls"
+      "prompt": "beach, sunny, summer, sand, ocean, waves, palm trees, seagulls",
+      "secondTitle": "On a stormy beach",
+      "secondPrompt": "dark clouds, crashing waves, strong winds, turbulent sea"
     }
   ],
   "actors": [
@@ -67,16 +83,6 @@
       "prompt": "chef, cook, wearing an apron and a chef's hat, holding a knife and a spatula, wearing oven mitts"
     }
   ],
-  "actions": [
-    "Flying",
-    "Building something",
-    "Painting",
-    "Gardening",
-    "Swimming",
-    "Surfing",
-    "Skiing",
-    "Skateboarding"
-  ],
   "styles": [
     {
       "title": "Realistic",
@@ -110,15 +116,5 @@
       "title": "Pixel Art",
       "prompt": "in the style of pixel art, pixels, 16 bit"
     }
-  ],
-  "objects": [
-    "A red apple",
-    "A yellow umbrella",
-    "A black leather jacket",
-    "A purple balloon",
-    "A white candle",
-    "A silver watch",
-    "A gold necklace",
-    "A brown leather briefcase"
   ]
 }
