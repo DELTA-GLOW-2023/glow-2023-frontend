@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import { OptionStepTest } from "../components/steps/test/OptionStepTest";
 import { actors, settings, styles } from "../assets/options.json";
 import { ImagePreviewStepTest } from "../components/steps/test/ImagePreviewTest";
-import { UploadImage } from "../services/uploadImageService";
+import { ProcessImage } from "../services/processImageService";
 
 export type ImageMeta = {
   image: string;
@@ -46,7 +46,7 @@ export const PromptTestPage: FC = () => {
             const setting = selectedSettings[x];
             for (let y = 0; y < selectedStyles?.length; y++) {
               const style = selectedStyles[y];
-              const response = await UploadImage(
+              const response = await ProcessImage(
                 imageCropped,
                 actor,
                 setting,
