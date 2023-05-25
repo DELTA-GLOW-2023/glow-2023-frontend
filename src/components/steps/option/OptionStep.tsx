@@ -20,26 +20,28 @@ export const OptionStep: FC<{
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center">
-      <motion.h1
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="text-6xl text-white font-bold text-center mb-16"
-      >
-        {title}
-      </motion.h1>
-      <div className="flex flex-col md:flex-row justify-center md:justify-end items-center md:space-x-24 space-y-8 md:space-y-0">
-        <div className="grid grid-cols-4 grid-rows-2 gap-24">
-          {optionArray.map((option) => (
-            <CardComponent
-              key={option.title}
-              onClick={() => {
-                handleOptionClick(option.title);
-                onHandleNext();
-              }}
-              icon={option.icon}
-            />
-          ))}
+      <div className=" bg-white/60 backdrop-blur-sm p-16 rounded-xl">
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="text-7xl text-[#072837] font-bold text-center mb-16 "
+        >
+          {title}
+        </motion.h1>
+        <div className="flex flex-col md:flex-row justify-center md:justify-end items-center md:space-x-24 space-y-8 md:space-y-0">
+          <div className="grid grid-cols-4 grid-rows-2 gap-24 bg-clip-text">
+            {optionArray.map((option) => (
+              <CardComponent
+                key={option.title}
+                onClick={() => {
+                  handleOptionClick(option.title);
+                  onHandleNext();
+                }}
+                icon={option.icon}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

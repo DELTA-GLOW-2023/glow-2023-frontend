@@ -18,10 +18,10 @@ export const CardComponent: React.FC<{
       whileTap={{ scale: 0.8 }}
       onClick={onClick}
       className={
-        "cursor-pointer backdrop-blur-lg w-48 h-36 flex justify-center items-center rounded-2xl border-2"
+        "cursor-pointer  w-48 h-36 flex justify-center items-center rounded-2xl border-4 border-[#072837]"
       }
     >
-      {React.createElement(icon, { className: "text-6xl text-white" })}
+      {React.createElement(icon, { className: "text-6xl text-[#072837]" })}
     </motion.div>
   );
 };

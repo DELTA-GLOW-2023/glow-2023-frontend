@@ -1,50 +1,50 @@
 import { optionType } from "../components/steps/option/OptionStep.tsx";
-import { FaCamera } from "react-icons/all";
+import { FaCamera, MdOutlineForest, BsSnow3, MdOutlineMuseum, GiMusicalScore, HiOutlineLibrary, GiModernCity, MdOutlineStadium, TbBeach, FaHandHoldingMedical,GiPirateFlag,GiFarmer,FaHatWizard,GiBlackKnightHelm,GiMachineGunMagazine,MdOutlineScience,TbChefHat } from "react-icons/all";
 
 export const options: Record<string, optionType[]> = {
   settings: [
     {
       title: "In a forest",
       prompt: "forest, trees, pines, leaves, autumn",
-      icon: FaCamera,
+      icon: MdOutlineForest,
     },
     {
       title: "A museum",
       prompt: "museum, marble, gallery, greek statues in the background",
-      icon: FaCamera,
+      icon: MdOutlineMuseum,
     },
     {
       title: "A snowy landscape",
       prompt:
         "snowy landscape, snow, hills, cabin, winter, snowman, snowflakes",
-      icon: FaCamera,
+      icon: BsSnow3,
     },
     {
       title: "A concert hall",
       prompt:
         "concert hall, stage, audience, seats, lights, microphone, instruments",
-      icon: FaCamera,
+      icon: GiMusicalScore,
     },
     {
       title: "A library",
       prompt: "library, books, bookshelves",
-      icon: FaCamera,
+      icon: HiOutlineLibrary,
     },
     {
       title: "In a cityscape",
       prompt: "city, new york, taxi, skyscrapers, buildings, traffic, cars",
-      icon: FaCamera,
+      icon: GiModernCity,
     },
     {
       title: "A sports stadium",
       prompt:
         "sports stadium, stadium, crowd, seats, lights, scoreboard, field, grass",
-      icon: FaCamera,
+      icon: MdOutlineStadium,
     },
     {
       title: "On a beach",
       prompt: "beach, sunny, summer, sand, ocean, waves, palm trees, seagulls",
-      icon: FaCamera,
+      icon: TbBeach,
     },
   ],
   actors: [
@@ -52,49 +52,49 @@ export const options: Record<string, optionType[]> = {
       title: "A doctor",
       prompt:
         "doctor, surgeon, wearing white scrubs, white coat, stethoscope on neck, medical mask on mouth, wearing medical gloves",
-      icon: FaCamera,
+      icon: FaHandHoldingMedical,
     },
     {
       title: "A pirate",
       prompt:
         "pirate, eyepatch over one eye, parrot on shoulder, hook on hand, peg leg, pirate hat on head, treasure chest with gold coins on the background",
-      icon: FaCamera,
+      icon: GiPirateFlag,
     },
     {
       title: "A farmer",
       prompt:
         "farmer, holding a pitchfork, wearing a straw hat, wearing overalls",
-      icon: FaCamera,
+      icon: GiFarmer,
     },
     {
       title: "A wizard",
       prompt:
         "wizard, mage, enchanter, wearing a wizard hat, holding a staff and a spellbook",
-      icon: FaCamera,
+      icon: FaHatWizard,
     },
     {
       title: "A knight",
       prompt:
         "knight, wearing knight armor, holding a sword and a shield, knight helmet, medieval",
-      icon: FaCamera,
+      icon: GiBlackKnightHelm,
     },
     {
       title: "A soldier",
       prompt:
         "soldier, army, military, camouflage, soldier helmet, holding a rifle, dog tag",
-      icon: FaCamera,
+      icon: GiMachineGunMagazine,
     },
     {
       title: "A scientist",
       prompt:
         "scientist, lab coat, goggles, holding a test tube and a beaker, safety goggles",
-      icon: FaCamera,
+      icon: MdOutlineScience,
     },
     {
       title: "A chef",
       prompt:
         "chef, cook, wearing an apron and a chef's hat, holding a knife and a spatula, wearing oven mitts",
-      icon: FaCamera,
+      icon: TbChefHat,
     },
   ],
   styles: [
