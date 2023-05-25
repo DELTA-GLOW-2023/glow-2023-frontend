@@ -1,7 +1,7 @@
 import { ImageResponseType } from "../types/ImageResponseType.ts";
 import axios from "axios";
 import { API_URL } from "../config/config.ts";
-import { actors, settings, styles } from "../assets/options.json";
+import { options } from "../config/options.ts";
 
 export const ProcessImage = async (
   image: string,
@@ -9,10 +9,12 @@ export const ProcessImage = async (
   setting: string,
   style: string
 ): Promise<ImageResponseType> => {
-  const selectedActor: any = actors.find((x) => x.title === actor) || "";
-  const selectedSetting: any = settings.find((x) => x.title === setting) || "";
-  const selectedStyle: string =
-    styles.find((x) => x.title === style)?.prompt || "";
+  const actorPrompt: string =
+    options["actors"].find((x) => x.title === actor)?.prompt || "";
+  const settingPrompt: string =
+    options["settings"].find((x) => x.title === setting)?.prompt || "";
+  const stylePrompt: string =
+    options["styles"].find((x) => x.title === style)?.prompt || "";
 
   const prompt = `transform the person in the image into: ${selectedActor?.prompt}, change the background scenery into: ${selectedSetting?.prompt}, ${selectedStyle}`;
   const promptDescription = `${selectedActor.title} ${selectedSetting.title}`;

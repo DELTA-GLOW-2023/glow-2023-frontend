@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import { SlCamera } from "react-icons/all";
 
 interface CameraComponentProps {
   image: string | undefined;
@@ -115,10 +114,10 @@ export const CameraComponent = ({
           animate={{ opacity: 1 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="z-10 flex items-center justify-center text-white bg-purple-600 w-48 h-48 rounded-full shadow-lg"
+          className="z-10 flex items-center justify-center text-white bg-transparent w-48 h-48 rounded-full backdrop-blur-lg"
           onClick={handleTakePhoto}
         >
-          <FontAwesomeIcon icon={faCamera} className="h-24" />
+          <SlCamera className={"text-8xl"} />
         </motion.button>
       </div>
     </div>

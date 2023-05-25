@@ -94,7 +94,7 @@ export const ImagePreviewStepTest: FC<{
           <div className="z-10 rounded-lg">
             <motion.img
               key={index}
-              src={`data:image/png;base64,${image}`}
+              src={image}
               alt="preview-image"
               className="rounded-lg shadow-lg"
               variants={imageVariants}

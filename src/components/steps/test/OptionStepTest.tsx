@@ -1,13 +1,13 @@
 import { FC, useState } from "react";
 import { motion } from "framer-motion";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CardComponent } from "../../core/CardComponent";
+import { FaArrowRight } from "react-icons/all";
+import { CardTestComponent } from "./CardTestComponent.tsx";
+import { OptionType } from "../../../types/OptionType.ts";
 
 export const OptionStepTest: FC<{
   onSelected: (val: string[]) => void;
   onHandleNext: () => void;
-  optionArray: { title: string; prompt: string }[];
+  optionArray: OptionType[];
   title: string;
 }> = ({ onHandleNext, onSelected, optionArray, title }) => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
@@ -40,8 +40,9 @@ export const OptionStepTest: FC<{
       <div className="flex flex-col md:flex-row justify-center md:justify-end items-center md:space-x-24 space-y-8 md:space-y-0">
         <div className="grid grid-cols-4 grid-rows-2 gap-24">
           {optionArray.map((option) => (
-            <CardComponent
+            <CardTestComponent
               key={option.title}
+              icon={option.icon}
               onClick={() => handleOptionClick(option.title)}
               selectedValue={
                 selectedOptions.includes(option.title) ? option.title : ""
@@ -55,10 +56,10 @@ export const OptionStepTest: FC<{
           animate={{ opacity: 1 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="flex items-center justify-center text-white bg-purple-600 w-48 h-48 rounded-full shadow-lg"
+          className="flex items-center justify-center text-white w-48 h-48 rounded-full shadow-lg border-4 border-white"
           onClick={handleClick}
         >
-          <FontAwesomeIcon icon={faArrowRight} className="h-24" />
+          <FaArrowRight className={"text-8xl"} />
         </motion.button>
       </div>
     </div>

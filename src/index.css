@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Dark background with no margin or padding */
 body {
     background-color: #1a202c;
     margin: 0;
     padding: 0;
 }
+
+.container-background {
+    background: url("./assets/blob-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
