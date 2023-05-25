@@ -7,25 +7,25 @@
       "secondPrompt": "burnt forest, cut trees, charcoaled wood, burn marks"
     },
     {
-      "title": "A museum",
+      "title": "In a museum",
       "prompt": "museum, marble, gallery, greek statues in the background",
       "secondTitle": "In an abandoned museum",
       "secondPrompt": "dusty exhibits, broken artifacts, cracked walls, eerie silence"
     },
     {
-      "title": "A snowy landscape",
+      "title": "in A snowy landscape",
       "prompt": "snowy landscape, snow, hills, cabin, winter, snowman, snowflakes",
       "secondTitle": "At the foot of a volcano",
       "secondPrompt": "molten lava, ash-covered ground, billowing smoke, intense heat"
     },
     {
-      "title": "A concert hall",
+      "title": "in A concert hall",
       "prompt": "concert hall, stage, audience, seats, lights, microphone, instruments",
       "secondTitle": "In a deserted concert hall",
       "secondPrompt": "empty seats, dusty stage, broken equipment, haunting echoes"
     },
     {
-      "title": "A library",
+      "title": "In a library",
       "prompt": "library, books, bookshelves",
       "secondTitle": "In a ruined library",
       "secondPrompt": "torn pages, crumbling shelves, shattered windows, forgotten knowledge"
@@ -37,7 +37,7 @@
       "secondPrompt": "ruined buildings, overgrown vegetation, deserted streets, ominous silence"
     },
     {
-      "title": "A sports stadium",
+      "title": "In a sports stadium",
       "prompt": "sports stadium, stadium, crowd, seats, lights, scoreboard, field, grass",
       "secondTitle": "In an abandoned sports stadium",
       "secondPrompt": "cracked bleachers, overgrown field, faded scoreboard, eerie atmosphere"
@@ -64,11 +64,15 @@
     },
     {
       "title": "A wizard",
-      "prompt": "wizard, mage, enchanter, wearing a wizard hat, holding a staff and a spellbook"
+      "prompt": "wizard, mage, enchanter, wearing a wizard hat, holding a staff and a spellbook",
+      "secondTitle": "A zombie",
+      "secondPrompt": "zombie, green skin, drooling"
     },
     {
       "title": "A knight",
-      "prompt": "knight, wearing knight armor, holding a sword and a shield, knight helmet, medieval"
+      "prompt": "knight, wearing knight armor, holding a sword and a shield, knight helmet, medieval",
+      "secondTitle": "A ghost",
+      "secondPrompt": "ghost white skinned, transparent, floating"
     },
     {
       "title": "A soldier",
