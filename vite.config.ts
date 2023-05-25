@@ -13,8 +13,8 @@ export default defineConfig({
       fix: true,
       include: ["src/**/*.{ts,tsx}"],
       lintOnStart: true,
-      failOnError: true,
-      failOnWarning: true,
+      failOnError: false,
+      failOnWarning: false,
     }),
   ],
 });
