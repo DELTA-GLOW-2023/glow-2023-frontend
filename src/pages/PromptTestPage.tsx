@@ -55,7 +55,7 @@ export const PromptTestPage: FC = () => {
               images.push({
                 image: response.image,
                 title: `${actor} ${setting} ${style}`,
-              } as ImageMeta);
+              });
               step++;
               console.log("processed images: " + step.toString());
               setCounter(step);

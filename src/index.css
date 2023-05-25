@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Dark background with no margin or padding */
 body {
     background-color: #1a202c;
     margin: 0;

@@ -7,18 +7,18 @@ export const CameraStep: React.FC<{
 }> = ({ onPhotoTaken, image }) => {
   return (
     <div className={"flex flex-col items-center justify-center h-screen"}>
-      <div className={"mt-12"}>
+      <div className={"mt-32"}>
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-6xl text-white font-bold text-center"
+          className="text-8xl text-white font-bold text-center"
         >
           Hello Glow!
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-2xl text-white font-bold text-center"
+          className="text-4xl text-white font-bold text-center"
         >
           Time to smile!
         </motion.p>
