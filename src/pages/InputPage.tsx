@@ -4,7 +4,7 @@ import { OptionStep } from "../components/steps/option/OptionStep.tsx";
 import { BackgroundBlob } from "../components/core/BackgroundBlob.tsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { ProcessImage } from "../services/processImageService.ts";
-import { actors, settings, styles } from "../assets/options.json";
+import { options } from "../config/options.ts";
 
 export const InputPage: FC = () => {
   const [step, setStep] = useState(0);
@@ -57,7 +57,7 @@ export const InputPage: FC = () => {
       case 1:
         return (
           <OptionStep
-            optionArray={settings}
+            optionArray={options["settings"]}
             onSelected={setSetting}
             onHandleNext={handleNextStep}
             title={"Where are you?"}
@@ -66,7 +66,7 @@ export const InputPage: FC = () => {
       case 2:
         return (
           <OptionStep
-            optionArray={actors}
+            optionArray={options["actors"]}
             onSelected={setActor}
             onHandleNext={handleNextStep}
             title={"What are you?"}
@@ -75,7 +75,7 @@ export const InputPage: FC = () => {
       case 3:
         return (
           <OptionStep
-            optionArray={styles}
+            optionArray={options["styles"]}
             onSelected={setStyle}
             onHandleNext={handleNextStep}
             title={"Select a style"}

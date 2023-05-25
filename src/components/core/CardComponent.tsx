@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { IconType } from "react-icons";
 
 export const CardComponent: React.FC<{
   onClick: () => void;
   selectedValue: string | null;
-  value: string;
+  value: IconType;
 }> = ({ onClick, selectedValue, value }) => {
   return (
     <motion.div
@@ -20,17 +21,6 @@ export const CardComponent: React.FC<{
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.8 }}
       onClick={onClick}
-      className={`flex justify-center w-48 h-48 text-center transition-colors items-center rounded-2xl shadow-lg cursor-pointer ${
-        selectedValue === value ? "bg-purple-600" : "bg-white"
-      }`}
-    >
-      <motion.p
-        className={`rotate-45 ${
-          selectedValue === value ? "text-white" : "text-purple-600"
-        } text-2xl`}
-      >
-        {value}
-      </motion.p>
-    </motion.div>
+    ></motion.div>
   );
 };

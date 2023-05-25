@@ -2,9 +2,9 @@ import React, { FC, useState } from "react";
 import { CameraStep } from "../components/steps/camera/CameraStep.tsx";
 import { AnimatePresence } from "framer-motion";
 import { OptionStepTest } from "../components/steps/test/OptionStepTest";
-import { actors, settings, styles } from "../assets/options.json";
 import { ImagePreviewStepTest } from "../components/steps/test/ImagePreviewTest";
 import { ProcessImage } from "../services/processImageService.ts";
+import { options } from "../config/options.ts";
 
 export type ImageMeta = {
   image: string;
@@ -79,7 +79,7 @@ export const PromptTestPage: FC = () => {
         )}
         {step === 1 && (
           <OptionStepTest
-            optionArray={settings}
+            optionArray={options["settings"]}
             onSelected={setSelectedSettings}
             onHandleNext={handleNextStep}
             title={"Where are you?"}
@@ -87,7 +87,7 @@ export const PromptTestPage: FC = () => {
         )}
         {step === 2 && (
           <OptionStepTest
-            optionArray={actors}
+            optionArray={options["actors"]}
             onSelected={setSelectedActors}
             onHandleNext={handleNextStep}
             title={"What are you?"}
@@ -95,7 +95,7 @@ export const PromptTestPage: FC = () => {
         )}
         {step === 3 && (
           <OptionStepTest
-            optionArray={styles}
+            optionArray={options["styles"]}
             onSelected={setSelectedStyles}
             onHandleNext={handleNextStep}
             title={"Select a style"}
