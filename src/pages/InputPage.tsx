@@ -5,6 +5,7 @@ import { BackgroundBlob } from "../components/core/BackgroundBlob.tsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { ProcessImage } from "../services/processImageService.ts";
 import { options } from "../config/options.ts";
+import {MdOutlineNavigateNext} from "react-icons/all"
 
 export const InputPage: FC = () => {
   const [step, setStep] = useState(0);
@@ -19,7 +20,7 @@ export const InputPage: FC = () => {
   };
 
   const handleNextStep = async () => {
-    if (step + 1 === 4) {
+    if (step + 1 === 5) {
       if (!setting || !actor || !style || !image) return;
       setStep(step + 1);
       const imageCropped = image.split(",")[1];
@@ -68,12 +69,21 @@ export const InputPage: FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-4xl text-white font-bold text-center"
               >
-                Time to smile!
+                Come on in! 
               </motion.p>
             </div>
+            <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="mt-7 z-10 flex items-center justify-center text-white bg-transparent w-48 h-48 rounded-full backdrop-blur-lg"
+                onClick={handleNextStep}>
+                <MdOutlineNavigateNext className={"text-8xl"}/>
+          </motion.button>
           </div>
         );
-      case -1:
+      case 1:
         return (
           <OptionStep
             optionArray={options["actors"]}
@@ -82,7 +92,7 @@ export const InputPage: FC = () => {
             title={"What are you?"}
           />
         );
-      case 1:
+      case 2:
         return (
           <OptionStep
             optionArray={options["settings"]}
@@ -91,7 +101,7 @@ export const InputPage: FC = () => {
             title={"Where are you?"}
           />
         );
-      case 2:
+      case 3:
         return (
           <OptionStep
             optionArray={options["styles"]}
@@ -100,7 +110,7 @@ export const InputPage: FC = () => {
             title={"Select a style"}
           />
         );
-      case 3:
+      case 4:
         return <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />;
     }
   };
