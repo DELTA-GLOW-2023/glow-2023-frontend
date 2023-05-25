@@ -1,11 +1,12 @@
 import { FC, useState } from "react";
 import { motion } from "framer-motion";
 import { CardComponent } from "../../core/CardComponent";
+import {IconType} from "react-icons"
 
 export const OptionStep: FC<{
   onSelected: (val: string) => void;
   onHandleNext: () => void;
-  optionArray: { title: string; prompt: string }[];
+  optionArray: { title: string; prompt: string, icon: IconType }[];
   title: string;
 }> = ({ onHandleNext, onSelected, optionArray, title }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
