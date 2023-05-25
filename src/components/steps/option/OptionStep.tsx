@@ -14,6 +14,7 @@ export const OptionStep: FC<{
   optionArray[0].icon;
   const handleOptionClick = (Option: string) => {
     setSelectedOption(Option);
+    console.log(selectedOption);
     onSelected(Option);
   };
 
@@ -36,8 +37,7 @@ export const OptionStep: FC<{
                 handleOptionClick(option.title);
                 onHandleNext();
               }}
-              selectedValue={selectedOption}
-              value={option.title}
+              icon={option.icon}
             />
           ))}
         </div>
