@@ -1,5 +1,30 @@
 import { optionType } from "../components/steps/option/OptionStep.tsx";
-import { FaCamera, MdOutlineForest, BsSnow3, MdOutlineMuseum, GiMusicalScore, HiOutlineLibrary, GiModernCity, MdOutlineStadium, TbBeach, FaHandHoldingMedical,GiPirateFlag,GiFarmer,FaHatWizard,GiBlackKnightHelm,GiMachineGunMagazine,MdOutlineScience,TbChefHat } from "react-icons/all";
+import {
+  BsSnow3,
+  DiDigitalOcean,
+  FaHandHoldingMedical,
+  FaHatWizard,
+  FaOilCan,
+  GiBlackKnightHelm,
+  GiFarmer,
+  GiMachineGunMagazine,
+  GiModernCity,
+  GiMusicalScore,
+  GiPirateFlag,
+  GiPuppet,
+  HiOutlineLibrary,
+  IoWaterOutline,
+  MdOutlineForest,
+  MdOutlineMuseum,
+  MdOutlinePersonOutline,
+  MdOutlineScience,
+  MdOutlineStadium,
+  RiPixelfedFill,
+  SiMyanimelist,
+  TbBeach,
+  TbChefHat,
+  TfiSpray,
+} from "react-icons/all";
 
 export const options: Record<string, optionType[]> = {
   settings: [
@@ -102,48 +127,48 @@ export const options: Record<string, optionType[]> = {
       title: "Realistic",
       prompt:
         "photo, dslr, ultra quality, sharp focus, Fujifilm XT3, crystal clear, 8K UHD, high detailed",
-      icon: FaCamera,
+      icon: MdOutlinePersonOutline,
     },
     {
       title: "Cartoonish",
       prompt:
         "in the style of cartoon, cartoonish style, lines, bold, colorful, flat, simple, minimalistic, 2D",
-      icon: FaCamera,
+      icon: GiPuppet,
     },
     {
       title: "Graffiti",
       prompt:
         "in the style of graffiti, graffiti style, colorful, spray paint, street art, urban",
-      icon: FaCamera,
+      icon: TfiSpray,
     },
     {
       title: "Watercolor",
       prompt:
         "in the style of a watercolor painting, watercolor style paint, brush, paper, dry, colorful",
-      icon: FaCamera,
+      icon: IoWaterOutline,
     },
     {
       title: "Oil painting",
       prompt:
         "in the style of a oil painting, oil painting style, colorful, thick, textured",
-      icon: FaCamera,
+      icon: FaOilCan,
     },
     {
       title: "Digital Art",
       prompt:
         "in the style of digital art, digital art style, photoshop, illustrator, colorful, sharp, detailed",
-      icon: FaCamera,
+      icon: DiDigitalOcean,
     },
     {
       title: "Anime",
       prompt:
         "in the style of anime, in the style of manga, lines, bold, colorful, flat, simple, minimalistic, 2D",
-      icon: FaCamera,
+      icon: SiMyanimelist,
     },
     {
       title: "Pixel Art",
       prompt: "in the style of pixel art, pixels, 16 bit",
-      icon: FaCamera,
+      icon: RiPixelfedFill,
     },
   ],
 };
