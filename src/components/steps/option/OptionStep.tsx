@@ -1,7 +1,5 @@
 import { FC, useState } from "react";
 import { motion } from "framer-motion";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CardComponent } from "../../core/CardComponent";
 
 export const OptionStep: FC<{
@@ -15,11 +13,6 @@ export const OptionStep: FC<{
   const handleOptionClick = (Option: string) => {
     setSelectedOption(Option);
     onSelected(Option);
-  };
-  const handleClick = () => {
-    if (selectedOption) {
-      onHandleNext();
-    }
   };
 
   return (
@@ -37,22 +30,15 @@ export const OptionStep: FC<{
           {optionArray.map((option) => (
             <CardComponent
               key={option.title}
-              onClick={() => handleOptionClick(option.title)}
+              onClick={() => {
+                handleOptionClick(option.title);
+                onHandleNext();
+              }}
               selectedValue={selectedOption}
               value={option.title}
             />
           ))}
         </div>
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="flex items-center justify-center text-white bg-purple-600 w-48 h-48 rounded-full shadow-lg"
-          onClick={handleClick}
-        >
-          <FontAwesomeIcon icon={faArrowRight} className="h-24" />
-        </motion.button>
       </div>
     </div>
   );

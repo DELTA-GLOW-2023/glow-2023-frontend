@@ -1,8 +1,7 @@
 import { FC, useState } from "react";
 import { motion } from "framer-motion";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CardComponent } from "../../core/CardComponent";
+import { FaArrowRight } from "react-icons/all";
 
 export const OptionStepTest: FC<{
   onSelected: (val: string[]) => void;
@@ -58,7 +57,7 @@ export const OptionStepTest: FC<{
           className="flex items-center justify-center text-white bg-purple-600 w-48 h-48 rounded-full shadow-lg"
           onClick={handleClick}
         >
-          <FontAwesomeIcon icon={faArrowRight} className="h-24" />
+          <FaArrowRight />
         </motion.button>
       </div>
     </div>

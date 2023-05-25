@@ -1,11 +1,10 @@
-import React, {FC, useState} from "react";
-import {CameraStep} from "../components/steps/camera/CameraStep.tsx";
-import {OptionStep} from "../components/steps/option/OptionStep.tsx";
-import {GradientBackgroundComponent} from "../components/core/GradientBackgroundComponent.tsx";
-import {AnimatePresence} from "framer-motion";
-import {ProcessImage} from "../services/processImageService.ts";
-import {styles, actors, settings} from "../assets/options.json";
-import {motion} from "framer-motion";
+import React, { FC, useState } from "react";
+import { CameraStep } from "../components/steps/camera/CameraStep.tsx";
+import { OptionStep } from "../components/steps/option/OptionStep.tsx";
+import { BackgroundBlob } from "../components/core/BackgroundBlob.tsx";
+import { AnimatePresence, motion } from "framer-motion";
+import { ProcessImage } from "../services/processImageService.ts";
+import { actors, settings, styles } from "../assets/options.json";
 
 export const InputPage: FC = () => {
   const [step, setStep] = useState(0);
@@ -32,10 +31,10 @@ export const InputPage: FC = () => {
           setting,
           style
         );
-        console.log(response)
-        setLoading(false)
+        console.log(response);
+        setLoading(false);
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
       reset();
       return;
@@ -49,46 +48,71 @@ export const InputPage: FC = () => {
     setActor(undefined);
     setStyle(undefined);
     setStep(0);
-    setLoading(false)
-  }
+    setLoading(false);
+  };
   const showStep = () => {
     switch (step) {
       case 0:
-        return <CameraStep onPhotoTaken={handlePhotoTaken} image={image}/>
+        return <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />;
       case 1:
-        return <OptionStep
-          optionArray={settings}
-          onSelected={setSetting}
-          onHandleNext={handleNextStep}
-          title={"Where are you?"}
-        />
+        return (
+          <OptionStep
+            optionArray={settings}
+            onSelected={setSetting}
+            onHandleNext={handleNextStep}
+            title={"Where are you?"}
+          />
+        );
       case 2:
-        return <OptionStep
-          optionArray={actors}
-          onSelected={setActor}
-          onHandleNext={handleNextStep}
-          title={"What are you?"}
-        />
+        return (
+          <OptionStep
+            optionArray={actors}
+            onSelected={setActor}
+            onHandleNext={handleNextStep}
+            title={"What are you?"}
+          />
+        );
       case 3:
-        return <OptionStep
-          optionArray={styles}
-          onSelected={setStyle}
-          onHandleNext={handleNextStep}
-          title={"Select a style"}
-        />
+        return (
+          <OptionStep
+            optionArray={styles}
+            onSelected={setStyle}
+            onHandleNext={handleNextStep}
+            title={"Select a style"}
+          />
+        );
     }
-  }
+  };
+
+  const textVariants = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+
+  const textTransition = {
+    duration: 0.5,
+    yoyo: Infinity,
+  };
 
   return (
     <div className="relative w-screen h-screen">
       <AnimatePresence>
-        <GradientBackgroundComponent>
-          {
-            loading ? <motion.div>
-              yo
-            </motion.div> : showStep()
-          }
-        </GradientBackgroundComponent>
+        <BackgroundBlob>
+          {loading ? (
+            <motion.div>
+              <motion.h2
+                initial="hidden"
+                animate="visible"
+                variants={textVariants}
+                transition={textTransition}
+              >
+                Generating your image.
+              </motion.h2>
+            </motion.div>
+          ) : (
+            showStep()
+          )}
+        </BackgroundBlob>
       </AnimatePresence>
     </div>
   );

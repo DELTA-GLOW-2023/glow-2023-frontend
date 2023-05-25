@@ -21,8 +21,8 @@ export const DisplayPage = () => {
         console.error("Error fetching image:", error);
       }
     };
-
-    const interval = setInterval(fetchImage, 300);
+    fetchImage();
+    const interval = setInterval(fetchImage, 10000);
 
     return () => {
       clearInterval(interval);
