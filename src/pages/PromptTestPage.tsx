@@ -75,7 +75,12 @@ export const PromptTestPage: FC = () => {
     <div className="overflow-auto min-h-screen flex flex-col items-center justify-center">
       <AnimatePresence>
         {step === 0 && (
-          <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />
+          <OptionStepTest
+            optionArray={options["styles"]}
+            onSelected={setSelectedStyles}
+            onHandleNext={handleNextStep}
+            title={"Select a style"}
+          />
         )}
         {step === 1 && (
           <OptionStepTest
@@ -94,12 +99,7 @@ export const PromptTestPage: FC = () => {
           />
         )}
         {step === 3 && (
-          <OptionStepTest
-            optionArray={options["styles"]}
-            onSelected={setSelectedStyles}
-            onHandleNext={handleNextStep}
-            title={"Select a style"}
-          />
+          <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />
         )}
         {step === 4 && (
           <ImagePreviewStepTest

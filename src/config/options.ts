@@ -1,4 +1,3 @@
-import { optionType } from "../components/steps/option/OptionStep.tsx";
 import {
   BsSnow3,
   DiDigitalOcean,
@@ -25,8 +24,9 @@ import {
   TbChefHat,
   TfiSpray,
 } from "react-icons/all";
+import { OptionType } from "../types/OptionType.ts";
 
-export const options: Record<string, optionType[]> = {
+export const options: Record<string, OptionType[]> = {
   settings: [
     {
       title: "In a forest",

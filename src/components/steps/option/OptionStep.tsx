@@ -1,13 +1,12 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
 import { CardComponent } from "../../core/CardComponent";
-import { IconType } from "react-icons";
+import { OptionType } from "../../../types/OptionType.ts";
 
-export type optionType = { title: string; prompt: string; icon: IconType };
 export const OptionStep: FC<{
   onSelected: (val: string) => void;
   onHandleNext: () => void;
-  optionArray: optionType[];
+  optionArray: OptionType[];
   title: string;
 }> = ({ onHandleNext, onSelected, optionArray, title }) => {
   const handleOptionClick = (Option: string) => {
@@ -16,7 +15,7 @@ export const OptionStep: FC<{
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center">
-      <div className=" bg-white/60 backdrop-blur-sm p-16 rounded-xl">
+      <div className=" bg-white/60 backdrop-blur-sm p-32 rounded-xl">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}

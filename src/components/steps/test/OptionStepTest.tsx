@@ -2,12 +2,12 @@ import { FC, useState } from "react";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/all";
 import { CardTestComponent } from "./CardTestComponent.tsx";
-import { optionType } from "../option/OptionStep.tsx";
+import { OptionType } from "../../../types/OptionType.ts";
 
 export const OptionStepTest: FC<{
   onSelected: (val: string[]) => void;
   onHandleNext: () => void;
-  optionArray: optionType[];
+  optionArray: OptionType[];
   title: string;
 }> = ({ onHandleNext, onSelected, optionArray, title }) => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);

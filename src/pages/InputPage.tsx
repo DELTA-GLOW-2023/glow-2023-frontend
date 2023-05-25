@@ -53,7 +53,35 @@ export const InputPage: FC = () => {
   const showStep = () => {
     switch (step) {
       case 0:
-        return <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />;
+        return (
+          <div className={"flex flex-col items-center justify-center h-screen"}>
+            <div className={"mt-32"}>
+              <motion.h1
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-8xl text-white font-bold text-center"
+              >
+                Hello Glow!
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-4xl text-white font-bold text-center"
+              >
+                Time to smile!
+              </motion.p>
+            </div>
+          </div>
+        );
+      case -1:
+        return (
+          <OptionStep
+            optionArray={options["actors"]}
+            onSelected={setActor}
+            onHandleNext={handleNextStep}
+            title={"What are you?"}
+          />
+        );
       case 1:
         return (
           <OptionStep
@@ -66,21 +94,14 @@ export const InputPage: FC = () => {
       case 2:
         return (
           <OptionStep
-            optionArray={options["actors"]}
-            onSelected={setActor}
-            onHandleNext={handleNextStep}
-            title={"What are you?"}
-          />
-        );
-      case 3:
-        return (
-          <OptionStep
             optionArray={options["styles"]}
             onSelected={setStyle}
             onHandleNext={handleNextStep}
             title={"Select a style"}
           />
         );
+      case 3:
+        return <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />;
     }
   };
 
