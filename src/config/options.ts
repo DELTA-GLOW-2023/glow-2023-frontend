@@ -31,23 +31,23 @@ export const options: Record<string, OptionType[]> = {
     {
       title: "In a forest",
       prompt: "forest, trees, pines, leaves, autumn",
-      secondTitle: "",
-      secondPrompt: "",
+      secondTitle: "In a burning forest",
+      secondPrompt: "forest fire, charcoal wood, burning",
       icon: MdOutlineForest,
     },
     {
-      title: "A museum",
+      title: "In a museum",
       prompt: "museum, marble, gallery, greek statues in the background",
-      secondTitle: "",
-      secondPrompt: "",
+      secondTitle: "A graveyard",
+      secondPrompt: "Gravestones, dark, night, creepy church, ",
       icon: MdOutlineMuseum,
     },
     {
-      title: "A snowy landscape",
+      title: "In a snowy landscape",
       prompt:
         "snowy landscape, snow, hills, cabin, winter, snowman, snowflakes",
-      secondTitle: "",
-      secondPrompt: "",
+      secondTitle: "At a volcano",
+      secondPrompt: "Fire volcano, erupting, burning",
       icon: BsSnow3,
     },
     {
@@ -68,8 +68,8 @@ export const options: Record<string, OptionType[]> = {
     {
       title: "In a cityscape",
       prompt: "city, new york, taxi, skyscrapers, buildings, traffic, cars",
-      secondTitle: "",
-      secondPrompt: "",
+      secondTitle: "In a wasteland",
+      secondPrompt: "wasteland, deserted, ruined buildings",
       icon: GiModernCity,
     },
     {
@@ -93,32 +93,36 @@ export const options: Record<string, OptionType[]> = {
       title: "A doctor",
       prompt:
         "doctor, surgeon, wearing white scrubs, white coat, stethoscope on neck, medical mask on mouth, wearing medical gloves",
-      secondTitle: "",
-      secondPrompt: "",
+      secondTitle: "A doctor",
+      secondPrompt:
+        "doctor, surgeon, wearing white scrubs, white coat, stethoscope on neck, medical mask on mouth, wearing medical gloves",
       icon: FaHandHoldingMedical,
     },
     {
       title: "A pirate",
       prompt:
         "pirate, eyepatch over one eye, parrot on shoulder, hook on hand, peg leg, pirate hat on head, treasure chest with gold coins on the background",
-      secondTitle: "",
-      secondPrompt: "",
+      secondTitle: "A pirate",
+      secondPrompt:
+        "pirate, eyepatch over one eye, parrot on shoulder, hook on hand, peg leg, pirate hat on head",
       icon: GiPirateFlag,
     },
     {
       title: "A farmer",
       prompt:
         "farmer, holding a pitchfork, wearing a straw hat, wearing overalls",
-      secondTitle: "",
-      secondPrompt: "",
+      secondTitle: "A farmer",
+      secondPrompt:
+        "farmer, holding a pitchfork, wearing a straw hat, wearing overalls",
       icon: GiFarmer,
     },
     {
       title: "A wizard",
       prompt:
         "wizard, mage, enchanter, wearing a wizard hat, holding a staff and a spellbook",
-      secondTitle: "",
-      secondPrompt: "",
+      secondTitle: "A wizard",
+      secondPrompt:
+        "wizard, mage, enchanter, wearing a wizard hat, holding a staff and a spellbook",
       icon: FaHatWizard,
     },
     {
