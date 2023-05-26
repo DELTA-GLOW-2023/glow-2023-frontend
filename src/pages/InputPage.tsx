@@ -5,7 +5,7 @@ import { BackgroundBlob } from "../components/core/BackgroundBlob.tsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { ProcessImage } from "../services/processImageService.ts";
 import { options } from "../config/options.ts";
-import {MdOutlineNavigateNext} from "react-icons/all"
+import { MdOutlineNavigateNext } from "react-icons/all";
 
 export const InputPage: FC = () => {
   const [step, setStep] = useState(0);
@@ -16,14 +16,14 @@ export const InputPage: FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const handlePhotoTaken = async (photoData: string) => {
     setImage(photoData);
-    await handleNextStep();
+    await handleNextStep(photoData);
   };
 
-  const handleNextStep = async () => {
+  const handleNextStep = async (photoData?: string) => {
     if (step + 1 === 5) {
-      if (!setting || !actor || !style || !image) return;
+      if (!setting || !actor || !style || !photoData) return;
       setStep(step + 1);
-      const imageCropped = image.split(",")[1];
+      const imageCropped = photoData.split(",")[1];
       try {
         setLoading(true);
         const response = await ProcessImage(
@@ -69,18 +69,19 @@ export const InputPage: FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-4xl text-white font-bold text-center"
               >
-                Come on in! 
+                Come on in!
               </motion.p>
             </div>
             <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="mt-7 z-10 flex items-center justify-center text-white bg-transparent w-48 h-48 rounded-full backdrop-blur-lg"
-                onClick={handleNextStep}>
-                <MdOutlineNavigateNext className={"text-8xl"}/>
-          </motion.button>
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="mt-7 z-10 flex items-center justify-center text-white bg-transparent w-48 h-48 rounded-full backdrop-blur-lg"
+              onClick={async () => await handleNextStep()}
+            >
+              <MdOutlineNavigateNext className={"text-8xl"} />
+            </motion.button>
           </div>
         );
       case 1:
