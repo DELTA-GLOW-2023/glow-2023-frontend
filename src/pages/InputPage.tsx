@@ -37,7 +37,6 @@ export const InputPage: FC = () => {
       } catch (e) {
         console.log(e);
       }
-      reset();
       return;
     }
     setStep(step + 1);
@@ -49,6 +48,7 @@ export const InputPage: FC = () => {
     setActor(undefined);
     setStyle(undefined);
     setStep(0);
+    setLoading(false);
   };
   const showStep = () => {
     switch (step) {
@@ -120,7 +120,7 @@ export const InputPage: FC = () => {
       <AnimatePresence>
         <BackgroundBlob>
           {loading ? (
-            <LoadingStep/>
+              <LoadingStep reset={reset}/>
           ) : (
             showStep()
           )}
