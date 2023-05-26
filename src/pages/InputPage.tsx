@@ -1,11 +1,12 @@
-import React, { FC, useState } from "react";
-import { CameraStep } from "../components/steps/camera/CameraStep.tsx";
-import { OptionStep } from "../components/steps/option/OptionStep.tsx";
-import { BackgroundBlob } from "../components/core/BackgroundBlob.tsx";
-import { AnimatePresence, motion } from "framer-motion";
-import { ProcessImage } from "../services/processImageService.ts";
-import { options } from "../config/options.ts";
-import { MdOutlineNavigateNext } from "react-icons/all";
+import React, {FC, useState} from "react";
+import {CameraStep} from "../components/steps/camera/CameraStep.tsx";
+import {OptionStep} from "../components/steps/option/OptionStep.tsx";
+import {BackgroundBlob} from "../components/core/BackgroundBlob.tsx";
+import {AnimatePresence, motion} from "framer-motion";
+import {ProcessImage} from "../services/processImageService.ts";
+import {options} from "../config/options.ts";
+import {MdOutlineNavigateNext} from "react-icons/all";
+import LoadingStep from "../components/steps/loading/LoadingStep.tsx";
 
 export const InputPage: FC = () => {
   const [step, setStep] = useState(0);
@@ -33,7 +34,6 @@ export const InputPage: FC = () => {
           style
         );
         console.log(response);
-        setLoading(false);
       } catch (e) {
         console.log(e);
       }
@@ -49,7 +49,6 @@ export const InputPage: FC = () => {
     setActor(undefined);
     setStyle(undefined);
     setStep(0);
-    setLoading(false);
   };
   const showStep = () => {
     switch (step) {
@@ -58,29 +57,29 @@ export const InputPage: FC = () => {
           <div className={"flex flex-col items-center justify-center h-screen"}>
             <div className={"mt-32"}>
               <motion.h1
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{opacity: 0, y: -50}}
+                animate={{opacity: 1, y: 0}}
                 className="text-8xl text-white font-bold text-center"
               >
                 Hello Glow!
               </motion.h1>
               <motion.p
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{opacity: 0, y: -50}}
+                animate={{opacity: 1, y: 0}}
                 className="text-4xl text-white font-bold text-center"
               >
                 Come on in!
               </motion.p>
             </div>
             <motion.button
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              whileHover={{scale: 1.1}}
+              whileTap={{scale: 0.9}}
               className="mt-7 z-10 flex items-center justify-center text-white bg-transparent w-48 h-48 rounded-full backdrop-blur-lg"
               onClick={async () => await handleNextStep()}
             >
-              <MdOutlineNavigateNext className={"text-8xl"} />
+              <MdOutlineNavigateNext className={"text-8xl"}/>
             </motion.button>
           </div>
         );
@@ -112,18 +111,8 @@ export const InputPage: FC = () => {
           />
         );
       case 4:
-        return <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />;
+        return <CameraStep onPhotoTaken={handlePhotoTaken} image={image}/>;
     }
-  };
-
-  const textVariants = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
-  };
-
-  const textTransition = {
-    duration: 0.5,
-    yoyo: Infinity,
   };
 
   return (
@@ -131,16 +120,7 @@ export const InputPage: FC = () => {
       <AnimatePresence>
         <BackgroundBlob>
           {loading ? (
-            <motion.div>
-              <motion.h2
-                initial="hidden"
-                animate="visible"
-                variants={textVariants}
-                transition={textTransition}
-              >
-                Generating your image.
-              </motion.h2>
-            </motion.div>
+            <LoadingStep/>
           ) : (
             showStep()
           )}
