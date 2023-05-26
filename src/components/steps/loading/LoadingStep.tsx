@@ -1,8 +1,12 @@
 import {motion, AnimatePresence} from "framer-motion";
-import React from "react";
+import React, {useEffect} from "react";
 import Typewriter from "typewriter-effect";
 
-const LoadingStep = () => {
+interface LoadingStepProps {
+  reset: () => void;
+}
+
+const LoadingStep = ({reset}: LoadingStepProps) => {
   const terminalText = [
     'I’ve seen that one before.',
     'Give me a bit',
@@ -20,6 +24,11 @@ const LoadingStep = () => {
     animate: {opacity: 1, transition: {duration: 3}},
     exit: {opacity: 0, transition: {duration: 1}},
   };
+  useEffect(() => {
+    setTimeout(() => {
+      reset();
+    }, 60000);
+  }, [reset]);
 
   return (
     <motion.div
