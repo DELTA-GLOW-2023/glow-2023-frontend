@@ -2,9 +2,9 @@ import React, { FC, useState } from "react";
 import { CameraStep } from "../components/steps/camera/CameraStep.tsx";
 import { AnimatePresence } from "framer-motion";
 import { OptionStepTest } from "../components/steps/test/OptionStepTest";
-import { actors, settings, styles } from "../assets/options.json";
 import { ImagePreviewStepTest } from "../components/steps/test/ImagePreviewTest";
-import { UploadImage } from "../services/uploadImageService";
+import { ProcessImage } from "../services/processImageService.ts";
+import { options } from "../config/options.ts";
 
 export type ImageMeta = {
   image: string;
@@ -46,7 +46,7 @@ export const PromptTestPage: FC = () => {
             const setting = selectedSettings[x];
             for (let y = 0; y < selectedStyles?.length; y++) {
               const style = selectedStyles[y];
-              const response = await UploadImage(
+              const response = await ProcessImage(
                 imageCropped,
                 actor,
                 setting,
@@ -55,7 +55,7 @@ export const PromptTestPage: FC = () => {
               images.push({
                 image: response.image,
                 title: `${actor} ${setting} ${style}`,
-              } as ImageMeta);
+              });
               step++;
               console.log("processed images: " + step.toString());
               setCounter(step);
@@ -75,11 +75,16 @@ export const PromptTestPage: FC = () => {
     <div className="overflow-auto min-h-screen flex flex-col items-center justify-center">
       <AnimatePresence>
         {step === 0 && (
-          <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />
+          <OptionStepTest
+            optionArray={options["styles"]}
+            onSelected={setSelectedStyles}
+            onHandleNext={handleNextStep}
+            title={"Select a style"}
+          />
         )}
         {step === 1 && (
           <OptionStepTest
-            optionArray={settings}
+            optionArray={options["settings"]}
             onSelected={setSelectedSettings}
             onHandleNext={handleNextStep}
             title={"Where are you?"}
@@ -87,19 +92,14 @@ export const PromptTestPage: FC = () => {
         )}
         {step === 2 && (
           <OptionStepTest
-            optionArray={actors}
+            optionArray={options["actors"]}
             onSelected={setSelectedActors}
             onHandleNext={handleNextStep}
             title={"What are you?"}
           />
         )}
         {step === 3 && (
-          <OptionStepTest
-            optionArray={styles}
-            onSelected={setSelectedStyles}
-            onHandleNext={handleNextStep}
-            title={"Select a style"}
-          />
+          <CameraStep onPhotoTaken={handlePhotoTaken} image={image} />
         )}
         {step === 4 && (
           <ImagePreviewStepTest
