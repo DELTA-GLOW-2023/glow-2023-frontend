@@ -15,4 +15,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(-1000px) translateX(300px);
+    }
+}
 
+.float {
+    display: inline-block;
+    animation: float 10s ease-in-out forwards;
+}
