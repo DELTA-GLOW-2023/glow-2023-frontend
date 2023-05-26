@@ -34,7 +34,6 @@ export const InputPage: FC = () => {
           style
         );
         console.log(response);
-        setLoading(false);
       } catch (e) {
         console.log(e);
       }
@@ -50,7 +49,6 @@ export const InputPage: FC = () => {
     setActor(undefined);
     setStyle(undefined);
     setStep(0);
-    setLoading(false);
   };
   const showStep = () => {
     switch (step) {
@@ -116,7 +114,6 @@ export const InputPage: FC = () => {
         return <CameraStep onPhotoTaken={handlePhotoTaken} image={image}/>;
     }
   };
-  return <LoadingStep/>;
 
   return (
     <div className="relative w-screen h-screen">
