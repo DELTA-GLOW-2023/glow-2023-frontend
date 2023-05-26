@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { DisplayImage } from "../services/displayImageService.ts";
+import { bigScreenDialogue } from "../config/dialogue";
 
 type ImageDataType = {
   createdAt: string;
@@ -11,7 +12,7 @@ type ImageDataType = {
   updatedAt: string;
 };
 
-export const DisplayPage = () => {
+export const DisplayPage: FC = () => {
   const [imageData, setImageData] = useState<ImageDataType | null>(null);
   const [frameCounter, setFrameCounter] = useState<number>(0);
   const [ranOnce, setRanOnce] = useState<boolean>(false);
@@ -29,10 +30,15 @@ export const DisplayPage = () => {
 
   useEffect(() => {
     if (!ranOnce) {
-      fetchImage();
+      fetchImage().catch(console.log);
     }
     setRanOnce(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const pickRandomDialogue = (dialogueList: string[]): string => {
+    return dialogueList[Math.floor(Math.random() * dialogueList.length)];
+  };
 
   const startCountdown = async () => {
     setFrameCounter(0);
@@ -50,13 +56,13 @@ export const DisplayPage = () => {
     case 0:
       return (
         imageData && (
-          <div className="absolute w-screen h-screen flex flex-col justify-center items-center">
+          <div className="absolute w-screen h-screen flex flex-col gap-24 justify-center items-center">
+            <h1 className="font-bold  text-white text-6xl text-center">
+              {pickRandomDialogue(bigScreenDialogue["screen1"])}
+            </h1>
             <h1 className="font-bold  text-white text-6xl text-center">
               {imageData.imagePrompt}
             </h1>
-            <h2 className="font-bold  text-white text-4xl text-center">
-              Interesting one incoming!
-            </h2>
           </div>
         )
       );
@@ -75,13 +81,13 @@ export const DisplayPage = () => {
     case 2:
       return (
         imageData && (
-          <div className="absolute w-screen h-screen flex flex-col justify-center items-center">
+          <div className="absolute w-screen h-screen flex flex-col gap-24 justify-center items-center">
+            <h1 className="font-bold  text-white text-6xl text-center">
+              {pickRandomDialogue(bigScreenDialogue["screen2"])}
+            </h1>
             <h1 className="font-bold  text-white text-6xl text-center">
               {imageData.secondImagePrompt}
             </h1>
-            <h2 className="font-bold  text-white text-4xl text-center">
-              Wait wait wait! I thought of something!
-            </h2>
           </div>
         )
       );
@@ -97,7 +103,19 @@ export const DisplayPage = () => {
           </div>
         )
       );
+    case 4:
+      return (
+        imageData && (
+          <div className="absolute w-screen h-screen">
+            <img
+              src={imageData.secondImage}
+              alt="Display Image"
+              className="object-cover w-full h-full"
+            />
+          </div>
+        )
+      );
+    default:
+      return <h1>Oops something went wrong!</h1>;
   }
 };
-
-export default DisplayPage;
