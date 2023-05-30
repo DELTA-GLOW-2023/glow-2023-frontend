@@ -30,203 +30,204 @@ export const options: Record<string, OptionType[]> = {
   settings: [
     {
       title: "In a forest",
-      prompt: "forest, trees, pines, leaves, autumn",
+      prompt:
+        "Red yellow trees path leaves (forest:1.4) fall autumn (photoreal:1.5) fullframe (outside:1.4)",
       secondTitle: "In a burning forest",
-      secondPrompt: "forest fire, charcoal wood, burning",
+      secondPrompt:
+        "(forrest:1.5), trees, outside, (inferno:1.5), (forrest fire:1.8), (embers:1.7), (flames:1.3)",
       icon: MdOutlineForest,
     },
     {
       title: "In a museum",
-      prompt: "museum, marble, gallery, greek statues in the background",
+      prompt:
+        "Museum, hallway, symmetry, (marblewall:1.4), (redcarpet:1.4), modern, bright, whitelight",
       secondTitle: "A graveyard",
-      secondPrompt: "Gravestones, dark, night, creepy church, ",
+      secondPrompt:
+        "in a (hoarders den:1.6), hoarding, obsessive, (compulsive:1.8), stacked books, (depot:1.5), (spiders crawling over person:1.5), (cockroaches crawling over person:1.5), (insects:2.0)",
       icon: MdOutlineMuseum,
     },
     {
       title: "In a snowy landscape",
       prompt:
-        "snowy landscape, snow, hills, cabin, winter, snowman, snowflakes",
+        "Snow, hills, (skiing:1.4), brightsun, panorama, morning, yellowlight, whitesnow, lightsnowing, (aurora:1.5), beautiful",
       secondTitle: "At a volcano",
-      secondPrompt: "Fire volcano, erupting, burning",
+      secondPrompt:
+        "in a (volcano:1.4), (lava:1.4), disaster, smoke, fire, (embers:1.5), (outside:1.5), lavalake, darksky, ashes, screaming ",
       icon: BsSnow3,
     },
     {
       title: "A concert hall",
       prompt:
-        "concert hall, stage, audience, seats, lights, microphone, instruments",
-      secondTitle: "",
-      secondPrompt: "",
+        "(viewing podium:1.4), stage, (concerthall:1.4), symmetry, (from audience:1.4), redcurtains, podium lights, dark, musicconcert, speakers",
+      secondTitle: "In the yellow king performance",
+      secondPrompt:
+        "In a performance of (king in yellow:1.8), (yellow crown:1.4), (strange moons:1.5), occult, (manyfaces:1.5), (stage:1.4), (faces:1.5)",
       icon: GiMusicalScore,
     },
     {
       title: "A library",
-      prompt: "library, books, bookshelves",
-      secondTitle: "",
-      secondPrompt: "",
+      prompt:
+        "Library, mansion, expensive, ancient, study, globe, (indoor:1.4), mahogany, (greencarpet:1.4), (whitecurtains:1.4)",
+      secondTitle: "In a crypt",
+      secondPrompt:
+        "a crypt, (zombie:1.5), (scarred:1.3), (damaged-clothing:1.8), (injuries:1.5), (red eyes:1.9)",
       icon: HiOutlineLibrary,
     },
     {
       title: "In a cityscape",
-      prompt: "city, new york, taxi, skyscrapers, buildings, traffic, cars",
+      prompt:
+        "Cityscape, (new York:1.4), manhattan, streetview, taxi, busy, sidewalk, concrete, heatwave sharp, high-quality",
       secondTitle: "In a wasteland",
-      secondPrompt: "wasteland, deserted, ruined buildings",
+      secondPrompt:
+        "in a cityscape, street-view, (apocalypse:1.5), (atomic-cloud:1.4), (nuclearexplosion:1.5), (post-war:1.4), (scarred-face:1.6), (leather-armour:1.4), (bandages:1.5), overgrown",
       icon: GiModernCity,
     },
     {
       title: "A sports stadium",
       prompt:
         "sports stadium, stadium, crowd, seats, lights, scoreboard, field, grass",
-      secondTitle: "",
-      secondPrompt: "",
+      secondTitle: "In a riot",
+      secondPrompt: "riot",
       icon: MdOutlineStadium,
     },
     {
       title: "On a beach",
-      prompt: "beach, sunny, summer, sand, ocean, waves, palm trees, seagulls",
-      secondTitle: "",
-      secondPrompt: "",
+      prompt:
+        "Beach, ocean, waves, sand, panorama, palmtrees, bahama’s, fullframe, detailed, sharp, groundperspective",
+      secondTitle: "In a desert",
+      secondPrompt:
+        "in a desert, outside, sanddunes, sand, (sandstorm:1.6), (sand-in-hair:1.3), (crying:1.5), (sand-in-face:1.6), sandblast, exhausted, (dehydrated:1.4), (gaunt:1.6)",
       icon: TbBeach,
     },
   ],
   actors: [
     {
       title: "A doctor",
-      prompt:
-        "doctor, surgeon, wearing white scrubs, white coat, stethoscope on neck, medical mask on mouth, wearing medical gloves",
+      prompt: "(doctor:1.5) standing, fullframe, labcoat",
       secondTitle: "A doctor",
-      secondPrompt:
-        "doctor, surgeon, wearing white scrubs, white coat, stethoscope on neck, medical mask on mouth, wearing medical gloves",
+      secondPrompt: "(doctor:1.5) standing, fullframe, labcoat",
       icon: FaHandHoldingMedical,
     },
     {
       title: "A pirate",
       prompt:
-        "pirate, eyepatch over one eye, parrot on shoulder, hook on hand, peg leg, pirate hat on head, treasure chest with gold coins on the background",
+        "(Pirate:1.5) detailed, standing coat, leather boots, (pirate hat:1.5)",
       secondTitle: "A pirate",
       secondPrompt:
-        "pirate, eyepatch over one eye, parrot on shoulder, hook on hand, peg leg, pirate hat on head",
+        "(Pirate:1.5) detailed, standing coat, leather boots, (pirate hat:1.5)",
       icon: GiPirateFlag,
     },
     {
       title: "A farmer",
-      prompt:
-        "farmer, holding a pitchfork, wearing a straw hat, wearing overalls",
+      prompt: "(Farmer:1.5), standing straw-hat, denim",
       secondTitle: "A farmer",
-      secondPrompt:
-        "farmer, holding a pitchfork, wearing a straw hat, wearing overalls",
+      secondPrompt: "(Farmer:1.5), standing straw-hat, denim",
       icon: GiFarmer,
     },
     {
       title: "A wizard",
-      prompt:
-        "wizard, mage, enchanter, wearing a wizard hat, holding a staff and a spellbook",
+      prompt: "(WIzard:1.5) standing, (void-spell:1.2)",
       secondTitle: "A wizard",
-      secondPrompt:
-        "wizard, mage, enchanter, wearing a wizard hat, holding a staff and a spellbook",
+      secondPrompt: "(WIzard:1.5) standing, (void-spell:1.2)",
       icon: FaHatWizard,
     },
     {
       title: "A knight",
       prompt:
-        "knight, wearing knight armor, holding a sword and a shield, knight helmet, medieval",
-      secondTitle: "",
-      secondPrompt: "",
+        "(knightstanding:1.4), (detailed face:1.4), royalguard, bluecape, (metalplating:0.5), nose, mouth, hair, (freckles:0.5), embroided",
+      secondTitle: "A knight",
+      secondPrompt:
+        "(knightstanding:1.4), (detailed face:1.4), royalguard, bluecape, (metalplating:0.5), nose, mouth, hair, (freckles:0.5), embroided",
       icon: GiBlackKnightHelm,
     },
     {
       title: "A soldier",
-      prompt:
-        "soldier, army, military, camouflage, soldier helmet, holding a rifle, dog tag",
-      secondTitle: "",
-      secondPrompt: "",
+      prompt: "(soldier:1.5), camoflage-clothes, standing dog-tag",
+      secondTitle: "A soldier",
+      secondPrompt: "(soldier:1.5), camoflage-clothes, standing dog-tag",
       icon: GiMachineGunMagazine,
     },
     {
       title: "A scientist",
-      prompt:
-        "scientist, lab coat, goggles, holding a test tube and a beaker, safety goggles",
-      secondTitle: "",
-      secondPrompt: "",
+      prompt: "(scientist:1.5) standing, doctor-robe",
+      secondTitle: "A scientist",
+      secondPrompt: "(scientist:1.5) standing, doctor-robe",
       icon: MdOutlineScience,
     },
     {
       title: "A chef",
-      prompt:
-        "chef, cook, wearing an apron and a chef's hat, holding a knife and a spatula, wearing oven mitts",
-      secondTitle: "",
-      secondPrompt: "",
+      prompt: "(chef:1.5), standing, (white-apron:1.5)",
+      secondTitle: "A chef",
+      secondPrompt: "(chef:1.5), standing, (white-apron:1.5)",
       icon: TbChefHat,
     },
   ],
   styles: [
     {
       title: "Realistic",
-      prompt:
-        "photo, dslr, ultra quality, sharp focus, Fujifilm XT3, crystal clear, 8K UHD, high detailed",
+      prompt: "(photography:1.5), high-detail",
       secondTitle: "Realistic",
-      secondPrompt:
-        "photo, dslr, ultra quality, sharp focus, Fujifilm XT3, crystal clear, 8K UHD, high detailed",
+      secondPrompt: "(photography:1.5), 4k, uhd, sharp, high-detail",
       icon: MdOutlinePersonOutline,
     },
     {
       title: "Cartoonish",
       prompt:
-        "in the style of cartoon, cartoonish style, lines, bold, colorful, flat, simple, minimalistic, 2D",
+        "(vector art:1.3), 1960, advertisement, poster, high contrast, action shot, redbacklight, bluedifusedlight",
       secondTitle: "Cartoonish",
       secondPrompt:
-        "in the style of cartoon, cartoonish style, lines, bold, colorful, flat, simple, minimalistic, 2D",
+        "(vector art:1.3), 1960, advertisement, poster, high contrast, action shot, redbacklight, bluedifusedlight",
       icon: GiPuppet,
     },
     {
       title: "Graffiti",
-      prompt:
-        "in the style of graffiti, graffiti style, colorful, spray paint, street art, urban",
+      prompt: "(Grafitti:1.5), (mural:1.5), (brickwall:1.2), personmural",
       secondTitle: "Graffiti",
-      secondPrompt:
-        "in the style of graffiti, graffiti style, colorful, spray paint, street art, urban",
+      secondPrompt: "(Grafitti:1.5), (mural:1.5), (brickwall:1.2), personmural",
       icon: TfiSpray,
     },
     {
       title: "Watercolor",
-      prompt:
-        "in the style of a watercolor painting, watercolor style paint, brush, paper, dry, colorful",
+      prompt: "in the style of a (watercolor:1.5) painting, (wet-on-wet:1.5)",
       secondTitle: "Watercolor",
       secondPrompt:
-        "in the style of a watercolor painting, watercolor style paint, brush, paper, dry, colorful",
+        "in the style of a (watercolor:1.5) painting, (wet-on-wet:1.5)",
       icon: IoWaterOutline,
     },
     {
       title: "Oil painting",
       prompt:
-        "in the style of a oil painting, oil painting style, colorful, thick, textured",
+        "(oilpainting:1.2), (renaissancepainting:1.3), (renaissance:1.6), (rembradt_painting:1.2), (brushstrokes:1.5)",
       secondTitle: "Oil painting",
       secondPrompt:
-        "in the style of a oil painting, oil painting style, colorful, thick, textured",
+        "(oilpainting:1.2), (renaissancepainting:1.3), (renaissance:1.6), (rembradt_painting:1.2), (brushstrokes:1.5)",
       icon: FaOilCan,
     },
     {
       title: "Digital Art",
       prompt:
-        "in the style of digital art, digital art style, photoshop, illustrator, colorful, sharp, detailed",
+        "digitalart, 2100, hypermodern, (blacklight:1.3), tatoos, purple lighting, rave",
       secondTitle: "Digital Art",
       secondPrompt:
-        "in the style of digital art, digital art style, photoshop, illustrator, colorful, sharp, detailed",
+        "digitalart, 2100, hypermodern, (blacklight:1.3), tatoos, purple lighting, rave",
       icon: DiDigitalOcean,
     },
     {
       title: "Anime",
       prompt:
-        "in the style of anime, in the style of manga, lines, bold, colorful, flat, simple, minimalistic, 2D",
+        "anime, akira, flat color, thicklines, blackhighlight, movieposter",
       secondTitle: "Anime",
       secondPrompt:
-        "in the style of anime, in the style of manga, lines, bold, colorful, flat, simple, minimalistic, 2D",
+        "anime, akira, flat color, thicklines, blackhighlight, movieposter",
       icon: SiMyanimelist,
     },
     {
       title: "Pixel Art",
-      prompt: "in the style of pixel art, pixels, 16 bit",
+      prompt:
+        "(Pixelart:1.6), (64bit:1.2), videogame character portrait, (dittering:1.4), (roleplayinggmae:1.4), (computergraphics:1.2), (commodore 64:1.2)",
       secondTitle: "Pixel Art",
-      secondPrompt: "in the style of pixel art, pixels, 16 bit",
+      secondPrompt:
+        "(Pixelart:1.6), (64bit:1.2), videogame character portrait, (dittering:1.4), (roleplayinggmae:1.4), (computergraphics:1.2), (commodore 64:1.2)",
       icon: RiPixelfedFill,
     },
   ],
