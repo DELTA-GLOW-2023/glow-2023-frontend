@@ -4,17 +4,14 @@ import {
   FaHatWizard,
   FaOilCan,
   GiFarmer,
-  GiMachineGunMagazine,
   GiPirateFlag,
   GiPuppet,
   IoWaterOutline,
   MdOutlinePersonOutline,
-  MdOutlineScience,
   MdOutlineStadium,
   RiPixelfedFill,
   SiMyanimelist,
   TbBeach,
-  TbChefHat,
   TfiSpray,
 } from "react-icons/all";
 
@@ -79,15 +76,7 @@ export const options: Record<string, OptionType[]> = {
         "In a performance of (king in yellow:1.8), (yellow crown:1.4), (strange moons:1.5), occult, (manyfaces:1.5), (stage:1.4), (faces:1.5)",
       icon: Library,
     },
-    {
-      title: "A library",
-      prompt:
-        "Library, mansion, expensive, ancient, study, globe, (indoor:1.4), mahogany, (greencarpet:1.4), (whitecurtains:1.4)",
-      secondTitle: "In a crypt",
-      secondPrompt:
-        "a crypt, (zombie:1.5), (scarred:1.3), (damaged-clothing:1.8), (injuries:1.5), (red eyes:1.9)",
-      icon: Library,
-    },
+
     {
       title: "In a cityscape",
       prompt:
@@ -177,27 +166,6 @@ export const options: Record<string, OptionType[]> = {
       secondPrompt:
         "(knightstanding:1.4), (detailed face:1.4), royalguard, bluecape, (metalplating:0.5), nose, mouth, hair, (freckles:0.5), embroided",
       icon: Chef,
-    },
-    {
-      title: "A soldier",
-      prompt: "(soldier:1.5), camoflage-clothes, standing dog-tag",
-      secondTitle: "A soldier",
-      secondPrompt: "(soldier:1.5), camoflage-clothes, standing dog-tag",
-      icon: GiMachineGunMagazine,
-    },
-    {
-      title: "A scientist",
-      prompt: "(scientist:1.5) standing, doctor-robe",
-      secondTitle: "A scientist",
-      secondPrompt: "(scientist:1.5) standing, doctor-robe",
-      icon: MdOutlineScience,
-    },
-    {
-      title: "A chef",
-      prompt: "(chef:1.5), standing, (white-apron:1.5)",
-      secondTitle: "A chef",
-      secondPrompt: "(chef:1.5), standing, (white-apron:1.5)",
-      icon: TbChefHat,
     },
   ],
   styles: [
