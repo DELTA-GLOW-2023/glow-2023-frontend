@@ -5,5 +5,5 @@ export type OptionType = {
   prompt: string;
   secondTitle: string;
   secondPrompt: string;
-  icon: IconType;
+  icon: any;
 };

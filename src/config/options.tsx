@@ -1,30 +1,32 @@
 import {
   BsSnow3,
   DiDigitalOcean,
-  FaHandHoldingMedical,
   FaHatWizard,
   FaOilCan,
-  GiBlackKnightHelm,
   GiFarmer,
-  GiMachineGunMagazine,
-  GiModernCity,
-  GiMusicalScore,
   GiPirateFlag,
   GiPuppet,
-  HiOutlineLibrary,
   IoWaterOutline,
-  MdOutlineForest,
-  MdOutlineMuseum,
   MdOutlinePersonOutline,
-  MdOutlineScience,
   MdOutlineStadium,
   RiPixelfedFill,
   SiMyanimelist,
   TbBeach,
-  TbChefHat,
   TfiSpray,
-} from "react-icons/all";
-import { OptionType } from "../types/OptionType.ts";
+} from "react-icons/all"
+
+import Artgallery from "../assets/Artgallery.svg";
+import Chef from "../assets/Chef.svg";
+import Cityskyline from "../assets/Cityskyline.svg";
+import Doctor from "../assets/Doctor.svg";
+import Concerthall from "../assets/Concerthall.svg";
+import Forest from "../assets/Forest.svg";
+import Knight from "../assets/Knight.svg";
+import Library from "../assets/Library.svg";
+import Scientist  from "../assets/Scientist.svg";
+import Soldier from "../assets/Soldier.svg";
+
+import {OptionType} from "../types/OptionType.ts";
 
 export const options: Record<string, OptionType[]> = {
   settings: [
@@ -33,14 +35,14 @@ export const options: Record<string, OptionType[]> = {
       prompt: "forest, trees, pines, leaves, autumn",
       secondTitle: "In a burning forest",
       secondPrompt: "forest fire, charcoal wood, burning",
-      icon: MdOutlineForest,
+      icon: Forest,
     },
     {
       title: "In a museum",
       prompt: "museum, marble, gallery, greek statues in the background",
       secondTitle: "A graveyard",
       secondPrompt: "Gravestones, dark, night, creepy church, ",
-      icon: MdOutlineMuseum,
+      icon: Artgallery,
     },
     {
       title: "In a snowy landscape",
@@ -56,21 +58,21 @@ export const options: Record<string, OptionType[]> = {
         "concert hall, stage, audience, seats, lights, microphone, instruments",
       secondTitle: "",
       secondPrompt: "",
-      icon: GiMusicalScore,
+      icon: Concerthall,
     },
     {
       title: "A library",
       prompt: "library, books, bookshelves",
       secondTitle: "",
       secondPrompt: "",
-      icon: HiOutlineLibrary,
+      icon: Library,
     },
     {
       title: "In a cityscape",
       prompt: "city, new york, taxi, skyscrapers, buildings, traffic, cars",
       secondTitle: "In a wasteland",
       secondPrompt: "wasteland, deserted, ruined buildings",
-      icon: GiModernCity,
+      icon: Cityskyline,
     },
     {
       title: "A sports stadium",
@@ -96,7 +98,7 @@ export const options: Record<string, OptionType[]> = {
       secondTitle: "A doctor",
       secondPrompt:
         "doctor, surgeon, wearing white scrubs, white coat, stethoscope on neck, medical mask on mouth, wearing medical gloves",
-      icon: FaHandHoldingMedical,
+      icon: Doctor,
     },
     {
       title: "A pirate",
@@ -131,7 +133,7 @@ export const options: Record<string, OptionType[]> = {
         "knight, wearing knight armor, holding a sword and a shield, knight helmet, medieval",
       secondTitle: "",
       secondPrompt: "",
-      icon: GiBlackKnightHelm,
+      icon: Knight,
     },
     {
       title: "A soldier",
@@ -139,7 +141,7 @@ export const options: Record<string, OptionType[]> = {
         "soldier, army, military, camouflage, soldier helmet, holding a rifle, dog tag",
       secondTitle: "",
       secondPrompt: "",
-      icon: GiMachineGunMagazine,
+      icon: Soldier,
     },
     {
       title: "A scientist",
@@ -147,7 +149,7 @@ export const options: Record<string, OptionType[]> = {
         "scientist, lab coat, goggles, holding a test tube and a beaker, safety goggles",
       secondTitle: "",
       secondPrompt: "",
-      icon: MdOutlineScience,
+      icon: Scientist,
     },
     {
       title: "A chef",
@@ -155,7 +157,7 @@ export const options: Record<string, OptionType[]> = {
         "chef, cook, wearing an apron and a chef's hat, holding a knife and a spatula, wearing oven mitts",
       secondTitle: "",
       secondPrompt: "",
-      icon: TbChefHat,
+      icon: Chef,
     },
   ],
   styles: [

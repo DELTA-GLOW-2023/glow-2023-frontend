@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import { OptionStepTest } from "../components/steps/test/OptionStepTest";
 import { ImagePreviewStepTest } from "../components/steps/test/ImagePreviewTest";
 import { ProcessImage } from "../services/processImageService.ts";
-import { options } from "../config/options.ts";
+import { options } from "../config/options.tsx";
 
 export type ImageMeta = {
   image: string;

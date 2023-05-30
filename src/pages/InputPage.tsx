@@ -4,7 +4,7 @@ import {OptionStep} from "../components/steps/option/OptionStep.tsx";
 import {BackgroundBlob} from "../components/core/BackgroundBlob.tsx";
 import {AnimatePresence, motion} from "framer-motion";
 import {ProcessImage} from "../services/processImageService.ts";
-import {options} from "../config/options.ts";
+import {options} from "../config/options.tsx";
 import {MdOutlineNavigateNext} from "react-icons/all";
 import LoadingStep from "../components/steps/loading/LoadingStep.tsx";
 
