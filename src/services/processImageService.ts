@@ -1,7 +1,7 @@
 import { ImageResponseType } from "../types/ImageResponseType.ts";
 import axios from "axios";
 import { API_URL } from "../config/config.ts";
-import { options } from "../config/options.ts";
+import { options } from "../config/options.tsx";
 import { OptionType } from "../types/OptionType";
 import { MdOutlineForest } from "react-icons/all";
 

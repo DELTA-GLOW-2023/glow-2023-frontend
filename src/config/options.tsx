@@ -1,29 +1,31 @@
 import {
   BsSnow3,
   DiDigitalOcean,
-  FaHandHoldingMedical,
   FaHatWizard,
   FaOilCan,
-  GiBlackKnightHelm,
   GiFarmer,
-  GiMachineGunMagazine,
-  GiModernCity,
-  GiMusicalScore,
   GiPirateFlag,
   GiPuppet,
-  HiOutlineLibrary,
   IoWaterOutline,
-  MdOutlineForest,
-  MdOutlineMuseum,
   MdOutlinePersonOutline,
-  MdOutlineScience,
   MdOutlineStadium,
   RiPixelfedFill,
   SiMyanimelist,
   TbBeach,
-  TbChefHat,
   TfiSpray,
 } from "react-icons/all";
+
+import Artgallery from "../assets/Artgallery.svg";
+import Chef from "../assets/Chef.svg";
+import Cityskyline from "../assets/Cityskyline.svg";
+import Doctor from "../assets/Doctor.svg";
+import Concerthall from "../assets/Concerthall.svg";
+import Forest from "../assets/Forest.svg";
+import Knight from "../assets/Knight.svg";
+import Library from "../assets/Library.svg";
+import Scientist from "../assets/Scientist.svg";
+import Soldier from "../assets/Soldier.svg";
+
 import { OptionType } from "../types/OptionType.ts";
 
 export const options: Record<string, OptionType[]> = {
@@ -33,18 +35,19 @@ export const options: Record<string, OptionType[]> = {
       prompt:
         "Red yellow trees path leaves (forest:1.4) fall autumn (photoreal:1.5) fullframe (outside:1.4)",
       secondTitle: "In a burning forest",
+      icon: Forest,
       secondPrompt:
         "(forrest:1.5), trees, outside, (inferno:1.5), (forrest fire:1.8), (embers:1.7), (flames:1.3)",
-      icon: MdOutlineForest,
     },
     {
       title: "In a museum",
       prompt:
         "Museum, hallway, symmetry, (marblewall:1.4), (redcarpet:1.4), modern, bright, whitelight",
       secondTitle: "A graveyard",
+
+      icon: Artgallery,
       secondPrompt:
         "in a (hoarders den:1.6), hoarding, obsessive, (compulsive:1.8), stacked books, (depot:1.5), (spiders crawling over person:1.5), (cockroaches crawling over person:1.5), (insects:2.0)",
-      icon: MdOutlineMuseum,
     },
     {
       title: "In a snowy landscape",
@@ -62,25 +65,26 @@ export const options: Record<string, OptionType[]> = {
       secondTitle: "In the yellow king performance",
       secondPrompt:
         "In a performance of (king in yellow:1.8), (yellow crown:1.4), (strange moons:1.5), occult, (manyfaces:1.5), (stage:1.4), (faces:1.5)",
-      icon: GiMusicalScore,
+      icon: Concerthall,
     },
     {
       title: "A library",
       prompt:
-        "Library, mansion, expensive, ancient, study, globe, (indoor:1.4), mahogany, (greencarpet:1.4), (whitecurtains:1.4)",
-      secondTitle: "In a crypt",
+        "(viewing podium:1.4), stage, (concerthall:1.4), symmetry, (from audience:1.4), redcurtains, podium lights, dark, musicconcert, speakers",
+      secondTitle: "In the yellow king performance",
       secondPrompt:
-        "a crypt, (zombie:1.5), (scarred:1.3), (damaged-clothing:1.8), (injuries:1.5), (red eyes:1.9)",
-      icon: HiOutlineLibrary,
+        "In a performance of (king in yellow:1.8), (yellow crown:1.4), (strange moons:1.5), occult, (manyfaces:1.5), (stage:1.4), (faces:1.5)",
+      icon: Library,
     },
+
     {
       title: "In a cityscape",
       prompt:
         "Cityscape, (new York:1.4), manhattan, streetview, taxi, busy, sidewalk, concrete, heatwave sharp, high-quality",
       secondTitle: "In a wasteland",
+      icon: Cityskyline,
       secondPrompt:
         "in a cityscape, street-view, (apocalypse:1.5), (atomic-cloud:1.4), (nuclearexplosion:1.5), (post-war:1.4), (scarred-face:1.6), (leather-armour:1.4), (bandages:1.5), overgrown",
-      icon: GiModernCity,
     },
     {
       title: "A sports stadium",
@@ -105,8 +109,8 @@ export const options: Record<string, OptionType[]> = {
       title: "A doctor",
       prompt: "(doctor:1.5) standing, fullframe, labcoat",
       secondTitle: "A doctor",
+      icon: Doctor,
       secondPrompt: "(doctor:1.5) standing, fullframe, labcoat",
-      icon: FaHandHoldingMedical,
     },
     {
       title: "A pirate",
@@ -138,28 +142,30 @@ export const options: Record<string, OptionType[]> = {
       secondTitle: "A knight",
       secondPrompt:
         "(knightstanding:1.4), (detailed face:1.4), royalguard, bluecape, (metalplating:0.5), nose, mouth, hair, (freckles:0.5), embroided",
-      icon: GiBlackKnightHelm,
+      icon: Knight,
     },
     {
       title: "A soldier",
       prompt: "(soldier:1.5), camoflage-clothes, standing dog-tag",
       secondTitle: "A soldier",
       secondPrompt: "(soldier:1.5), camoflage-clothes, standing dog-tag",
-      icon: GiMachineGunMagazine,
+      icon: Soldier,
     },
     {
       title: "A scientist",
       prompt: "(scientist:1.5) standing, doctor-robe",
       secondTitle: "A scientist",
       secondPrompt: "(scientist:1.5) standing, doctor-robe",
-      icon: MdOutlineScience,
+      icon: Scientist,
     },
     {
       title: "A chef",
-      prompt: "(chef:1.5), standing, (white-apron:1.5)",
-      secondTitle: "A chef",
-      secondPrompt: "(chef:1.5), standing, (white-apron:1.5)",
-      icon: TbChefHat,
+      prompt:
+        "(knightstanding:1.4), (detailed face:1.4), royalguard, bluecape, (metalplating:0.5), nose, mouth, hair, (freckles:0.5), embroided",
+      secondTitle: "A knight",
+      secondPrompt:
+        "(knightstanding:1.4), (detailed face:1.4), royalguard, bluecape, (metalplating:0.5), nose, mouth, hair, (freckles:0.5), embroided",
+      icon: Chef,
     },
   ],
   styles: [

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { IconType } from "react-icons";
+import {Icon} from "./Icon.tsx";
 
 export const CardComponent: React.FC<{
   onClick: () => void;
@@ -21,7 +22,7 @@ export const CardComponent: React.FC<{
         "cursor-pointer  w-48 h-36 flex justify-center items-center rounded-2xl border-4 border-[#072837]"
       }
     >
-      {React.createElement(icon, { className: "text-6xl text-[#072837]" })}
+      <Icon icon={icon}/>
     </motion.div>
   );
 };
