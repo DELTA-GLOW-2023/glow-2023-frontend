@@ -31,7 +31,7 @@ import { OptionType } from "../types/OptionType.ts";
 export const options: Record<string, OptionType[]> = {
   settings: [
     {
-      title: "In a forest",
+      title: "in a forest",
       prompt:
         "Red yellow trees path leaves (forest:1.4) fall autumn (photoreal:1.5) fullframe (outside:1.4)",
       secondTitle: "In a burning forest",
@@ -40,17 +40,16 @@ export const options: Record<string, OptionType[]> = {
         "(forrest:1.5), trees, outside, (inferno:1.5), (forrest fire:1.8), (embers:1.7), (flames:1.3)",
     },
     {
-      title: "In a museum",
+      title: "in a museum",
       prompt:
-        "Museum, hallway, symmetry, (marblewall:1.4), (redcarpet:1.4), modern, bright, whitelight",
+        "Museum, large_room, symmetry, (marblewall:1.4), (redcarpet:1.4), modern, bright, whitelight",
       secondTitle: "A graveyard",
-
       icon: Artgallery,
       secondPrompt:
         "in a (hoarders den:1.6), hoarding, obsessive, (compulsive:1.8), stacked books, (depot:1.5), (spiders crawling over person:1.5), (cockroaches crawling over person:1.5), (insects:2.0)",
     },
     {
-      title: "In a snowy landscape",
+      title: "in a snowy landscape",
       prompt:
         "Snow, hills, (skiing:1.4), brightsun, panorama, morning, yellowlight, whitesnow, lightsnowing, (aurora:1.5), beautiful",
       secondTitle: "At a volcano",
@@ -59,35 +58,35 @@ export const options: Record<string, OptionType[]> = {
       icon: BsSnow3,
     },
     {
-      title: "A concert hall",
+      title: "in a concert hall",
       prompt:
         "(viewing podium:1.4), stage, (concerthall:1.4), symmetry, (from audience:1.4), redcurtains, podium lights, dark, musicconcert, speakers",
       secondTitle: "In the yellow king performance",
+      icon: Concerthall,
       secondPrompt:
         "In a performance of (king in yellow:1.8), (yellow crown:1.4), (strange moons:1.5), occult, (manyfaces:1.5), (stage:1.4), (faces:1.5)",
-      icon: Concerthall,
     },
     {
-      title: "A library",
+      title: "in a library",
       prompt:
         "(viewing podium:1.4), stage, (concerthall:1.4), symmetry, (from audience:1.4), redcurtains, podium lights, dark, musicconcert, speakers",
       secondTitle: "In the yellow king performance",
+      icon: Library,
       secondPrompt:
         "In a performance of (king in yellow:1.8), (yellow crown:1.4), (strange moons:1.5), occult, (manyfaces:1.5), (stage:1.4), (faces:1.5)",
-      icon: Library,
     },
 
     {
-      title: "In a cityscape",
+      title: "in a cityscape",
       prompt:
         "Cityscape, (new York:1.4), manhattan, streetview, taxi, busy, sidewalk, concrete, heatwave sharp, high-quality",
       secondTitle: "In a wasteland",
       icon: Cityskyline,
       secondPrompt:
-        "in a cityscape, street-view, (apocalypse:1.5), (atomic-cloud:1.4), (nuclearexplosion:1.5), (post-war:1.4), (scarred-face:1.6), (leather-armour:1.4), (bandages:1.5), overgrown",
+        "street-view, (apocalypse:1.5), (atomic-cloud:1.4), (nuclearexplosion:1.5), (post-war:1.4), (scarred-face:1.6), (leather-armour:1.4), (bandages:1.5)",
     },
     {
-      title: "A sports stadium",
+      title: "in a sports stadium",
       prompt:
         "sports stadium, stadium, crowd, seats, lights, scoreboard, field, grass",
       secondTitle: "In a riot",
@@ -95,7 +94,7 @@ export const options: Record<string, OptionType[]> = {
       icon: MdOutlineStadium,
     },
     {
-      title: "On a beach",
+      title: "on a beach",
       prompt:
         "Beach, ocean, waves, sand, panorama, palmtrees, bahama’s, fullframe, detailed, sharp, groundperspective",
       secondTitle: "In a desert",
@@ -138,15 +137,15 @@ export const options: Record<string, OptionType[]> = {
     {
       title: "A knight",
       prompt:
-        "(knightstanding:1.4), (detailed face:1.4), royalguard, bluecape, (metalplating:0.5), nose, mouth, hair, (freckles:0.5), embroided",
+        "(knightstanding:1.4), (detailed face:1.4), royalguard, chainmail, nose, mouth, hair, (freckles:0.5), embroided",
       secondTitle: "A knight",
       secondPrompt:
-        "(knightstanding:1.4), (detailed face:1.4), royalguard, bluecape, (metalplating:0.5), nose, mouth, hair, (freckles:0.5), embroided",
+        "(knightstanding:1.4), (detailed face:1.4), royalguard, Chainmail, nose, mouth, hair, (freckles:0.5), embroided",
       icon: Knight,
     },
     {
       title: "A soldier",
-      prompt: "(soldier:1.5), camoflage-clothes, standing dog-tag",
+      prompt: "(soldier:1.5), standing dog-tag",
       secondTitle: "A soldier",
       secondPrompt: "(soldier:1.5), camoflage-clothes, standing dog-tag",
       icon: Soldier,
@@ -160,11 +159,9 @@ export const options: Record<string, OptionType[]> = {
     },
     {
       title: "A chef",
-      prompt:
-        "(knightstanding:1.4), (detailed face:1.4), royalguard, bluecape, (metalplating:0.5), nose, mouth, hair, (freckles:0.5), embroided",
-      secondTitle: "A knight",
-      secondPrompt:
-        "(knightstanding:1.4), (detailed face:1.4), royalguard, bluecape, (metalplating:0.5), nose, mouth, hair, (freckles:0.5), embroided",
+      prompt: "(chef:1.5), standing, (white-apron:1.5)",
+      secondTitle: "A chef",
+      secondPrompt: "(chef:1.5), standing, (white-apron:1.5)",
       icon: Chef,
     },
   ],
