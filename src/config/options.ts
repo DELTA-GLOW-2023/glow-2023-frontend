@@ -76,7 +76,7 @@ export const options: Record<string, OptionType[]> = {
     {
       title: "In a cityscape",
       prompt:
-        "Cityscape, (new York:1.4), manhattan, streetview, taxi, busy, sidewalk, concrete, heatwave, full-frame, sharp, high-quality",
+        "Cityscape, (new York:1.4), manhattan, streetview, taxi, busy, sidewalk, concrete, heatwave sharp, high-quality",
       secondTitle: "In a wasteland",
       secondPrompt:
         "in a cityscape, street-view, (apocalypse:1.5), (atomic-cloud:1.4), (nuclearexplosion:1.5), (post-war:1.4), (scarred-face:1.6), (leather-armour:1.4), (bandages:1.5), overgrown",
@@ -103,32 +103,32 @@ export const options: Record<string, OptionType[]> = {
   actors: [
     {
       title: "A doctor",
-      prompt: "Clinical doctor standing, fullframe, labcoat",
+      prompt: "(doctor:1.5) standing, fullframe, labcoat",
       secondTitle: "A doctor",
-      secondPrompt: "Clinical doctor standing, fullframe, labcoat",
+      secondPrompt: "(doctor:1.5) standing, fullframe, labcoat",
       icon: FaHandHoldingMedical,
     },
     {
       title: "A pirate",
       prompt:
-        "Pirate standing, full-frame, detailed, coat, leather boots, pirate hat",
+        "(Pirate:1.5) detailed, standing coat, leather boots, (pirate hat:1.5)",
       secondTitle: "A pirate",
       secondPrompt:
-        "Pirate standing, full-frame, detailed, coat, leather boots, pirate hat",
+        "(Pirate:1.5) detailed, standing coat, leather boots, (pirate hat:1.5)",
       icon: GiPirateFlag,
     },
     {
       title: "A farmer",
-      prompt: "Farmer, standing, full-frame, straw-hat, denim",
+      prompt: "(Farmer:1.5), standing straw-hat, denim",
       secondTitle: "A farmer",
-      secondPrompt: "Farmer, standing, full-frame, straw-hat, denim",
+      secondPrompt: "(Farmer:1.5), standing straw-hat, denim",
       icon: GiFarmer,
     },
     {
       title: "A wizard",
-      prompt: "WIzard standing, full-frame, (void-spell:1.2)",
+      prompt: "(WIzard:1.5) standing, (void-spell:1.2)",
       secondTitle: "A wizard",
-      secondPrompt: "WIzard standing, full-frame, (void-spell:1.2)",
+      secondPrompt: "(WIzard:1.5) standing, (void-spell:1.2)",
       icon: FaHatWizard,
     },
     {
@@ -142,34 +142,32 @@ export const options: Record<string, OptionType[]> = {
     },
     {
       title: "A soldier",
-      prompt: "(soldier:1.5), green-outfit, dog-tag",
+      prompt: "(soldier:1.5), camoflage-clothes, standing dog-tag",
       secondTitle: "A soldier",
-      secondPrompt: "(soldier:1.5), green-outfit, dog-tag",
+      secondPrompt: "(soldier:1.5), camoflage-clothes, standing dog-tag",
       icon: GiMachineGunMagazine,
     },
     {
       title: "A scientist",
-      prompt: "scientist standing, green vials, full-frame",
+      prompt: "(scientist:1.5) standing, doctor-robe",
       secondTitle: "A scientist",
-      secondPrompt: "scientist standing, green vials, full-frame",
+      secondPrompt: "(scientist:1.5) standing, doctor-robe",
       icon: MdOutlineScience,
     },
     {
       title: "A chef",
-      prompt: "chef, standing, full-frame, (white-apron:1.5)",
+      prompt: "(chef:1.5), standing, (white-apron:1.5)",
       secondTitle: "A chef",
-      secondPrompt: "chef, standing, full-frame, (white-apron:1.5)",
+      secondPrompt: "(chef:1.5), standing, (white-apron:1.5)",
       icon: TbChefHat,
     },
   ],
   styles: [
     {
       title: "Realistic",
-      prompt:
-        "photo, dslr, ultra quality, sharp focus, Fujifilm XT3, crystal clear, 8K UHD, high detailed",
+      prompt: "(photography:1.5), high-detail",
       secondTitle: "Realistic",
-      secondPrompt:
-        "photo, dslr, ultra quality, sharp focus, Fujifilm XT3, crystal clear, 8K UHD, high detailed",
+      secondPrompt: "(photography:1.5), 4k, uhd, sharp, high-detail",
       icon: MdOutlinePersonOutline,
     },
     {
