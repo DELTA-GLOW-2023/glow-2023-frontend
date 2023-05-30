@@ -5,7 +5,7 @@ export const BackgroundBlob: React.FC<{
   children?: ReactNode;
 }> = ({ children }) => {
   return (
-    <motion.div className="fixed inset-0 flex items-center justify-center container-background">
+    <motion.div className="fixed inset-0 container-background">
       {children}
     </motion.div>
   );
