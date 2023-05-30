@@ -44,7 +44,6 @@ export const options: Record<string, OptionType[]> = {
       prompt:
         "Museum, large_room, symmetry, (marblewall:1.4), (redcarpet:1.4), modern, bright, whitelight",
       secondTitle: "A graveyard",
-
       icon: Artgallery,
       secondPrompt:
         "in a (hoarders den:1.6), hoarding, obsessive, (compulsive:1.8), stacked books, (depot:1.5), (spiders crawling over person:1.5), (cockroaches crawling over person:1.5), (insects:2.0)",
@@ -63,18 +62,18 @@ export const options: Record<string, OptionType[]> = {
       prompt:
         "(viewing podium:1.4), stage, (concerthall:1.4), symmetry, (from audience:1.4), redcurtains, podium lights, dark, musicconcert, speakers",
       secondTitle: "In the yellow king performance",
+      icon: Concerthall,
       secondPrompt:
         "In a performance of (king in yellow:1.8), (yellow crown:1.4), (strange moons:1.5), occult, (manyfaces:1.5), (stage:1.4), (faces:1.5)",
-      icon: Concerthall,
     },
     {
       title: "in a library",
       prompt:
         "(viewing podium:1.4), stage, (concerthall:1.4), symmetry, (from audience:1.4), redcurtains, podium lights, dark, musicconcert, speakers",
       secondTitle: "In the yellow king performance",
+      icon: Library,
       secondPrompt:
         "In a performance of (king in yellow:1.8), (yellow crown:1.4), (strange moons:1.5), occult, (manyfaces:1.5), (stage:1.4), (faces:1.5)",
-      icon: Library,
     },
 
     {
