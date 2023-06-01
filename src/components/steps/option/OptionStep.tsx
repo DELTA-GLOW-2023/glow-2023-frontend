@@ -31,7 +31,10 @@ export const OptionStep: FC<{
               {title}
             </motion.h1>
             <div className={"flex flex-col items-center justify-center w-full"}>
-              <input value={value} onChange={(e) => setValue(e.target.value)} autoFocus={true} className={"w-full h-16 rounded-xl bg-[#F2F2F2] text-[#072837] font-bold text-2xl px-8"}/>
+              <input value={value}
+                     onChange={(e) => setValue(e.target.value)}
+                     autoFocus={true}
+                     className={"w-full h-16 rounded-xl bg-[#F2F2F2] text-[#072837] font-bold text-2xl px-8 focus:outline-0 focus:border-4 focus:border-[#072837]"}/>
               <motion.button
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
@@ -49,7 +52,7 @@ export const OptionStep: FC<{
     case 'icon':
       return (
         <div className="flex flex-col justify-center items-center">
-          <div className="bg-white/60 backdrop-blur-sm p-32 rounded-xl">
+          <div className="bg-white/60 backdrop-blur-sm p-32 m-8 rounded-xl">
             <motion.h1
               initial={{opacity: 0, y: -50}}
               animate={{opacity: 1, y: 0}}
