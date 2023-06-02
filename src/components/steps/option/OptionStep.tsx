@@ -76,7 +76,7 @@ export const OptionStep: FC<{
                   <CardComponent
                     key={option.title}
                     onClick={() => {
-                      handleClick(option.prompt)
+                      handleClick(option.title)
                     }}
                     icon={option.icon}
                   />
