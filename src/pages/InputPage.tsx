@@ -2,13 +2,12 @@ import React, {FC, useState} from "react";
 import {BackgroundBlob} from "../components/core/BackgroundBlob.tsx";
 import {AnimatePresence, motion} from "framer-motion";
 import {BsInputCursorText, BsReverseListColumnsReverse} from "react-icons/all";
-import LoadingStep from "../components/steps/loading/LoadingStep.tsx";
 import {OptionStep} from "../components/steps/option/OptionStep.tsx";
 
 export const InputPage: FC = () => {
     const [step, setStep] = useState('start');
     // const [image, setImage] = useState<string>();
-    const [loading, setLoading] = useState<boolean>(false);
+    // const [loading, setLoading] = useState<boolean>(false);
 
     // const handlePhotoTaken = async (photoData: string) => {
     //     setImage(photoData);
@@ -18,7 +17,6 @@ export const InputPage: FC = () => {
     const reset = () => {
         // setImage(undefined);
         setStep('start');
-        setLoading(false);
     };
 
     const showStep = () => {
@@ -68,11 +66,11 @@ export const InputPage: FC = () => {
                 );
             case 'text':
                 return (
-                    <OptionStep variant={'text'} onHandleNext={() => setLoading(true)}/>
+                    <OptionStep variant={'text'} onHandleNext={reset}/>
                 );
             case 'icon':
                 return (
-                    <OptionStep variant={'icon'} onHandleNext={() => setLoading(true)}/>
+                    <OptionStep variant={'icon'} onHandleNext={reset}/>
                 );
         }
     };
@@ -81,11 +79,7 @@ export const InputPage: FC = () => {
         <div className="relative">
             <AnimatePresence>
                 <BackgroundBlob>
-                    {loading ? (
-                        <LoadingStep reset={reset}/>
-                    ) : (
-                        showStep()
-                    )}
+                  {showStep()}
                 </BackgroundBlob>
             </AnimatePresence>
         </div>

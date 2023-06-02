@@ -4,19 +4,27 @@ import {CardComponent} from "../../core/CardComponent";
 import {options} from "../../../config/options.tsx";
 import {MdOutlineNavigateNext} from "react-icons/all";
 import {ProcessImage} from "../../../services/processImageService.ts";
+import {Spinner} from "../../core/Spinner.tsx";
 
 export const OptionStep: FC<{
   onHandleNext: () => void;
   variant: 'text' | 'icon';
 }> = ({onHandleNext, variant}) => {
+  const [loading, setLoading] = useState(false);
   const handleClick = async (prompt: string) => {
-    onHandleNext();
+    setLoading(true)
     await ProcessImage(prompt)
+    setLoading(false)
+    onHandleNext();
   };
 
   const [value, setValue] = useState("")
   const title = "What would you like to add?"
-
+  if (loading) {
+    return <div className={"min-h-screen min-w-screen flex justify-center items-center"}>
+      <Spinner/>
+    </div>
+  }
   switch (variant) {
     case 'text':
       return (
@@ -67,7 +75,9 @@ export const OptionStep: FC<{
                 {options.map((option) => (
                   <CardComponent
                     key={option.title}
-                    onClick={() => {handleClick(option.prompt)}}
+                    onClick={() => {
+                      handleClick(option.prompt)
+                    }}
                     icon={option.icon}
                   />
                 ))}
