@@ -1,6 +1,5 @@
-import {FC, useEffect, useState} from "react";
-import {DisplayImage} from "../services/displayImageService.ts";
-
+import { FC, useEffect, useState } from "react";
+import { DisplayImage } from "../services/displayImageService.ts";
 
 export const DisplayPage: FC = () => {
   const [imageData, setImageData] = useState<string | null>(null);
@@ -18,26 +17,22 @@ export const DisplayPage: FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       fetchImage().catch(console.log);
-    }, 100);
+    }, 300);
 
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, []);
 
-
-
   return (
     <div>
-      {
-        imageData && (
-          <div className="absolute w-screen h-screen">
-            <img
-              src={imageData}
-              alt="Display Image"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        )
-      }
+      {imageData && (
+        <div className="absolute w-screen h-screen">
+          <img
+            src={imageData}
+            alt="Display Image"
+            className="object-cover w-full h-full"
+          />
+        </div>
+      )}
     </div>
   );
 };
