@@ -5,7 +5,7 @@ export const BackgroundBlob: React.FC<{
   children?: ReactNode;
 }> = ({ children }) => {
   return (
-    <motion.div className="fixed inset-0 container-background">
+    <motion.div className="overflow-x-hidden inset-0 container-background">
       {children}
     </motion.div>
   );

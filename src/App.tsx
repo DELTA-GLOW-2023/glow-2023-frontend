@@ -1,26 +1,24 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { DisplayPage } from "./pages/DisplayPage.tsx";
-import { InputPage } from "./pages/InputPage.tsx";
-import { PromptTestPage } from "./pages/PromptTestPage";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {DisplayPage} from "./pages/DisplayPage.tsx";
+import {InputPage} from "./pages/InputPage.tsx";
 
 function App() {
+  localStorage.setItem("count", "0");
+  localStorage.setItem("last_six_prompts", "[]");
+
   const router = createBrowserRouter([
     {
-      element: <InputPage />,
+      element: <InputPage/>,
       path: "/",
     },
     {
-      element: <DisplayPage />,
+      element: <DisplayPage/>,
       path: "/display",
-    },
-    {
-      element: <PromptTestPage />,
-      path: "/prompt-test",
     },
   ]);
   return (
     <>
-      <RouterProvider router={router} />
+        <RouterProvider router={router}/>
     </>
   );
 }
