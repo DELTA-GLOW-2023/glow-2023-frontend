@@ -1,12 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { IconType } from "react-icons";
-import {Icon} from "./Icon.tsx";
+import {Emoji} from "react-apple-emojis";
 
 export const CardComponent: React.FC<{
   onClick: () => void;
-  icon: IconType;
-}> = ({ onClick, icon }) => {
+  emoji: string;
+}> = ({ onClick, emoji }) => {
   return (
     <motion.div
       initial={{
@@ -22,7 +21,7 @@ export const CardComponent: React.FC<{
         "cursor-pointer  w-48 h-36 flex justify-center items-center rounded-2xl border-4 border-[#072837]"
       }
     >
-      <Icon icon={icon}/>
+        <Emoji name={emoji} />
     </motion.div>
   );
 };

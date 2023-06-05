@@ -1,9 +1,4 @@
-import { IconType } from "react-icons";
-
 export type OptionType = {
-  title: string;
+  emoji: string;
   prompt: string;
-  secondTitle: string;
-  secondPrompt: string;
-  icon: IconType;
 };

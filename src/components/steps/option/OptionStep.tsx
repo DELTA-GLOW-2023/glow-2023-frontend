@@ -74,11 +74,11 @@ export const OptionStep: FC<{
               <div className="grid grid-cols-4 grid-rows-2 gap-24 bg-clip-text">
                 {options.map((option) => (
                   <CardComponent
-                    key={option.title}
+                    key={option.prompt}
                     onClick={() => {
-                      handleClick(option.title)
+                      handleClick(option.prompt)
                     }}
-                    icon={option.icon}
+                    emoji={option.emoji}
                   />
                 ))}
               </div>

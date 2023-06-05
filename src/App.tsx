@@ -1,6 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { DisplayPage } from "./pages/DisplayPage.tsx";
-import { InputPage } from "./pages/InputPage.tsx";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {DisplayPage} from "./pages/DisplayPage.tsx";
+import {InputPage} from "./pages/InputPage.tsx";
+import emojiData from "react-apple-emojis/src/data.json"
+import {EmojiProvider} from "react-apple-emojis";
 
 function App() {
   localStorage.setItem("count", "0");
@@ -8,17 +10,19 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      element: <InputPage />,
+      element: <InputPage/>,
       path: "/",
     },
     {
-      element: <DisplayPage />,
+      element: <DisplayPage/>,
       path: "/display",
     },
   ]);
   return (
     <>
-      <RouterProvider router={router} />
+      <EmojiProvider data={emojiData}>
+        <RouterProvider router={router}/>
+      </EmojiProvider>
     </>
   );
 }
