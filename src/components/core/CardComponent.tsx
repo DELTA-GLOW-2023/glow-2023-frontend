@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {Emoji} from "react-apple-emojis";
 
 export const CardComponent: React.FC<{
   onClick: () => void;
@@ -21,7 +20,7 @@ export const CardComponent: React.FC<{
         "cursor-pointer  w-48 h-36 flex justify-center items-center rounded-2xl border-4 border-[#072837]"
       }
     >
-        <Emoji name={emoji} />
+      {emoji}
     </motion.div>
   );
 };
