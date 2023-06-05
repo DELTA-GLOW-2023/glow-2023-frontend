@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 export const CardComponent: React.FC<{
   onClick: () => void;
-  emoji: string;
-}> = ({ onClick, emoji }) => {
+  children: React.ReactNode;
+}> = ({ onClick, children }) => {
   return (
     <motion.div
       initial={{
@@ -17,10 +17,10 @@ export const CardComponent: React.FC<{
       whileTap={{ scale: 0.8 }}
       onClick={onClick}
       className={
-        "cursor-pointer  w-48 h-36 flex justify-center items-center rounded-2xl border-4 border-[#072837]"
+        "cursor-pointer w-48 h-36 flex justify-center items-center rounded-2xl border-4 border-[#072837]"
       }
     >
-      {emoji}
+      {children}
     </motion.div>
   );
 };

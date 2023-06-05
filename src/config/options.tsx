@@ -1,204 +1,259 @@
-import {OptionType} from "../types/OptionType.ts";
+import { OptionType } from "../types/OptionType.ts";
+import Alien from "../assets/emoji/alien.png";
+import AlienMonster from "../assets/emoji/alien-monster.png";
+import Robot from "../assets/emoji/robot.png";
+import Merperson from "../assets/emoji/merperson.png";
+import Fairy from "../assets/emoji/fairy.png";
+import Rocket from "../assets/emoji/rocket.png";
+import Umbrella from "../assets/emoji/umbrella.png";
+import Yarn from "../assets/emoji/yarn.png";
+import Crown from "../assets/emoji/crown.png";
+import LightBulb from "../assets/emoji/light-bulb.png";
+import Planet from "../assets/emoji/planet.png";
+import Star from "../assets/emoji/star.png";
+import DogFace from "../assets/emoji/dog-face.png";
+import CatFace from "../assets/emoji/cat-face.png";
+import Fox from "../assets/emoji/fox.png";
+import Panda from "../assets/emoji/panda.png";
+import Bear from "../assets/emoji/bear.png";
+import FerrisWheel from "../assets/emoji/ferris-wheel.png";
+import Lion from "../assets/emoji/lion.png";
+import Monkey from "../assets/emoji/monkey.png";
+import Penguin from "../assets/emoji/penguin.png";
+import Wolf from "../assets/emoji/wolf.png";
+import Unicorn from "../assets/emoji/unicorn.png";
+import Honeybee from "../assets/emoji/honeybee.png";
+import Butterfly from "../assets/emoji/butterfly.png";
+import TReX from "../assets/emoji/t-rex.png";
+import Coral from "../assets/emoji/coral.png";
+import TropicalFish from "../assets/emoji/tropical-fish.png";
+import SpoutingWhale from "../assets/emoji/spouting-whale.png";
+import Dragon from "../assets/emoji/dragon.png";
+import Desert from "../assets/emoji/desert.png";
+import DeciduousTree from "../assets/emoji/deciduous-tree.png";
+import DesertIsland from "../assets/emoji/desert-island.png";
+import Pizza from "../assets/emoji/pizza.png";
+import Hibiscus from "../assets/emoji/hibiscus.png";
+import Bubbles from "../assets/emoji/bubbles.png";
+import Snowflake from "../assets/emoji/snowflake.png";
+import Pineapple from "../assets/emoji/pineapple.png";
+import Coconut from "../assets/emoji/coconut.png";
+import Candy from "../assets/emoji/candy.png";
+import Castle from "../assets/emoji/castle.png";
+import Volcano from "../assets/emoji/volcano.png";
+import ClassicalBuilding from "../assets/emoji/classical-building.png";
+import CircusTent from "../assets/emoji/circus-tent.png";
+import ArtistPalette from "../assets/emoji/artist-palette.png";
+import MusicalNotes from "../assets/emoji/musical-notes.png";
+import RollerSkate from "../assets/emoji/roller-skate.png";
+import MirrorBall from "../assets/emoji/mirror-ball.png";
+import Doughnut from "../assets/emoji/doughnut.png";
+import Cloud from "../assets/emoji/cloud.png";
+import Fireworks from "../assets/emoji/fireworks.png";
 
 export const options: OptionType[] = [
   {
-    "emoji": "alien",
-    "prompt": "Alien"
+    emoji: Alien,
+    prompt: "Alien"
   },
   {
-    "emoji": "alien-monster",
-    "prompt": "pixel art"
+    emoji: AlienMonster,
+    prompt: "Pixel Art"
   },
   {
-    "emoji": "robot",
-    "prompt": "Robot"
+    emoji: Robot,
+    prompt: "Robot"
   },
   {
-    "emoji": "merperson",
-    "prompt": "Mermaid"
+    emoji: Merperson,
+    prompt: "Mermaid"
   },
   {
-    "emoji": "fairy",
-    "prompt": "Fairy"
+    emoji: Fairy,
+    prompt: "Fairy"
   },
   {
-    "emoji": "rocket",
-    "prompt": "Spaceship"
+    emoji: Rocket,
+    prompt: "Spaceship"
   },
   {
-    "emoji": "umbrella",
-    "prompt": "Rainy day"
+    emoji: Umbrella,
+    prompt: "Rainy day"
   },
   {
-    "emoji": "yarn",
-    "prompt": "Yarn"
+    emoji: Yarn,
+    prompt: "Yarn"
   },
   {
-    "emoji": "crown",
-    "prompt": "Royalty"
+    emoji: Crown,
+    prompt: "Royalty"
   },
   {
-    "emoji": "ballet-shoes",
-    "prompt": "Ballerina"
+    emoji: LightBulb,
+    prompt: "Light bulb"
   },
   {
-    "emoji": "planet",
-    "prompt": "Space"
+    emoji: Planet,
+    prompt: "Space"
   },
   {
-    "emoji": "star",
-    "prompt": "Celestial"
+    emoji: Star,
+    prompt: "Celestial"
   },
   {
-    "emoji": "dog-face",
-    "prompt": "Dog"
+    emoji: DogFace,
+    prompt: "Dog"
   },
   {
-    "emoji": "cat-face",
-    "prompt": "Cat"
+    emoji: CatFace,
+    prompt: "Cat"
   },
   {
-    "emoji": "fox",
-    "prompt": "Fox"
+    emoji: Fox,
+    prompt: "Fox"
   },
   {
-    "emoji": "panda",
-    "prompt": "Panda"
+    emoji: Panda,
+    prompt: "Panda"
   },
   {
-    "emoji": "bear",
-    "prompt": "Bear"
+    emoji: Bear,
+    prompt: "Bear"
   },
   {
-    "emoji": "️ferris-wheel",
-    "prompt": "Ferris wheel"
+    emoji: FerrisWheel,
+    prompt: "Ferris wheel"
   },
   {
-    "emoji": "lion",
-    "prompt": "Lion"
+    emoji: Lion,
+    prompt: "Lion"
   },
   {
-    "emoji": "monkey",
-    "prompt": "Monkey"
+    emoji: Monkey,
+    prompt: "Monkey"
   },
   {
-    "emoji": "penguin",
-    "prompt": "Penguin"
+    emoji: Penguin,
+    prompt: "Penguin"
   },
   {
-    "emoji": "wolf",
-    "prompt": "Wolf"
+    emoji: Wolf,
+    prompt: "Wolf"
   },
   {
-    "emoji": "unicorn",
-    "prompt": "Unicorn"
+    emoji: Unicorn,
+    prompt: "Unicorn"
   },
   {
-    "emoji": "honeybee",
-    "prompt": "Bee"
+    emoji: Honeybee,
+    prompt: "Bee"
   },
   {
-    "emoji": "butterfly",
-    "prompt": "Butterfly"
+    emoji: Butterfly,
+    prompt: "Butterfly"
   },
   {
-    "emoji": "t-rex",
-    "prompt": "Dinosaur"
+    emoji: TReX,
+    prompt: "Dinosaur"
   },
   {
-    "emoji": "coral",
-    "prompt": "Underwater world"
+    emoji: Coral,
+    prompt: "Underwater world"
   },
   {
-    "emoji": "tropical-fish",
-    "prompt": "Tropical fish"
+    emoji: TropicalFish,
+    prompt: "Tropical fish"
   },
   {
-    "emoji": "spouting-whale",
-    "prompt": "Whale"
+    emoji: SpoutingWhale,
+    prompt: "Whale"
   },
   {
-    "emoji": "dragon",
-    "prompt": "Dragon"
+    emoji: Dragon,
+    prompt: "Dragon"
   },
   {
-    "emoji": "desert",
-    "prompt": "Desert"
+    emoji: Desert,
+    prompt: "Desert"
   },
   {
-    "emoji": "deciduous-tree",
-    "prompt": "Forest"
+    emoji: DeciduousTree,
+    prompt: "Forest"
   },
   {
-    "emoji": "desert-island",
-    "prompt": "tropical island"
+    emoji: DesertIsland,
+    prompt: "Tropical island"
   },
   {
-    "emoji": "pizza",
-    "prompt": "Pizza"
+    emoji: Pizza,
+    prompt: "Pizza"
   },
   {
-    "emoji": "hibiscus",
-    "prompt": "Flowers"
+    emoji: Hibiscus,
+    prompt: "Flowers"
   },
   {
-    "emoji": "bubbles",
-    "prompt": "Bubbles"
+    emoji: Bubbles,
+    prompt: "Bubbles"
   },
   {
-    "emoji": "snowflake",
-    "prompt": "Snowflakes"
+    emoji: Snowflake,
+    prompt: "Snowflakes"
   },
   {
-    "emoji": "pineapple",
-    "prompt": "Pineapple"
+    emoji: Pineapple,
+    prompt: "Pineapple"
   },
   {
-    "emoji": "coconut",
-    "prompt": "Coconut"
+    emoji: Coconut,
+    prompt: "Coconut"
   },
   {
-    "emoji": "candy",
-    "prompt": "Candyland"
+    emoji: Candy,
+    prompt: "Candyland"
   },
   {
-    "emoji": "castle",
-    "prompt": "Castle"
+    emoji: Castle,
+    prompt: "Castle"
   },
   {
-    "emoji": "volcano",
-    "prompt": "Volcano"
+    emoji: Volcano,
+    prompt: "Volcano"
   },
   {
-    "emoji": "classical-building",
-    "prompt": "Ancient Greece"
+    emoji: ClassicalBuilding,
+    prompt: "Ancient Greece"
   },
   {
-    "emoji": "circus-tent",
-    "prompt": "Circus"
+    emoji: CircusTent,
+    prompt: "Circus"
   },
   {
-    "emoji": "artist-palette",
-    "prompt": "Colorful"
+    emoji: ArtistPalette,
+    prompt: "Colorful"
   },
   {
-    "emoji": "musical-notes",
-    "prompt": "Musical notes"
+    emoji: MusicalNotes,
+    prompt: "Musical notes"
   },
   {
-    "emoji": "roller-skate",
-    "prompt": "Roller skate"
+    emoji: RollerSkate,
+    prompt: "Roller skate"
   },
   {
-    "emoji": "mirror-ball",
-    "prompt": "Disco"
+    emoji: MirrorBall,
+    prompt: "Disco"
   },
   {
-    "emoji": "doughnut",
-    "prompt": "Donut"
+    emoji: Doughnut,
+    prompt: "Donut"
   },
   {
-    "emoji": "cloud",
-    "prompt": "Cloud"
+    emoji: Cloud,
+    prompt: "Cloud"
+  },
+  {
+    emoji: Fireworks,
+    prompt: "Fireworks"
   }
-]
+];
