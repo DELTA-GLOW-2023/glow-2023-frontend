@@ -29,7 +29,7 @@ export const DisplayPage: FC = () => {
           <img
             src={imageData}
             alt="Display Image"
-            className="object-cover w-full h-full"
+            className="object-contain w-full h-full"
           />
         </div>
       )}
