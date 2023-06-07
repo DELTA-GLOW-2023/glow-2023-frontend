@@ -40,7 +40,7 @@ export const InputPage: FC = () => {
                 whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 className="mt-7 z-10 flex items-center justify-center text-white bg-transparent w-48 h-48 rounded-full backdrop-blur-lg"
-                onClick={() => setStep('icon')}
+                onClick={() => setStep('option')}
               >
                 <motion.p
                   initial={{opacity: 0, y: -50}}
@@ -50,9 +50,54 @@ export const InputPage: FC = () => {
                   Start
                 </motion.p>
               </motion.button>
-
             </div>
           </div>
+        );
+      case 'option':
+          return (
+            <div className={"flex flex-col items-center justify-center h-screen"}>
+              <div className={"mt-32"}>
+                <motion.h1
+                  initial={{opacity: 0, y: -50}}
+                  animate={{opacity: 1, y: 0}}
+                  className="text-8xl text-white font-bold text-center"
+                >
+                  Choose a option:
+                </motion.h1>
+              </div>
+              <motion.button
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                whileHover={{scale: 1.1}}
+                whileTap={{scale: 0.9}}
+                className="mt-7 z-10 flex items-center justify-center text-white bg-transparent w-48 h-48 rounded-full backdrop-blur-lg"
+                onClick={() => setStep('text')}
+              >
+                <motion.p
+                  initial={{opacity: 0, y: -50}}
+                  animate={{opacity: 1, y: 0}}
+                  className="text-4xl text-white font-bold text-center"
+                >
+                  Text
+                </motion.p>
+              </motion.button>
+              <motion.button
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                whileHover={{scale: 1.1}}
+                whileTap={{scale: 0.9}}
+                className="mt-7 z-10 flex items-center justify-center text-white bg-transparent w-48 h-48 rounded-full backdrop-blur-lg"
+                onClick={() => setStep('icon')}
+              >
+                <motion.p
+                  initial={{opacity: 0, y: -50}}
+                  animate={{opacity: 1, y: 0}}
+                  className="text-4xl text-white font-bold text-center"
+                >
+                  Icons
+                </motion.p>
+              </motion.button>
+            </div>
         );
       case 'text':
         return (
@@ -62,6 +107,10 @@ export const InputPage: FC = () => {
         return (
           <OptionStep variant={'icon'} onHandleNext={reset} setStep={setStep}/>
         );
+        default:
+          console.error(`The step: '${step}', does not exist`);
+          break;
+
     }
   };
 

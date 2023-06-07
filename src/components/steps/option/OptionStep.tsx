@@ -39,7 +39,7 @@ export const OptionStep: FC<{
                 whileHover={{scale: 1.1}}
                 whileTap={{scale: 0.9}}
                 className="flex items-center justify-center text-[#072837] bg-transparent w-36 h-36 rounded-full backdrop-blur-sm"
-                onClick={() => setStep("icon")}
+                onClick={() => setStep("option")}
               >
                 <MdOutlineNavigateBefore className={"text-8xl"}/>
               </motion.button>
