@@ -1,24 +1,32 @@
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {DisplayPage} from "./pages/DisplayPage.tsx";
-import {InputPage} from "./pages/InputPage.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { DisplayPage } from "./pages/DisplayPage.tsx";
+import { InputPage } from "./pages/InputPage.tsx";
+import { StartPage } from "./pages/StartPage.tsx";
+import { BackgroundBlob } from "./components/core/BackgroundBlob.tsx";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
-  localStorage.setItem("count", "0");
-  localStorage.setItem("last_six_prompts", "[]");
-
   const router = createBrowserRouter([
     {
-      element: <InputPage/>,
-      path: "/",
+      element: <StartPage />,
+      path: "/"
     },
     {
-      element: <DisplayPage/>,
-      path: "/display",
+      element: <InputPage />,
+      path: "/input"
     },
+    {
+      element: <DisplayPage />,
+      path: "/display"
+    }
   ]);
   return (
     <>
-        <RouterProvider router={router}/>
+      <AnimatePresence>
+        <BackgroundBlob>
+          <RouterProvider router={router} />
+        </BackgroundBlob>
+      </AnimatePresence>
     </>
   );
 }

@@ -1,126 +1,52 @@
-import React, {FC, useState} from "react";
-import {BackgroundBlob} from "../components/core/BackgroundBlob.tsx";
-import {AnimatePresence, motion} from "framer-motion";
-import {OptionStep} from "../components/steps/option/OptionStep.tsx";
+import React, { FC, ReactNode } from "react";
+import { motion } from "framer-motion";
+import { CardComponent } from "../components/core/CardComponent.tsx";
+import { options } from "../config/options.tsx";
+import Cookies from "universal-cookie";
+import { ProcessImage } from "../services/processImageService.ts";
 
 export const InputPage: FC = () => {
-  const [step, setStep] = useState('start');
-  // const [image, setImage] = useState<string>();
-  // const [loading, setLoading] = useState<boolean>(false);
+  const cookies = new Cookies();
 
-  // const handlePhotoTaken = async (photoData: string) => {
-  //     setImage(photoData);
-  //     await handleNextStep(photoData);
-  // };
-
-  const reset = () => {
-    // setImage(undefined);
-    setStep('start');
+  const handleClick = async (prompt: string) => {
+    cookies.set("lastPrompt", prompt, { path: "/" });
+    await ProcessImage(prompt);
   };
 
-  const showStep = () => {
-    switch (step) {
-      case 'start':
-        return (
-          <div className={"flex flex-col items-center justify-center h-screen"}>
-            <div className={"mt-32"}>
-              <motion.h1
-                initial={{opacity: 0, y: -50}}
-                animate={{opacity: 1, y: 0}}
-                className="text-8xl text-white font-bold text-center"
-              >
-                Hello Glow!
-              </motion.h1>
-
-            </div>
-            <div className={"flex gap-16 mt-16"}>
-              <motion.button
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                whileHover={{scale: 1.1}}
-                whileTap={{scale: 0.9}}
-                className="mt-7 z-10 flex items-center justify-center text-white bg-transparent w-48 h-48 rounded-full backdrop-blur-lg"
-                onClick={() => setStep('option')}
-              >
-                <motion.p
-                  initial={{opacity: 0, y: -50}}
-                  animate={{opacity: 1, y: 0}}
-                  className="text-4xl text-white font-bold text-center"
-                >
-                  Start
-                </motion.p>
-              </motion.button>
-            </div>
-          </div>
-        );
-      case 'option':
-          return (
-            <div className={"flex flex-col items-center justify-center h-screen"}>
-              <div className={"mt-32"}>
-                <motion.h1
-                  initial={{opacity: 0, y: -50}}
-                  animate={{opacity: 1, y: 0}}
-                  className="text-8xl text-white font-bold text-center"
-                >
-                  Choose a option:
-                </motion.h1>
-              </div>
-              <motion.button
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                whileHover={{scale: 1.1}}
-                whileTap={{scale: 0.9}}
-                className="mt-7 z-10 flex items-center justify-center text-white bg-transparent w-48 h-48 rounded-full backdrop-blur-lg"
-                onClick={() => setStep('text')}
-              >
-                <motion.p
-                  initial={{opacity: 0, y: -50}}
-                  animate={{opacity: 1, y: 0}}
-                  className="text-4xl text-white font-bold text-center"
-                >
-                  Text
-                </motion.p>
-              </motion.button>
-              <motion.button
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                whileHover={{scale: 1.1}}
-                whileTap={{scale: 0.9}}
-                className="mt-7 z-10 flex items-center justify-center text-white bg-transparent w-48 h-48 rounded-full backdrop-blur-lg"
-                onClick={() => setStep('icon')}
-              >
-                <motion.p
-                  initial={{opacity: 0, y: -50}}
-                  animate={{opacity: 1, y: 0}}
-                  className="text-4xl text-white font-bold text-center"
-                >
-                  Icons
-                </motion.p>
-              </motion.button>
-            </div>
-        );
-      case 'text':
-        return (
-          <OptionStep variant={'text'} onHandleNext={reset} setStep={setStep}/>
-        );
-      case 'icon':
-        return (
-          <OptionStep variant={'icon'} onHandleNext={reset} setStep={setStep}/>
-        );
-        default:
-          console.error(`The step: '${step}', does not exist`);
-          break;
-
-    }
+  const showCards = (): ReactNode => {
+    return options.map(option => {
+      if (cookies.get("lastPrompt") === option.prompt) return null;
+      return (
+        <CardComponent
+          key={option.prompt}
+          onClick={() => {
+            handleClick(option.prompt);
+          }}
+        >
+          <img className={"h-20"} alt={"Emoji"} src={option.emoji} />
+        </CardComponent>
+      );
+    });
   };
+  
 
   return (
-    <div className="relative">
-      <AnimatePresence>
-        <BackgroundBlob>
-          {showStep()}
-        </BackgroundBlob>
-      </AnimatePresence>
+    <div className="flex flex-col justify-center items-center">
+      <div className="bg-white/60 backdrop-blur-sm p-32 m-8 rounded-xl">
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="text-7xl text-[#072837] font-bold text-center mb-16"
+        >
+          What would you like to add?
+        </motion.h1>
+        <div className="flex flex-col md:flex-row justify-center md:justify-end items-center md:space-x-24 space-y-8 md:space-y-0">
+          <div className="grid grid-cols-4 grid-rows-2 gap-24 bg-clip-text">
+            {showCards()}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
