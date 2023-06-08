@@ -5,7 +5,7 @@ import {options} from "../../../config/options.tsx";
 import {MdOutlineNavigateBefore, MdOutlineNavigateNext} from "react-icons/all";
 import {ProcessImage} from "../../../services/processImageService.ts";
 import {Spinner} from "../../core/Spinner.tsx";
-import {BsInputCursorText} from "react-icons/all";
+// import {BsInputCursorText} from "react-icons/all";
 
 export const OptionStep: FC<{
   onHandleNext: () => void;
@@ -13,12 +13,7 @@ export const OptionStep: FC<{
   setStep: (step: string) => void;
 }> = ({onHandleNext, variant, setStep}) => {
   const [loading, setLoading] = useState(false);
-  const handleClick = async (prompt: string) => {
-    setLoading(true)
-    await ProcessImage(prompt)
-    setLoading(false)
-    onHandleNext();
-  };
+
 
   const [value, setValue] = useState("")
   const title = "What would you like to add?"
@@ -72,39 +67,7 @@ export const OptionStep: FC<{
         </div>
       );
     case 'icon':
-      return (
-        <div className="flex flex-col justify-center items-center">
-          <div className="bg-white/60 backdrop-blur-sm p-32 m-8 rounded-xl">
-            <motion.h1
-              initial={{opacity: 0, y: -50}}
-              animate={{opacity: 1, y: 0}}
-              transition={{delay: 0.5}}
-              className="text-7xl text-[#072837] font-bold text-center mb-16"
-            >
-              {title}
-            </motion.h1>
-            <div
-              className="flex flex-col md:flex-row justify-center md:justify-end items-center md:space-x-24 space-y-8 md:space-y-0">
-              <div className="grid grid-cols-4 grid-rows-2 gap-24 bg-clip-text">
-                <CardComponent onClick={() => {
-                  setStep("text")
-                }}>
-                  <BsInputCursorText className={"text-8xl"}/>
-                </CardComponent>
-                {options.map((option) => (
-                  <CardComponent
-                    key={option.prompt}
-                    onClick={() => {
-                      handleClick(option.prompt)
-                    }}
-                  >
-                    <img className={"h-20"} alt={"Emoji"} src={option.emoji}/>
-                  </CardComponent>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      );
+
   }
+  
 };
