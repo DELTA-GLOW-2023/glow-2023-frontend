@@ -6,7 +6,7 @@ import Cookies from "universal-cookie";
 import { ProcessImage } from "../services/processImageService.ts";
 
 export const InputPage: FC = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const cookies = new Cookies();
 
   const handleClick = async (prompt: string) => {
@@ -35,7 +35,7 @@ export const InputPage: FC = () => {
   if (loading){
     return(
       <div className={"flex flex-col items-center justify-center h-screen"}>
-      <div className={"mt-32"}>
+      <div className={"flex flex-col justify-center items-center"}>
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
