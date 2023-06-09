@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useState } from "react";
 import { motion } from "framer-motion";
 import { CardComponent } from "../components/core/CardComponent.tsx";
 import { options } from "../config/options.tsx";
@@ -6,15 +6,18 @@ import Cookies from "universal-cookie";
 import { ProcessImage } from "../services/processImageService.ts";
 
 export const InputPage: FC = () => {
+  const [loading, setLoading] = useState(true);
   const cookies = new Cookies();
 
   const handleClick = async (prompt: string) => {
-    cookies.set("lastPrompt", prompt, { path: "/" });
-    await ProcessImage(prompt);
+    cookies.set("lastPrompt", prompt, { path: "/" })
+    setLoading(true);
+    await ProcessImage(prompt)
+    setLoading(false);
   };
 
   const showCards = (): ReactNode => {
-    return options.map(option => {
+    return options.map((option) => {
       if (cookies.get("lastPrompt") === option.prompt) return null;
       return (
         <CardComponent
@@ -29,6 +32,22 @@ export const InputPage: FC = () => {
     });
   };
   
+  if (loading){
+    return(
+      <div className={"flex flex-col items-center justify-center h-screen"}>
+      <div className={"mt-32"}>
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-8xl text-white font-bold text-center"
+        >
+          Look up!
+        </motion.h1>
+      </div>
+      </div>
+    )
+  }
+
 
   return (
     <div className="flex flex-col justify-center items-center">
