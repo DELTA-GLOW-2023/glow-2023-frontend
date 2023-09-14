@@ -2,37 +2,35 @@ import React, {FC, ReactNode, useState} from "react";
 import {motion} from "framer-motion";
 import {CardComponent} from "../components/core/CardComponent.tsx";
 import {options} from "../config/options.tsx";
-import Cookies from "universal-cookie";
 import {ProcessImage} from "../services/processImageService.ts";
 import Carousel from "../components/core/Carousel.tsx";
 
 export const InputPage: FC = () => {
   const [loading, setLoading] = useState(false);
-  const cookies = new Cookies();
 
   const handleClick = async (prompt: string) => {
-    cookies.set("lastPrompt", prompt, {path: "/"})
+    localStorage.setItem("lastPrompt", prompt)
     setLoading(true);
     await ProcessImage(prompt)
     setLoading(false);
   };
 
-  const showCards = (): ReactNode => {
+  const showCards = (): ReactNode[] => {
 
     let counter = 0;
     let currentSlide = 0;
     const slides: ReactNode[][] = [[]];
 
     options.map((option) => {
-      if (cookies.get("lastPrompt") === option.prompt) return null;
+      if (localStorage.getItem("lastPrompt") === option.prompt) return null;
 
       if (slides[currentSlide] === undefined)
         slides[currentSlide] = [];
 
       slides[currentSlide].push(<CardComponent
         key={option.prompt}
-        onClick={() => {
-          handleClick(option.prompt);
+        onClick={async () => {
+          await handleClick(option.prompt);
         }}
       >
         <img className={"h-20"} alt={"Emoji"} src={option.emoji}/>

@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import { useSwipeable } from 'react-swipeable';
+import React, {FC, ReactNode, useState} from "react";
+import {useSwipeable} from 'react-swipeable';
 
-const Carousel = ({ children }) => {
+const Carousel:FC<{children: ReactNode[]}> = ({ children }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const widthOfSlide = 100 / children.length; // Calculate the width each slide should occupy in percentage
 
   const handlers = useSwipeable({
     onSwipedLeft: () => goNext(),
     onSwipedRight: () => goPrev(),
-    preventDefaultTouchmoveEvent: true,
     trackMouse: true
   });
 
