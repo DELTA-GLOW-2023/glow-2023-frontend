@@ -3,7 +3,7 @@ import {useSwipeable} from 'react-swipeable';
 
 const Carousel:FC<{children: ReactNode[]}> = ({ children }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const widthOfSlide = 100 / children.length; // Calculate the width each slide should occupy in percentage
+  const widthOfCarousel = 16 * children.length;
 
   const handlers = useSwipeable({
     onSwipedLeft: () => goNext(),
@@ -24,7 +24,7 @@ const Carousel:FC<{children: ReactNode[]}> = ({ children }) => {
       <div
         className="flex transition-transform duration-300 ease-in-out"
         style={{
-          transform: `translateX(-${currentSlide * widthOfSlide}%)`
+          transform: `translateX(-${currentSlide * widthOfCarousel}%)`
         }}
         {...handlers}
       >

@@ -11,6 +11,7 @@ body {
 }
 
 .container-background {
+    height: 100vh;
     background: url("./assets/blob-bg.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,4 +30,16 @@ body {
 .float {
     display: inline-block;
     animation: float 10s ease-in-out forwards;
+}
+
+.glass {
+    border-radius: 59px;
+    backdrop-filter: blur(40px);
+    background: radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%);
+}
+
+.icon-container {
+    border-radius: 8px;
+    border: 0px solid #011D29;
+    background: rgba(255, 255, 255, 0.24)
 }

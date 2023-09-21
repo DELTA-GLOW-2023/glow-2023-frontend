@@ -33,7 +33,7 @@ export const InputPage: FC = () => {
           await handleClick(option.prompt);
         }}
       >
-        <img className={"h-20"} alt={"Emoji"} src={option.emoji}/>
+        <img className={"h-30"} alt={"Emoji"} src={option.emoji}/>
       </CardComponent>)
 
       counter++;
@@ -45,11 +45,11 @@ export const InputPage: FC = () => {
     return slides.map((slide, i) => {
       return (
         <div
-          className="flex-none w-full grid grid-cols-4 grid-rows-2 gap-8 bg-clip-text"
+          className="flex-none w-full grid grid-cols-4 grid-rows-2 gap-8 bg-clip-text mr-8"
           key={i + 1}
         >
           {slide.map((card) =>
-            <div className="flex items-center justify-center"> {/* This centers the content */}
+            <div className="flex items-center justify-center w-full">
               {card}
             </div>
           )}
@@ -81,24 +81,27 @@ export const InputPage: FC = () => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="bg-white/60 backdrop-blur-sm p-16 m-8 rounded-xl">
-        <motion.h1
-          initial={{opacity: 0, y: -50}}
-          animate={{opacity: 1, y: 0}}
-          transition={{delay: 0.5}}
-          className="text-7xl text-[#072837] font-bold text-center mt-16 mb-8"
-        >
-          What would you like to add?
-        </motion.h1>
-        <div className={'w-full mb-8'}>
-          <input className={"w-full h-16 border-4 border-[rgb(7 40 55)]-600"} placeholder={"Fill your own prompt.."}
-                 type={"text"}/>
+      <div className="glass p-16 m-8 rounded-xl flex justify-center">
+        <div className={'w-[80%]'}>
+          <motion.h1
+              initial={{opacity: 0, y: -50}}
+              animate={{opacity: 1, y: 0}}
+              transition={{delay: 0.5}}
+              className="text-7xl text-[#FFF] font-bold text-center mt-16 mb-8"
+          >
+            What would you like to add?
+          </motion.h1>
+          <div className={'w-full mb-8'}>
+            <input className={"w-full h-16 bg-white bg-opacity-25"} placeholder={"Fill your own prompt.."}
+                   type={"text"}/>
+          </div>
+          <div>
+            <Carousel>
+              {showCards()}
+            </Carousel>
+          </div>
         </div>
-        <div>
-          <Carousel>
-            {showCards()}
-          </Carousel>
-        </div>
+
       </div>
     </div>
   );
