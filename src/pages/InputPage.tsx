@@ -1,22 +1,21 @@
-import React, {FC, ReactNode, useState} from "react";
-import {motion} from "framer-motion";
-import {CardComponent} from "../components/core/CardComponent.tsx";
-import {options} from "../config/options.tsx";
-import {ProcessImage} from "../services/processImageService.ts";
+import React, { FC, ReactNode, useState } from "react";
+import { motion } from "framer-motion";
+import { CardComponent } from "../components/core/CardComponent.tsx";
+import { options } from "../config/options.tsx";
+import { ProcessImage } from "../services/processImageService.ts";
 import Carousel from "../components/core/Carousel.tsx";
 
 export const InputPage: FC = () => {
   const [loading, setLoading] = useState(false);
-
+  const [showKeyBoard, setShowKeyBoard] = useState(false);
   const handleClick = async (prompt: string) => {
-    localStorage.setItem("lastPrompt", prompt)
+    localStorage.setItem("lastPrompt", prompt);
     setLoading(true);
-    await ProcessImage(prompt)
+    await ProcessImage(prompt);
     setLoading(false);
   };
 
   const showCards = (): ReactNode[] => {
-
     let counter = 0;
     let currentSlide = 0;
     const slides: ReactNode[][] = [[]];
@@ -24,20 +23,21 @@ export const InputPage: FC = () => {
     options.map((option) => {
       if (localStorage.getItem("lastPrompt") === option.prompt) return null;
 
-      if (slides[currentSlide] === undefined)
-        slides[currentSlide] = [];
+      if (slides[currentSlide] === undefined) slides[currentSlide] = [];
 
-      slides[currentSlide].push(<CardComponent
-        key={option.prompt}
-        onClick={async () => {
-          await handleClick(option.prompt);
-        }}
-      >
-        <img className={"h-30"} alt={"Emoji"} src={option.emoji}/>
-      </CardComponent>)
+      slides[currentSlide].push(
+        <CardComponent
+          key={option.prompt}
+          onClick={async () => {
+            await handleClick(option.prompt);
+          }}
+        >
+          <img className={"h-30"} alt={"Emoji"} src={option.emoji} />
+        </CardComponent>
+      );
 
       counter++;
-      if (counter % 12 === 0) {
+      if (counter % 16 === 0) {
         currentSlide++;
       }
     });
@@ -48,60 +48,59 @@ export const InputPage: FC = () => {
           className="flex-none w-full grid grid-cols-4 grid-rows-2 gap-8 bg-clip-text mr-8"
           key={i + 1}
         >
-          {slide.map((card) =>
+          {slide.map((card) => (
             <div className="flex items-center justify-center w-full">
               {card}
             </div>
-          )}
+          ))}
         </div>
       );
     });
-
-
-
   };
-
 
   if (loading) {
     return (
       <div className={"flex flex-col items-center justify-center h-screen"}>
         <div className={"flex flex-col justify-center items-center"}>
           <motion.h1
-            initial={{opacity: 0, y: -50}}
-            animate={{opacity: 1, y: 0}}
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
             className="text-8xl text-white font-bold text-center"
           >
             Look up!
           </motion.h1>
         </div>
       </div>
-    )
+    );
   }
-
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="glass p-16 m-8 rounded-xl flex justify-center">
-        <div className={'w-[80%]'}>
-          <motion.h1
-              initial={{opacity: 0, y: -50}}
-              animate={{opacity: 1, y: 0}}
-              transition={{delay: 0.5}}
-              className="text-7xl text-[#FFF] font-bold text-center mt-16 mb-8"
-          >
-            What would you like to add?
-          </motion.h1>
-          <div className={'w-full mb-8'}>
-            <input className={"w-full h-16 bg-white bg-opacity-25"} placeholder={"Fill your own prompt.."}
-                   type={"text"}/>
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+        className="text-8xl text-[#FFF] font-bold text-center mt-64 mb-8"
+      >
+        What would you like to add?
+      </motion.h1>
+
+      <div className="glass p-16 m-8 rounded-xl flex justify-center ">
+        <div className={"w-[80%]"}>
+          <div className={"w-full mb-8"}>
+            <button
+              className={
+                "w-full h-20 bg-white bg-opacity-20 rounded-lg text-5xl text-left text-white px-14 text-opacity-50"
+              }
+              onClick={() => setShowKeyBoard(!showKeyBoard)}
+            >
+              Write your own prompt here...
+            </button>
           </div>
           <div>
-            <Carousel>
-              {showCards()}
-            </Carousel>
+            {showKeyBoard ? <div></div> : <Carousel>{showCards()}</Carousel>}
           </div>
         </div>
-
       </div>
     </div>
   );
