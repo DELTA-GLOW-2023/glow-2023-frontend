@@ -41,5 +41,29 @@ body {
 .icon-container {
     border-radius: 8px;
     border: 0px solid #011D29;
-    background: rgba(255, 255, 255, 0.24)
+    background: radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%);;
+}
+
+.keyboard {
+    /*backdrop-filter: blur(40px);*/
+    background: transparent;
+    font-family: monospace;
+    font-size: 64px;
+
+    .hg-button {
+        background: radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%);;
+        color: #ffffff;
+        border-width: 0;
+        height: 100px;
+        margin: 6px;
+        backdrop-filter: blur(40px);
+
+    }
+
+    .hg-standardBtn {
+    }
+
+    .hg-functionBtn {
+        width: 22px;
+    }
 }
