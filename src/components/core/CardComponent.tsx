@@ -17,7 +17,7 @@ export const CardComponent: React.FC<{
       whileTap={{ scale: 0.9 }}
       onClick={onClick}
       className={
-        "cursor-pointer w-full h-48 flex justify-center items-center rounded-2xl icon-container"
+        "cursor-pointer w-full h-[108px] flex justify-center items-center rounded-2xl icon-container"
       }
     >
       {children}

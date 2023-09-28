@@ -54,10 +54,23 @@ body {
         background: radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%);;
         color: #ffffff;
         border-width: 0;
-        height: 100px;
+        height: 71px;
         margin: 6px;
         backdrop-filter: blur(40px);
+        width: 80px !important;
+    }
 
+    .hg-button-space {
+        max-width: 64%;
+    }
+
+    .hg-button-space span{
+        margin-top: -90px;
+        font-size: 96px;
+    }
+
+    .hg-button-bksp {
+        width: 185px !important;
     }
 
     .hg-standardBtn {
@@ -66,4 +79,17 @@ body {
     .hg-functionBtn {
         width: 22px;
     }
+}
+
+.keyboard .hg-row:nth-child(2) {
+    margin: 0 46px;
+}
+
+.keyboard .hg-row:nth-child(3) {
+    margin-left: 92px;
+}
+
+.keyboard .hg-row:nth-child(4) {
+    display: flex;
+    justify-content: center;
 }

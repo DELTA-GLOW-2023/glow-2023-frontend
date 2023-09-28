@@ -41,7 +41,7 @@ export const InputPage: FC = () => {
             await handleClick(option.prompt);
           }}
         >
-          <img className={"h-30"} alt={"Emoji"} src={option.emoji} />
+          <img className={"h-[63px]"} alt={"Emoji"} src={option.emoji} />
         </CardComponent>
       );
 
@@ -92,18 +92,18 @@ export const InputPage: FC = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
-        className="text-8xl text-white font-bold text-center mt-64 mb-8"
+        className="text-7xl text-white font-bold text-center mt-32 mb-4"
       >
         What would you like to add?
       </motion.h1>
 
-      <div className="glass p-16 m-8 rounded-xl flex justify-center w-[90vw]">
-        <div className={"w-4/5"}>
+      <div className={`glass mt-2 rounded-xl flex justify-center ${ showKeyBoard ? "py-16 w-[90vw]" : "p-16 w-[90vw]"} `}>
+        <div className={`${ showKeyBoard ? "" : "w-4/5"}`}>
           <div className={"w-full mb-8"}>
             {!showKeyBoard ? (
               <button
                 className={
-                  "w-full h-20 bg-white bg-opacity-20 rounded-lg text-5xl text-left text-white px-14 text-opacity-50"
+                  "w-full h-20 bg-white bg-opacity-20 rounded-lg text-4xl text-left text-white px-8 text-opacity-50"
                 }
                 onClick={() => activateKeyBoard()}
               >
@@ -111,30 +111,47 @@ export const InputPage: FC = () => {
               </button>
             ) : (
               <div className={"flex flex-col items-center"}>
-                <textarea
-                  className={
-                    "transition-all ease-in-out delay-300 focus:outline-none w-full h-20 bg-white bg-opacity-20 rounded-lg text-5xl text-left text-white px-14 pt-4 text-opacity-50"
-                  }
-                  readOnly={true}
-                  placeholder="Write your own prompt here..."
-                  value={customPrompt}
-                />
+                <div className={"w-full flex justify-center px-10"}>
+                    <div className={"absolute right-8 top-0 mt-16 w-20"}>
+                        <button
+                            className={
+                                "flex justify-center items-center h-20 w-full focus:outline-none bg-white bg-opacity-20 rounded-lg text-5xl text-left text-white"
+                            }
+                            onClick={ () => {
+                                setShowKeyBoard(false);
+                            }}
+                        >
+                          <svg width="85" height="85" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </button>
+                    </div>
+
+                  <textarea
+                      className={
+                        "transition-all ease-in-out delay-300 focus:outline-none w-4/5 h-40 bg-white bg-opacity-20 rounded-lg text-4xl text-left text-white px-8 pt-4 text-opacity-50"
+                      }
+                      readOnly={true}
+                      placeholder="Write your own prompt here..."
+                      value={customPrompt}
+                  />
+                </div>
                 <button
                   className={
-                    "h-20 mt-20 focus:outline-none bg-white bg-opacity-20 rounded-lg text-5xl text-left text-white px-14 text-opacity-50"
+                    "glass h-20 mt-10 focus:outline-none bg-white bg-opacity-20 rounded-lg text-5xl text-left text-white px-14"
                   }
                   onClick={async () => {
                     await handleClick(customPrompt);
                   }}
                 >
-                  Enter
+                  ENTER
                 </button>
               </div>
             )}
           </div>
           <div>
             {showKeyBoard ? (
-              <div>
+              <div className={""}>
                 <KeyboardComponent onChangeValue={setCustomPrompt} />
               </div>
             ) : (
