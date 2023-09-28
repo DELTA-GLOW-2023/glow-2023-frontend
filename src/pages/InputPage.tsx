@@ -41,7 +41,7 @@ export const InputPage: FC = () => {
             await handleClick(option.prompt);
           }}
         >
-          <img className={"h-[63px]"} alt={"Emoji"} src={option.emoji} />
+          <img className={"h-[64px]"} alt={"Emoji"} src={option.emoji} />
         </CardComponent>
       );
 
@@ -72,12 +72,12 @@ export const InputPage: FC = () => {
 
   if (loading) {
     return (
-      <div className={"flex flex-col items-center justify-center h-screen"}>
-        <div className={"flex flex-col justify-center items-center"}>
+      <div className={"flex flex-col h-screen"}>
+        <div className={"flex flex-col mt-[518px]"}>
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-8xl text-white font-bold text-center"
+            className="basic-font text-[160px] text-white font-bold text-center"
           >
             Look up!
           </motion.h1>
@@ -92,7 +92,7 @@ export const InputPage: FC = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
-        className="text-7xl text-white font-bold text-center mt-32 mb-4"
+        className="basic-font text-6xl text-white font-bold text-center mt-32 mb-4"
       >
         What would you like to add?
       </motion.h1>
@@ -103,7 +103,7 @@ export const InputPage: FC = () => {
             {!showKeyBoard ? (
               <button
                 className={
-                  "w-full h-20 bg-white bg-opacity-20 rounded-lg text-4xl text-left text-white px-8 text-opacity-50"
+                  "secondary-font w-full h-20 bg-white bg-opacity-20 rounded-lg text-4xl text-left text-white px-8 text-opacity-50"
                 }
                 onClick={() => activateKeyBoard()}
               >
@@ -121,15 +121,15 @@ export const InputPage: FC = () => {
                                 setShowKeyBoard(false);
                             }}
                         >
-                          <svg width="85" height="85" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8L8 16M8.00001 8L16 16" stroke="#fff"/>
                           </svg>
                         </button>
                     </div>
 
                   <textarea
                       className={
-                        "transition-all ease-in-out delay-300 focus:outline-none w-4/5 h-40 bg-white bg-opacity-20 rounded-lg text-4xl text-left text-white px-8 pt-4 text-opacity-50"
+                        "secondary-font transition-all ease-in-out delay-300 focus:outline-none w-4/5 h-40 bg-white bg-opacity-20 rounded-lg text-4xl text-left text-white px-8 pt-4 text-opacity-50"
                       }
                       readOnly={true}
                       placeholder="Write your own prompt here..."
@@ -138,9 +138,10 @@ export const InputPage: FC = () => {
                 </div>
                 <button
                   className={
-                    "glass h-20 mt-10 focus:outline-none bg-white bg-opacity-20 rounded-lg text-5xl text-left text-white px-14"
+                    "secondary-font glass h-20 mt-10 focus:outline-none bg-white bg-opacity-20 rounded-lg text-5xl text-left text-white px-14"
                   }
                   onClick={async () => {
+                    if(customPrompt === "") return;
                     await handleClick(customPrompt);
                   }}
                 >

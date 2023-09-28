@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -38,6 +40,13 @@ body {
     background: radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%);
 }
 
+.basic-font {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.secondary-font {
+    font-family: 'VT323', monospace;
+}
 .icon-container {
     border-radius: 8px;
     border: 0px solid #011D29;
@@ -50,35 +59,38 @@ body {
     font-family: monospace;
     font-size: 64px;
 
-    .hg-button {
-        background: radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%);;
-        color: #ffffff;
-        border-width: 0;
-        height: 71px;
-        margin: 6px;
-        backdrop-filter: blur(40px);
-        width: 80px !important;
-    }
 
-    .hg-button-space {
-        max-width: 64%;
-    }
+}
 
-    .hg-button-space span{
-        margin-top: -90px;
-        font-size: 96px;
-    }
+.keyboard .hg-button {
+    background: radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%);;
+    color: #ffffff;
+    border-width: 0;
+    height: 71px;
+    margin: 6px;
+    backdrop-filter: blur(40px);
+    width: 80px !important;
+}
 
-    .hg-button-bksp {
-        width: 185px !important;
-    }
+.keyboard .hg-button-space {
+    max-width: 64%;
+}
 
-    .hg-standardBtn {
-    }
+.keyboard .hg-button-space span {
+    margin-top: -90px;
+    font-size: 96px;
+}
 
-    .hg-functionBtn {
-        width: 22px;
-    }
+.keyboard .hg-button-bksp {
+    width: 185px !important;
+}
+
+.keyboard .hg-standardBtn {
+    font-family: 'VT323', monospace;
+}
+
+.keyboard .hg-functionBtn {
+    width: 22px;
 }
 
 .keyboard .hg-row:nth-child(2) {

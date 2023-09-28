@@ -9,7 +9,7 @@ export const StartPage: FC = () => {
         <motion.h1
           initial={{opacity: 0, y: -50}}
           animate={{opacity: 1, y: 0}}
-          className="text-[170px] text-white font-bold text-center"
+          className="basic-font text-[160px] text-white font-bold text-center"
         >
           Hello Glow!
         </motion.h1>
@@ -24,7 +24,7 @@ export const StartPage: FC = () => {
             <motion.p
               initial={{opacity: 0, y: -50}}
               animate={{opacity: 1, y: 0}}
-              className="text-6xl text-white font-bold text-center"
+              className="secondary-font text-7xl text-white text-center"
             >
               Start
             </motion.p>
