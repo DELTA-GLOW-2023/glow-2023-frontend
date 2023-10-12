@@ -9,10 +9,10 @@ import { KeyboardComponent } from "../components/core/KeyboardComponent.tsx";
 import { AxiosError } from "axios";
 
 export const InputPage: FC = () => {
-  const [loading, setLoading] = useState(false);
-  const [showKeyBoard, setShowKeyBoard] = useState(false);
-  const [customPrompt, setCustomPrompt] = useState("");
-  const [error, setError] = useState(true);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [showKeyBoard, setShowKeyBoard] = useState<boolean>(false);
+  const [customPrompt, setCustomPrompt] = useState<string>("");
+  const [error, setError] = useState<boolean>();
   const handleClick = async (prompt: string) => {
     localStorage.setItem("lastPrompt", prompt);
     setLoading(true);
@@ -174,15 +174,15 @@ export const InputPage: FC = () => {
                             viewBox="0 0 512 512"
                             fill="#ffffff"
                           >
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                             <g
                               id="SVGRepo_tracerCarrier"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             ></g>
                             <g id="SVGRepo_iconCarrier">
                               {" "}
-                              <style type="text/css"> </style>{" "}
+                              <style type="text/css"></style>{" "}
                               <g>
                                 {" "}
                                 <path
