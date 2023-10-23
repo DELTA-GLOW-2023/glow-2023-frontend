@@ -13,11 +13,11 @@ export const CardComponent: React.FC<{
       animate={{
         opacity: 1,
       }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.8 }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.9 }}
       onClick={onClick}
       className={
-        "cursor-pointer w-48 h-36 flex justify-center items-center rounded-2xl border-4 border-[#072837]"
+        "cursor-pointer w-full h-[108px] flex justify-center items-center rounded-2xl icon-container"
       }
     >
       {children}
