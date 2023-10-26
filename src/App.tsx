@@ -5,6 +5,7 @@ import { StartPage } from "./pages/StartPage.tsx";
 import { BackgroundBlob } from "./components/core/BackgroundBlob.tsx";
 import { AnimatePresence } from "framer-motion";
 import {TestDisplayPage} from "./pages/TestDisplayPage.tsx";
+import { PanicPage } from "./pages/PanicPage.tsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,10 @@ function App() {
     {
       element: <TestDisplayPage />,
       path: "/test"
+    },
+    {
+      element: <PanicPage />,
+      path: "/panic"
     }
   ]);
   return (
