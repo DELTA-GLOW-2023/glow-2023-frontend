@@ -1,15 +1,18 @@
 import React, { FC } from "react";
-import { Button } from "../components/core/Button";
 import { DeleteImage } from "../services/deleteImageService";
 
 export const PanicPage: FC = () => {
 	const handlePanic = React.useCallback(async () => {
-		await DeleteImage();
+		if (confirm("Press okay to delete the current prompt") == true) {
+			await DeleteImage();
+		}
 	}, [])
 
 	return (
-		<Button onClick={handlePanic}>
-			Panic
-		</Button>
+		<div className="flex flex-col justify-center items-center h-screen">
+			<button onClick={handlePanic} className="bg-red-500 text-white px-20 py-2 rounded-md shadow-lg">
+				Panic
+			</button>
+		</div>
 	)
 };
