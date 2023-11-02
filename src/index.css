@@ -14,7 +14,7 @@ body {
 
 .container-background {
     height: 100vh;
-    background: url("./assets/blob-bg.svg");
+    background: url("./assets/blob.gif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
