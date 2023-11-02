@@ -4,31 +4,31 @@ import { InputPage } from "./pages/InputPage.tsx";
 import { StartPage } from "./pages/StartPage.tsx";
 import { BackgroundBlob } from "./components/core/BackgroundBlob.tsx";
 import { AnimatePresence } from "framer-motion";
-import {TestDisplayPage} from "./pages/TestDisplayPage.tsx";
-import { PanicPage } from "./pages/PanicPage.tsx";
+import { TestDisplayPage } from "./pages/TestDisplayPage.tsx";
+import { ManagePromptsPage } from "./pages/ManagePromptsPage.tsx";
 
 function App() {
   const router = createBrowserRouter([
     {
       element: <StartPage />,
-      path: "/"
+      path: "/",
     },
     {
       element: <InputPage />,
-      path: "/input"
+      path: "/input",
     },
     {
       element: <DisplayPage />,
-      path: "/display"
+      path: "/display",
     },
     {
       element: <TestDisplayPage />,
-      path: "/test"
+      path: "/test",
     },
     {
-      element: <PanicPage />,
-      path: "/panic"
-    }
+      element: <ManagePromptsPage />,
+      path: "/manage-prompts",
+    },
   ]);
   return (
     <>

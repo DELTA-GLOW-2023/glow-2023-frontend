@@ -2,22 +2,28 @@ import React, { FC, ReactNode, useState } from "react";
 import { motion } from "framer-motion";
 import { CardComponent } from "../components/core/CardComponent.tsx";
 import { options } from "../config/options.tsx";
-import { ProcessImage } from "../services/processImageService.ts";
+import { UploadPrompt } from "../services/promptService.ts";
 import Carousel from "../components/core/Carousel.tsx";
 import "react-simple-keyboard/build/css/index.css";
 import { KeyboardComponent } from "../components/core/KeyboardComponent.tsx";
 import { AxiosError } from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const InputPage: FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [showKeyBoard, setShowKeyBoard] = useState<boolean>(false);
   const [customPrompt, setCustomPrompt] = useState<string>("");
   const [error, setError] = useState<boolean>();
-  const handleClick = async (prompt: string) => {
+  const navigate = useNavigate();
+
+  const sleep = (ms: number) => {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
+  const handleClick = async (prompt: string, method: string) => {
     localStorage.setItem("lastPrompt", prompt);
     setLoading(true);
     try {
-      await ProcessImage(prompt);
+      await UploadPrompt(prompt, method);
     } catch (error: unknown) {
       if (error instanceof AxiosError) {
         if (error.response?.data.includes("Vulgar words detected!")) {
@@ -25,7 +31,10 @@ export const InputPage: FC = () => {
         }
       }
     } finally {
+      // Artificial delay to allow for image processing, and to show loading screen
+      await sleep(2000);
       setLoading(false);
+      navigate("/");
     }
   };
   const activateKeyBoard = () => {
@@ -48,7 +57,7 @@ export const InputPage: FC = () => {
         <CardComponent
           key={option.prompt}
           onClick={async () => {
-            await handleClick(option.prompt);
+            await handleClick(option.prompt, "icon");
           }}
         >
           <img className={"h-[64px]"} alt={"Emoji"} src={option.emoji} />
@@ -204,7 +213,7 @@ export const InputPage: FC = () => {
                   }
                   onClick={async () => {
                     if (customPrompt === "") return;
-                    await handleClick(customPrompt);
+                    await handleClick(customPrompt, "text");
                   }}
                 >
                   ENTER
