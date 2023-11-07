@@ -1,4 +1,5 @@
 export type OptionType = {
-  emoji: string;
+  emoji?: string;
   prompt: string;
+  text?: string;
 };

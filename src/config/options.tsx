@@ -61,6 +61,10 @@ export const options: OptionType[] = [
     prompt: "Pixel Art"
   },
   {
+    text: "Health",
+    prompt: "Health"
+  },
+  {
     emoji: Robot,
     prompt: "Robot"
   },
@@ -81,6 +85,10 @@ export const options: OptionType[] = [
     prompt: "Rainy day"
   },
   {
+    text: "Public Transport",
+    prompt: "Public Transport"
+  },
+  {
     emoji: Yarn,
     prompt: "Yarn"
   },
@@ -95,6 +103,10 @@ export const options: OptionType[] = [
   {
     emoji: Planet,
     prompt: "Space"
+  },
+  {
+    text: "Walking",
+    prompt: "Walking"
   },
   {
     emoji: Star,
@@ -121,6 +133,10 @@ export const options: OptionType[] = [
     prompt: "Bear"
   },
   {
+    text: "Cycling",
+    prompt: "Bicycle"
+  },
+  {
     emoji: FerrisWheel,
     prompt: "Ferris wheel"
   },
@@ -145,6 +161,10 @@ export const options: OptionType[] = [
     prompt: "Unicorn"
   },
   {
+    text: "Meeting each other",
+    prompt: "Meeting each other"
+  },
+  {
     emoji: Honeybee,
     prompt: "Bee"
   },
@@ -163,6 +183,10 @@ export const options: OptionType[] = [
   {
     emoji: TropicalFish,
     prompt: "Tropical fish"
+  },
+  {
+    text: "Live, work, stay",
+    prompt: "Live, work, stay"
   },
   {
     emoji: SpoutingWhale,
@@ -185,6 +209,10 @@ export const options: OptionType[] = [
     prompt: "Tropical island"
   },
   {
+    text: "Stone now, Green later",
+    prompt: "Stone into Green"
+  },
+  {
     emoji: Pizza,
     prompt: "Pizza"
   },
@@ -199,6 +227,10 @@ export const options: OptionType[] = [
   {
     emoji: Snowflake,
     prompt: "Snowflakes"
+  },
+  {
+    text: "Mobility",
+    prompt: "Mobility"
   },
   {
     emoji: Pineapple,
@@ -229,6 +261,10 @@ export const options: OptionType[] = [
     prompt: "Circus"
   },
   {
+    text: "Innovation",
+    prompt: "Innovation"
+  },
+  {
     emoji: ArtistPalette,
     prompt: "Colorful"
   },
@@ -255,5 +291,9 @@ export const options: OptionType[] = [
   {
     emoji: Fireworks,
     prompt: "Fireworks"
-  }
+  },
+  {
+    text: "Accessibility",
+    prompt: "Accessibility"
+  },
 ];
