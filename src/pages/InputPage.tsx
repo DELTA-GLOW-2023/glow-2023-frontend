@@ -39,8 +39,6 @@ export const InputPage: FC = () => {
   };
   const activateKeyBoard = () => {
     setShowKeyBoard((prev) => !prev);
-    // textarea element class h-20 remove
-    // texAREA ELEMENT class h-40 add
   };
 
   const showCards = (): ReactNode[] => {
@@ -53,16 +51,31 @@ export const InputPage: FC = () => {
 
       if (slides[currentSlide] === undefined) slides[currentSlide] = [];
 
-      slides[currentSlide].push(
-        <CardComponent
-          key={option.prompt}
-          onClick={async () => {
-            await handleClick(option.prompt, "icon");
-          }}
-        >
-          <img className={"h-[64px]"} alt={"Emoji"} src={option.emoji} />
-        </CardComponent>
-      );
+
+      if(option.text) {
+        slides[currentSlide].push(
+            <CardComponent
+                key={option.prompt}
+                onClick={async () => {
+                  await handleClick(option.prompt, "icon");
+                }}
+            >
+              <h2 className={"text-white px-4 text-xl text-center font-semibold"}>{option.text}</h2>
+            </CardComponent>
+        );
+      } else {
+        slides[currentSlide].push(
+            <CardComponent
+                key={option.prompt}
+                onClick={async () => {
+                  await handleClick(option.prompt, "icon");
+                }}
+            >
+              <img className={"h-[64px]"} alt={"Emoji"} src={option.emoji} />
+            </CardComponent>
+        );
+      }
+
 
       counter++;
       if (counter % 16 === 0) {
