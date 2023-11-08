@@ -5,3 +5,8 @@ export const DisplayImage = async () => {
   const { data } = await axios.get(`${API_URL}/view-image/display`);
   return data;
 };
+
+export const DisplayDelayImage = async () => {
+  const { data } = await axios.get(`${API_URL}/view-image/display/delay`);
+  return data;
+};
