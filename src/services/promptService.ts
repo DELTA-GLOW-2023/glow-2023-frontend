@@ -19,6 +19,20 @@ export const UploadPrompt = async (
   return data;
 };
 
+export const UploadImage = async (
+  base64Image: string
+): Promise<ImageResponseType> => {
+  const json = {
+    image: base64Image,
+  };
+
+  const { data } = await axios.post<ImageResponseType>(
+    `${API_URL}/process-image/upload`,
+    json
+  );
+  return data;
+}
+
 export const ApprovePrompt = async (promptId: string): Promise<void> => {
   const json = {
     promptId,
