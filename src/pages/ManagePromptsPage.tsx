@@ -4,6 +4,7 @@ import {
   ApprovePrompt,
   getPrompts,
   RejectPrompt,
+  UploadImage,
 } from "../services/promptService.ts";
 import { promptType } from "../types/promptType.ts";
 import { AxiosError } from "axios";
@@ -41,6 +42,26 @@ export const ManagePromptsPage: FC = () => {
           }
         }
       }
+    }
+  };
+
+  const handleUpload: React.ChangeEventHandler<HTMLInputElement> = async (event) => {
+    const inputElement = event.target as HTMLInputElement;
+    const file = inputElement?.files ? inputElement.files[0] : null; // Get the selected file
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        const dataURL = e?.target?.result as string;
+
+        // Extract only the Base64-encoded data without the data URI prefix
+        const base64Image = dataURL.split(',')[1];
+        const imageBase64 = base64Image;
+
+        await UploadImage(imageBase64);
+      };
+
+      reader.readAsDataURL(file);
     }
   };
 
@@ -126,6 +147,12 @@ export const ManagePromptsPage: FC = () => {
           Panic
         </motion.button>
       </div>
+
+      <div className="mb-4">
+        <p className="text-xl font-semibold text-white">Upload custom image:</p>
+        <input type="file" onChange={handleUpload} />
+      </div>
+
       {loading ? (
         <div className="flex flex-col items-center">
           <motion.div
