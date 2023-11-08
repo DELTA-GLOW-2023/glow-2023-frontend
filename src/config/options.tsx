@@ -2,7 +2,6 @@ import { OptionType } from "../types/OptionType.ts";
 import Alien from "../assets/emoji/alien.png";
 import AlienMonster from "../assets/emoji/alien-monster.png";
 import Robot from "../assets/emoji/robot.png";
-import Merperson from "../assets/emoji/merperson.png";
 import Fairy from "../assets/emoji/fairy.png";
 import Rocket from "../assets/emoji/rocket.png";
 import Umbrella from "../assets/emoji/umbrella.png";
@@ -10,7 +9,6 @@ import Yarn from "../assets/emoji/yarn.png";
 import Crown from "../assets/emoji/crown.png";
 import LightBulb from "../assets/emoji/light-bulb.png";
 import Planet from "../assets/emoji/planet.png";
-import Star from "../assets/emoji/star.png";
 import DogFace from "../assets/emoji/dog-face.png";
 import CatFace from "../assets/emoji/cat-face.png";
 import Fox from "../assets/emoji/fox.png";
@@ -18,7 +16,6 @@ import Panda from "../assets/emoji/panda.png";
 import Bear from "../assets/emoji/bear.png";
 import FerrisWheel from "../assets/emoji/ferris-wheel.png";
 import Lion from "../assets/emoji/lion.png";
-import Monkey from "../assets/emoji/monkey.png";
 import Penguin from "../assets/emoji/penguin.png";
 import Wolf from "../assets/emoji/wolf.png";
 import Unicorn from "../assets/emoji/unicorn.png";
@@ -33,7 +30,6 @@ import Desert from "../assets/emoji/desert.png";
 import DeciduousTree from "../assets/emoji/deciduous-tree.png";
 import DesertIsland from "../assets/emoji/desert-island.png";
 import Pizza from "../assets/emoji/pizza.png";
-import Hibiscus from "../assets/emoji/hibiscus.png";
 import Bubbles from "../assets/emoji/bubbles.png";
 import Snowflake from "../assets/emoji/snowflake.png";
 import Pineapple from "../assets/emoji/pineapple.png";
@@ -50,6 +46,10 @@ import MirrorBall from "../assets/emoji/mirror-ball.png";
 import Doughnut from "../assets/emoji/doughnut.png";
 import Cloud from "../assets/emoji/cloud.png";
 import Fireworks from "../assets/emoji/fireworks.png";
+import Lightning from "../assets/emoji/lightning.png";
+import Books from "../assets/emoji/books.png";
+import Cityscape from "../assets/emoji/cityscape.png";
+import Milkyway from "../assets/emoji/milkyway.png";
 
 export const options: OptionType[] = [
   {
@@ -69,8 +69,8 @@ export const options: OptionType[] = [
     prompt: "Robot"
   },
   {
-    emoji: Merperson,
-    prompt: "Mermaid"
+    emoji: Lightning,
+    prompt: "Lightning"
   },
   {
     emoji: Fairy,
@@ -109,8 +109,8 @@ export const options: OptionType[] = [
     prompt: "Walking"
   },
   {
-    emoji: Star,
-    prompt: "Celestial"
+    emoji: Books,
+    prompt: "Library"
   },
   {
     emoji: DogFace,
@@ -145,8 +145,8 @@ export const options: OptionType[] = [
     prompt: "Lion"
   },
   {
-    emoji: Monkey,
-    prompt: "Monkey"
+    emoji: Cityscape,
+    prompt: "Cityscape"
   },
   {
     emoji: Penguin,
@@ -217,8 +217,8 @@ export const options: OptionType[] = [
     prompt: "Pizza"
   },
   {
-    emoji: Hibiscus,
-    prompt: "Flowers"
+    emoji: Milkyway,
+    prompt: "Aurora borealis"
   },
   {
     emoji: Bubbles,
