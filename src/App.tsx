@@ -6,6 +6,7 @@ import { BackgroundBlob } from "./components/core/BackgroundBlob.tsx";
 import { AnimatePresence } from "framer-motion";
 import { TestDisplayPage } from "./pages/TestDisplayPage.tsx";
 import { ManagePromptsPage } from "./pages/ManagePromptsPage.tsx";
+import { DisplayPageDelayed } from "./pages/DelayedDisplayPage.tsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -20,6 +21,10 @@ function App() {
     {
       element: <DisplayPage />,
       path: "/display",
+    },
+    {
+      element: <DisplayPageDelayed />,
+      path: "/display/delay",
     },
     {
       element: <TestDisplayPage />,

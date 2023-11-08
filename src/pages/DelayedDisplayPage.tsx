@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from "react";
-import { DisplayImage } from "../services/displayImageService.ts";
+import { DisplayImageDelayed } from "../services/displayImageService.ts";
 
-export const DisplayPage: FC = () => {
+export const DisplayPageDelayed: FC = () => {
   const [imageData, setImageData] = useState<string | null>(null);
 
   const fetchImage = async () => {
     try {
-      const data = await DisplayImage();
+      const data = await DisplayImageDelayed();
       setImageData(data);
     } catch (error) {
       // Handle error during image retrieval
