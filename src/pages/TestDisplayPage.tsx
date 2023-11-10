@@ -19,7 +19,7 @@ export const TestDisplayPage: FC = () => {
   }, [imageData]);
 
   return (
-    <div>
+    <div className={'pulsing-gradient'}>
       {imageData && (
         <div className="absolute w-screen h-screen">
           <img
