@@ -23,7 +23,7 @@ export const DisplayPageDelayed: FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className={'pulsing-gradient'}>
       {imageData && (
         <div className="absolute w-screen h-screen">
           <img
