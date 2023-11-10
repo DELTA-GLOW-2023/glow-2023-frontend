@@ -23,7 +23,7 @@ export const DisplayPageDelayed: FC = () => {
   }, []);
 
   return (
-    <div style={{ position: "relative" }}>
+    <div className={'relative pulsing-gradient'}>
       {imageData && (
         <div className="absolute w-screen h-screen">
           {/* Image */}
@@ -37,8 +37,8 @@ export const DisplayPageDelayed: FC = () => {
           <div
             style={{
               position: "absolute",
-              top: "40px", 
-              left: "10px", 
+              top: "40px",
+              left: "10px",
             }}
           >
             <img
@@ -54,8 +54,8 @@ export const DisplayPageDelayed: FC = () => {
           <div
             style={{
               position: "absolute",
-              top: "65px", 
-              right: "10px", 
+              top: "65px",
+              right: "10px",
             }}
           >
             <img
@@ -71,47 +71,4 @@ export const DisplayPageDelayed: FC = () => {
     </div>
   );
 
-  return (
-    <div style={{ position: "relative" }}>
-      {imageData && (
-        <div className="absolute w-screen h-screen">
-          {/* Image */}
-          <img
-            src={`data:image/png;base64,${imageData}`}
-            alt="Display Image"
-            className="object-contain w-full h-full"
-          />
-
-          {/* Logo Overlay */}
-          <div
-            style={{
-              position: "absolute",
-              top: "10px", // Adjust the top position as needed
-              left: "10px", // Adjust the left position as needed
-            }}
-          >
-            <img
-              src="/logos/fontys.png" // Replace with the path to your logo
-              alt="Logo"
-              className="logo-class" // Add any additional styling for your logo
-            />
-          </div>
-        </div>
-      )}
-    </div>
-  );
-
-  return (
-    <div>
-      {imageData && (
-        <div className="absolute w-screen h-screen">
-          <img
-            src={`data:image/png;base64,${imageData}`}
-            alt="Display Image"
-            className="object-contain w-full h-full"
-          />
-        </div>
-      )}
-    </div>
-  );
 };
