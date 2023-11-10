@@ -27,7 +27,7 @@ export const DisplayPage: FC = () => {
       {imageData && (
         <div className="absolute w-screen h-screen">
           <img
-            src={imageData}
+            src={`data:image/png;base64,${imageData}`}
             alt="Display Image"
             className="object-contain w-full h-full"
           />
