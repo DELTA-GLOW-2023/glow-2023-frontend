@@ -33,7 +33,7 @@ export const InputPage: FC = () => {
       }
     } finally {
       // Artificial delay to allow for image processing, and to show loading screen
-      await sleep(2000);
+      await sleep(5000);
       setLoading(false);
       navigate("/");
     }

@@ -23,7 +23,7 @@ export const DisplayPage: FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className={"h-[1088px]"}>
       {imageData && (
         <div className="absolute w-screen h-screen">
           <img
