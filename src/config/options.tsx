@@ -2,7 +2,7 @@ import { OptionType } from "../types/OptionType.ts";
 import Alien from "../assets/emoji/alien.png";
 import AlienMonster from "../assets/emoji/alien-monster.png";
 import Robot from "../assets/emoji/robot.png";
-import Fairy from "../assets/emoji/fairy.png";
+import AngelFace from "../assets/emoji/angel-face.png";
 import Rocket from "../assets/emoji/rocket.png";
 import Umbrella from "../assets/emoji/umbrella.png";
 import Yarn from "../assets/emoji/yarn.png";
@@ -11,29 +11,17 @@ import LightBulb from "../assets/emoji/light-bulb.png";
 import Planet from "../assets/emoji/planet.png";
 import DogFace from "../assets/emoji/dog-face.png";
 import CatFace from "../assets/emoji/cat-face.png";
-import Fox from "../assets/emoji/fox.png";
-import Panda from "../assets/emoji/panda.png";
-import Bear from "../assets/emoji/bear.png";
 import FerrisWheel from "../assets/emoji/ferris-wheel.png";
 import Lion from "../assets/emoji/lion.png";
-import Penguin from "../assets/emoji/penguin.png";
-import Wolf from "../assets/emoji/wolf.png";
 import Unicorn from "../assets/emoji/unicorn.png";
-import Honeybee from "../assets/emoji/honeybee.png";
 import Butterfly from "../assets/emoji/butterfly.png";
 import TReX from "../assets/emoji/t-rex.png";
 import Coral from "../assets/emoji/coral.png";
-import TropicalFish from "../assets/emoji/tropical-fish.png";
-import SpoutingWhale from "../assets/emoji/spouting-whale.png";
 import Dragon from "../assets/emoji/dragon.png";
-import Desert from "../assets/emoji/desert.png";
-import DeciduousTree from "../assets/emoji/deciduous-tree.png";
+import Confetti from "../assets/emoji/confetti.png"
 import DesertIsland from "../assets/emoji/desert-island.png";
-import Pizza from "../assets/emoji/pizza.png";
 import Bubbles from "../assets/emoji/bubbles.png";
 import Snowflake from "../assets/emoji/snowflake.png";
-import Pineapple from "../assets/emoji/pineapple.png";
-import Coconut from "../assets/emoji/coconut.png";
 import Candy from "../assets/emoji/candy.png";
 import Castle from "../assets/emoji/castle.png";
 import Volcano from "../assets/emoji/volcano.png";
@@ -50,6 +38,15 @@ import Lightning from "../assets/emoji/lightning.png";
 import Books from "../assets/emoji/books.png";
 import Cityscape from "../assets/emoji/cityscape.png";
 import Milkyway from "../assets/emoji/milkyway.png";
+import Car from "../assets/emoji/car.png"
+import Cinema from "../assets/emoji/cinema.png"
+import Magic from "../assets/emoji/magic.png"
+import Statue from "../assets/emoji/statue.png"
+import Science from "../assets/emoji/science.png"
+import Devil from "../assets/emoji/devil.png"
+import Illusion from "../assets/emoji/magician.png"
+import Plug from "../assets/emoji/plug.png"
+import Laser from "../assets/emoji/laser.png"
 
 export const options: OptionType[] = [
   {
@@ -62,7 +59,7 @@ export const options: OptionType[] = [
   },
   {
     text: "Health",
-    prompt: "Health"
+    prompt: "Jogging people" // TODO Works fine for now. Check more times
   },
   {
     emoji: Robot,
@@ -73,20 +70,30 @@ export const options: OptionType[] = [
     prompt: "Lightning"
   },
   {
-    emoji: Fairy,
-    prompt: "Fairy"
+    emoji: Car,
+    prompt: "Neon Car"
+  },
+  {
+    emoji: Magic,
+    prompt: "Magic mana"
+  },
+  {
+    emoji: AngelFace, // TODO add Angel Wing emoji
+    prompt: "White wings"
   },
   {
     emoji: Rocket,
     prompt: "Spaceship"
   },
   {
-    emoji: Umbrella,
+    emoji: Umbrella, // TODO
+                    //   1. Change to Rainy cloud
+                    //   2. Make a prompt for umbrella
     prompt: "Rainy day"
   },
   {
     text: "Public Transport",
-    prompt: "Public Transport"
+    prompt: "Tram"
   },
   {
     emoji: Yarn,
@@ -94,7 +101,7 @@ export const options: OptionType[] = [
   },
   {
     emoji: Crown,
-    prompt: "Royalty"
+    prompt: "Royalty" // TODO Reconsider
   },
   {
     emoji: LightBulb,
@@ -102,15 +109,15 @@ export const options: OptionType[] = [
   },
   {
     emoji: Planet,
-    prompt: "Space"
+    prompt: "Space Globe"
   },
   {
     text: "Walking",
-    prompt: "Walking"
+    prompt: "Walking Park" // TODO Works alright. Verify
   },
   {
     emoji: Books,
-    prompt: "Library"
+    prompt: "Books" // TODO Change it
   },
   {
     emoji: DogFace,
@@ -121,24 +128,16 @@ export const options: OptionType[] = [
     prompt: "Cat"
   },
   {
-    emoji: Fox,
-    prompt: "Fox"
-  },
-  {
-    emoji: Panda,
-    prompt: "Panda"
-  },
-  {
-    emoji: Bear,
-    prompt: "Bear"
+    emoji: Confetti,
+    prompt: "LED Confetti" // TODO consider
   },
   {
     text: "Cycling",
-    prompt: "Bicycle"
+    prompt: "Neon Bicycle"
   },
   {
     emoji: FerrisWheel,
-    prompt: "Ferris wheel"
+    prompt: "Ferris Wheel"
   },
   {
     emoji: Lion,
@@ -149,24 +148,16 @@ export const options: OptionType[] = [
     prompt: "Cityscape"
   },
   {
-    emoji: Penguin,
-    prompt: "Penguin"
+    emoji: Laser,
+    prompt: "Laser Show"
   },
   {
-    emoji: Wolf,
-    prompt: "Wolf"
+    emoji: Science,
+    prompt: "Science"
   },
   {
     emoji: Unicorn,
     prompt: "Unicorn"
-  },
-  {
-    text: "Meeting each other",
-    prompt: "Meeting each other"
-  },
-  {
-    emoji: Honeybee,
-    prompt: "Bee"
   },
   {
     emoji: Butterfly,
@@ -178,31 +169,27 @@ export const options: OptionType[] = [
   },
   {
     emoji: Coral,
-    prompt: "Underwater world"
-  },
-  {
-    emoji: TropicalFish,
-    prompt: "Tropical fish"
+    prompt: "Ocean"
   },
   {
     text: "Live, work, stay",
-    prompt: "Live, work, stay"
+    prompt: "Mundane Lifestyle" // TODO Test
   },
   {
-    emoji: SpoutingWhale,
-    prompt: "Whale"
+    emoji: Plug,
+    prompt: "Light beacon"
   },
   {
     emoji: Dragon,
     prompt: "Dragon"
   },
   {
-    emoji: Desert,
-    prompt: "Desert"
+    emoji: Cinema,
+    prompt: "Cinematic" // TODO consider
   },
   {
-    emoji: DeciduousTree,
-    prompt: "Forest"
+    emoji: Statue,
+    prompt: "Sculpture"
   },
   {
     emoji: DesertIsland,
@@ -210,35 +197,31 @@ export const options: OptionType[] = [
   },
   {
     text: "Stone now, Green later",
-    prompt: "Stone into Green"
-  },
-  {
-    emoji: Pizza,
-    prompt: "Pizza"
+    prompt: "Building Overgrown vegetation"
   },
   {
     emoji: Milkyway,
-    prompt: "Aurora borealis"
+    prompt: "Aurora borealis" // TODO double check
   },
   {
     emoji: Bubbles,
-    prompt: "Bubbles"
+    prompt: "Bubbles" // TODO change
   },
   {
     emoji: Snowflake,
     prompt: "Snowflakes"
   },
   {
+    emoji: Devil,
+    prompt: "God Devil"
+  },
+  {
     text: "Mobility",
-    prompt: "Mobility"
+    prompt: "Flying cars"
   },
   {
-    emoji: Pineapple,
-    prompt: "Pineapple"
-  },
-  {
-    emoji: Coconut,
-    prompt: "Coconut"
+    emoji: Illusion,
+    prompt: "Illusion"
   },
   {
     emoji: Candy,
@@ -258,11 +241,11 @@ export const options: OptionType[] = [
   },
   {
     emoji: CircusTent,
-    prompt: "Circus"
+    prompt: "Cirque Du Soleil"
   },
   {
     text: "Innovation",
-    prompt: "Innovation"
+    prompt: "Future Technology"
   },
   {
     emoji: ArtistPalette,
@@ -294,6 +277,6 @@ export const options: OptionType[] = [
   },
   {
     text: "Accessibility",
-    prompt: "Accessibility"
+    prompt: "Barrier-free"
   },
 ];
