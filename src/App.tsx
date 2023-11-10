@@ -11,21 +11,26 @@ import { DisplayPageDelayed } from "./pages/DelayedDisplayPage.tsx";
 function App() {
   useEffect(() => {
     const handleTouchStart = (event: TouchEvent) => {
-      event.preventDefault();
+      // Prevent the default context menu behavior only for touch events
+      if (event.target instanceof HTMLElement) {
+        // Check if the touch event is on an element where you want to prevent the context menu
+        const isContextMenuDisabledElement = event.target.matches(".disable-context-menu");
+
+        if (isContextMenuDisabledElement) {
+          event.preventDefault();
+        }
+      }
     };
 
-    const handleClick = (event: MouseEvent) => {
-      console.log(event.type)
-    };
-
+    // Add touchstart event listener when the component mounts
     document.addEventListener("touchstart", handleTouchStart, { passive: false });
-    document.addEventListener("click", handleClick);
 
+    // Remove touchstart event listener when the component unmounts
     return () => {
       document.removeEventListener("touchstart", handleTouchStart);
-      document.removeEventListener("click", handleClick);
     };
-  }, []); 
+  }, []); // Empty dependency array ensures the effect runs only once (on mount)
+
 
   const router = createBrowserRouter([
     {
