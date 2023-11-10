@@ -17,7 +17,7 @@ export const DisplayPage: FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       fetchImage().catch(console.log);
-    }, 1000);
+    }, 2000);
 
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, []);
