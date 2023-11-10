@@ -14,12 +14,18 @@ function App() {
       event.preventDefault();
     };
 
+    const handleClick = (event: MouseEvent) => {
+      console.log(event.type)
+    };
+
     document.addEventListener("touchstart", handleTouchStart, { passive: false });
+    document.addEventListener("click", handleClick);
 
     return () => {
       document.removeEventListener("touchstart", handleTouchStart);
+      document.removeEventListener("click", handleClick);
     };
-  }, []);
+  }, []); 
 
   const router = createBrowserRouter([
     {
