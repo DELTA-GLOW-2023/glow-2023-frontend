@@ -14,7 +14,7 @@ body {
 
 .container-background {
     height: 100vh;
-    background: url("./assets/blob.gif");
+    background: url("assets/blob.mp4");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -47,6 +47,7 @@ body {
 .secondary-font {
     font-family: 'VT323', monospace;
 }
+
 .icon-container {
     border-radius: 8px;
     border: 0px solid #011D29;
