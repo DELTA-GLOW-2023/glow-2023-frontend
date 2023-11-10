@@ -15,7 +15,7 @@ export const StartPage: FC = () => {
           >
             Hello Glow!
           </motion.h1>
-          <Link className={"mt-[32rem]"} to="/input">
+          <Link className={"mt-[14rem]"} to="/input">
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
