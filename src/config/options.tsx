@@ -18,7 +18,7 @@ import Butterfly from "../assets/emoji/butterfly.png";
 import TReX from "../assets/emoji/t-rex.png";
 import Coral from "../assets/emoji/coral.png";
 import Dragon from "../assets/emoji/dragon.png";
-import Confetti from "../assets/emoji/confetti.png"
+import Confetti from "../assets/emoji/confetti.png";
 import DesertIsland from "../assets/emoji/desert-island.png";
 import Bubbles from "../assets/emoji/bubbles.png";
 import Snowflake from "../assets/emoji/snowflake.png";
@@ -38,245 +38,245 @@ import Lightning from "../assets/emoji/lightning.png";
 import Books from "../assets/emoji/books.png";
 import Cityscape from "../assets/emoji/cityscape.png";
 import Milkyway from "../assets/emoji/milkyway.png";
-import Car from "../assets/emoji/car.png"
-import Cinema from "../assets/emoji/cinema.png"
-import Magic from "../assets/emoji/magic.png"
-import Statue from "../assets/emoji/statue.png"
-import Science from "../assets/emoji/science.png"
-import Devil from "../assets/emoji/devil.png"
-import Illusion from "../assets/emoji/magician.png"
-import Plug from "../assets/emoji/plug.png"
-import Laser from "../assets/emoji/laser.png"
+import Car from "../assets/emoji/car.png";
+import Cinema from "../assets/emoji/cinema.png";
+import Magic from "../assets/emoji/magic.png";
+import Statue from "../assets/emoji/statue.png";
+import Science from "../assets/emoji/science.png";
+import Devil from "../assets/emoji/devil.png";
+import Illusion from "../assets/emoji/magician.png";
+import Plug from "../assets/emoji/plug.png";
+import Laser from "../assets/emoji/laser.png";
 
 export const options: OptionType[] = [
   {
     emoji: Alien,
-    prompt: "Alien"
+    prompt: "Alien",
   },
   {
     emoji: AlienMonster,
-    prompt: "Pixel Art"
+    prompt: "Pixel Art",
   },
   {
     text: "Health",
-    prompt: "Jogging people" // TODO Works fine for now. Check more times
+    prompt: "Jogging people", // TODO Works fine for now. Check more times
   },
   {
     emoji: Robot,
-    prompt: "Robot"
+    prompt: "Robot",
   },
   {
     emoji: Lightning,
-    prompt: "Lightning"
+    prompt: "Lightning",
   },
   {
     emoji: Car,
-    prompt: "Neon Car"
+    prompt: "Neon Car",
   },
   {
     emoji: Magic,
-    prompt: "Magic mana"
+    prompt: "Magic mana",
   },
   {
     emoji: AngelFace, // TODO add Angel Wing emoji
-    prompt: "White wings"
+    prompt: "White wings",
   },
   {
     emoji: Rocket,
-    prompt: "Spaceship"
+    prompt: "Spaceship",
   },
   {
     emoji: Umbrella, // TODO
-                    //   1. Change to Rainy cloud
-                    //   2. Make a prompt for umbrella
-    prompt: "Rainy day"
+    //   1. Change to Rainy cloud
+    //   2. Make a prompt for umbrella
+    prompt: "Rainy day",
   },
   {
     text: "Public Transport",
-    prompt: "Tram"
+    prompt: "Tram",
   },
   {
     emoji: Yarn,
-    prompt: "Yarn"
+    prompt: "Yarn",
   },
   {
     emoji: Crown,
-    prompt: "Royalty" // TODO Reconsider
+    prompt: "Royalty", // TODO Reconsider
   },
   {
     emoji: LightBulb,
-    prompt: "Light bulb"
+    prompt: "Light bulb",
   },
   {
     emoji: Planet,
-    prompt: "Space Globe"
+    prompt: "Space Globe",
   },
   {
     text: "Walking",
-    prompt: "Walking Park" // TODO Works alright. Verify
+    prompt: "Walking Park", // TODO Works alright. Verify
   },
   {
     emoji: Books,
-    prompt: "Books" // TODO Change it
+    prompt: "Books book_cover", // TODO Change it
   },
   {
     emoji: DogFace,
-    prompt: "Dog"
+    prompt: "Dog",
   },
   {
     emoji: CatFace,
-    prompt: "Cat"
+    prompt: "Cat",
   },
   {
     emoji: Confetti,
-    prompt: "LED Confetti" // TODO consider
+    prompt: "LED Confetti", // TODO consider
   },
   {
     text: "Cycling",
-    prompt: "Neon Bicycle"
+    prompt: "Neon Bicycle",
   },
   {
     emoji: FerrisWheel,
-    prompt: "Ferris Wheel"
+    prompt: "Ferris Wheel",
   },
   {
     emoji: Lion,
-    prompt: "Lion"
+    prompt: "Lion",
   },
   {
     emoji: Cityscape,
-    prompt: "Cityscape"
+    prompt: "Cityscape",
   },
   {
     emoji: Laser,
-    prompt: "Laser Show"
+    prompt: "Laser Show",
   },
   {
     emoji: Science,
-    prompt: "Science"
+    prompt: "Science",
   },
   {
     emoji: Unicorn,
-    prompt: "Unicorn"
+    prompt: "Unicorn",
   },
   {
     emoji: Butterfly,
-    prompt: "Butterfly"
+    prompt: "Butterfly",
   },
   {
     emoji: TReX,
-    prompt: "Dinosaur"
+    prompt: "Dinosaur",
   },
   {
     emoji: Coral,
-    prompt: "Ocean"
+    prompt: "Ocean",
   },
   {
     text: "Live, work, stay",
-    prompt: "Mundane Lifestyle" // TODO Test
+    prompt: "Mundane Lifestyle", // TODO Test
   },
   {
     emoji: Plug,
-    prompt: "Light beacon"
+    prompt: "Light beacon",
   },
   {
     emoji: Dragon,
-    prompt: "Dragon"
+    prompt: "Dragon",
   },
   {
     emoji: Cinema,
-    prompt: "Cinematic" // TODO consider
+    prompt: "Cinematic", // TODO consider
   },
   {
     emoji: Statue,
-    prompt: "Sculpture"
+    prompt: "Sculpture",
   },
   {
     emoji: DesertIsland,
-    prompt: "Tropical island"
+    prompt: "Tropical island",
   },
   {
     text: "Stone now, Green later",
-    prompt: "Building Overgrown vegetation"
+    prompt: "Building Overgrown vegetation",
   },
   {
     emoji: Milkyway,
-    prompt: "Aurora borealis" // TODO double check
+    prompt: "Aurora borealis", // TODO double check
   },
   {
     emoji: Bubbles,
-    prompt: "Bubbles" // TODO change
+    prompt: "Bubbles", // TODO change
   },
   {
     emoji: Snowflake,
-    prompt: "Snowflakes"
+    prompt: "Snowflakes",
   },
   {
     emoji: Devil,
-    prompt: "God Devil"
+    prompt: "God Devil",
   },
   {
     text: "Mobility",
-    prompt: "Flying cars"
+    prompt: "Flying cars",
   },
   {
     emoji: Illusion,
-    prompt: "Illusion"
+    prompt: "Illusion",
   },
   {
     emoji: Candy,
-    prompt: "Candyland"
+    prompt: "Candyland",
   },
   {
     emoji: Castle,
-    prompt: "Castle"
+    prompt: "Castle",
   },
   {
     emoji: Volcano,
-    prompt: "Volcano"
+    prompt: "Volcano",
   },
   {
     emoji: ClassicalBuilding,
-    prompt: "Ancient Greece"
+    prompt: "Ancient Greece",
   },
   {
     emoji: CircusTent,
-    prompt: "Cirque Du Soleil"
+    prompt: "Cirque Du Soleil",
   },
   {
     text: "Innovation",
-    prompt: "Future Technology"
+    prompt: "Future Technology",
   },
   {
     emoji: ArtistPalette,
-    prompt: "Colorful"
+    prompt: "Colorful",
   },
   {
     emoji: MusicalNotes,
-    prompt: "Musical notes"
+    prompt: "Musical notes",
   },
   {
     emoji: RollerSkate,
-    prompt: "Roller skate"
+    prompt: "Roller skate",
   },
   {
     emoji: MirrorBall,
-    prompt: "Disco"
+    prompt: "Disco",
   },
   {
     emoji: Doughnut,
-    prompt: "Donut"
+    prompt: "Donut",
   },
   {
     emoji: Cloud,
-    prompt: "Cloud"
+    prompt: "Cloud",
   },
   {
     emoji: Fireworks,
-    prompt: "Fireworks"
+    prompt: "Fireworks",
   },
   {
     text: "Accessibility",
-    prompt: "Barrier-free"
+    prompt: "Barrier-free",
   },
 ];
