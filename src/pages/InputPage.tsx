@@ -113,7 +113,7 @@ export const InputPage: FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="basic-font text-[160px] text-white font-bold text-center"
             >
-              Follow the lights!
+              Go outside to see!
             </motion.h1>
             <motion.div className={"rotate-90 mt-96"}>
               <svg
@@ -247,7 +247,7 @@ export const InputPage: FC = () => {
                       await handleClick(customPrompt, "text");
                     }}
                   >
-                    ENTER
+                    CONFIRM
                   </button>
                 </div>
               )}
