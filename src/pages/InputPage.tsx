@@ -144,7 +144,7 @@ export const InputPage: FC = () => {
           transition={{ delay: 0.5 }}
           className="basic-font text-6xl text-white font-bold text-center mt-32 mb-4"
         >
-          What would you like to add?
+          What's in your future Glow?
         </motion.h1>
 
         <div
