@@ -113,11 +113,20 @@ export const InputPage: FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="basic-font text-[160px] text-white font-bold text-center"
             >
-              Follow the route!
+              Follow the lights!
             </motion.h1>
             <motion.div className={"rotate-90 mt-96"}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 128 128" fill="none">
-                <path d="M58.667 106.666H69.3337V42.6663H80.0003V31.9997H69.3337V21.333H58.667V31.9997H48.0003V42.6663H58.667V106.666ZM37.3337 53.333V42.6663H48.0003V53.333H37.3337ZM37.3337 53.333V63.9997H26.667V53.333H37.3337ZM90.667 53.333V42.6663H80.0003V53.333H90.667ZM90.667 53.333V63.9997H101.334V53.333H90.667Z" fill="white"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="360"
+                height="360"
+                viewBox="0 0 128 128"
+                fill="none"
+              >
+                <path
+                  d="M58.667 106.666H69.3337V42.6663H80.0003V31.9997H69.3337V21.333H58.667V31.9997H48.0003V42.6663H58.667V106.666ZM37.3337 53.333V42.6663H48.0003V53.333H37.3337ZM37.3337 53.333V63.9997H26.667V53.333H37.3337ZM90.667 53.333V42.6663H80.0003V53.333H90.667ZM90.667 53.333V63.9997H101.334V53.333H90.667Z"
+                  fill="white"
+                />
               </svg>
             </motion.div>
           </div>
