@@ -23,7 +23,7 @@ export const DisplayPageDelayed: FC = () => {
   }, []);
 
   return (
-    <div className={'relative pulsing-gradient'}>
+    <div className={'relative pulsing-gradient overflow-hidden'}>
       {imageData && (
         <div className="absolute w-screen h-screen">
           {/* Image */}
@@ -66,9 +66,21 @@ export const DisplayPageDelayed: FC = () => {
               }}
             />
           </div>
+
+          {/* Marquee */}
+          <div className="relative flex overflow-x-hidden" style={{ position: "absolute", bottom: '20px' }}>
+            <div className="py-12 animate-marquee whitespace-nowrap">
+              <span className="text-3xl text-white mx-4">Create your own GLOW art at Stationsplein Tourist information</span>
+            </div>
+
+            <div className="absolute top-0 py-12 animate-marquee2 whitespace-nowrap">
+              <span className="text-3xl text-white mx-4">Create your own GLOW art at Stationsplein Tourist information</span>
+
+              {/* <span className="text-4xl text-white mx-4">Like our project? Vote for us at gloweindhoven.nl/glow-talent-awards/</span> */}
+            </div>
+          </div>
         </div>
       )}
     </div>
   );
-
 };
