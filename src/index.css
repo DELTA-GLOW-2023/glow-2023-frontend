@@ -109,7 +109,7 @@ body {
 
 
 .pulsing-gradient {
-    background: linear-gradient(0deg, #8e4731, #912650, #186d8c, #188d72, #8e4731, #912650, #186d8c, #188d72, #8e4731, #912650, #186d8c, #188d72, #8e4731, #912650, #186d8c, #188d72);
+    background: linear-gradient(0deg, #8a2606, #912650, #186d8c, #188d72, #8a2606, #912650, #186d8c, #188d72, #8a2606, #912650, #186d8c, #188d72, #8a2606, #912650, #186d8c, #188d72);
     background-size: 400% 400%;
     animation: gradient 10s infinite;
     height: 100vh;
