@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { DisplayImageDelayed } from "../services/displayImageService.ts";
+import { Marguee } from "../components/core/Marguee.tsx";
 
 export const DisplayPageDelayed: FC = () => {
   const [imageData, setImageData] = useState<string | null>(null);
@@ -23,7 +24,7 @@ export const DisplayPageDelayed: FC = () => {
   }, []);
 
   return (
-    <div className={'relative pulsing-gradient'}>
+    <div className={"relative pulsing-gradient overflow-hidden"}>
       {imageData && (
         <div className="absolute w-screen h-screen">
           {/* Image */}
@@ -45,7 +46,7 @@ export const DisplayPageDelayed: FC = () => {
               src="/logos/fontys.png"
               alt="Fontys"
               style={{
-                height: "100px"
+                height: "100px",
               }}
             />
           </div>
@@ -62,13 +63,13 @@ export const DisplayPageDelayed: FC = () => {
               src="/logos/delta.png"
               alt="Delta"
               style={{
-                height: "30px"
+                height: "30px",
               }}
             />
           </div>
+          <Marguee />
         </div>
       )}
     </div>
   );
-
 };
