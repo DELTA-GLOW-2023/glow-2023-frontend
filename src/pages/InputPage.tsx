@@ -161,7 +161,7 @@ export const InputPage: FC = () => {
                   }
                   onClick={() => activateKeyBoard()}
                 >
-                  Write your own prompt here...
+                  Click here to write your own idea...
                 </button>
               ) : (
                 <div className={"flex flex-col items-center"}>
