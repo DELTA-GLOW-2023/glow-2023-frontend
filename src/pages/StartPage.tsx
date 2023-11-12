@@ -13,7 +13,7 @@ export const StartPage: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="basic-font text-[160px] text-white font-bold text-center"
           >
-            Hello Glow!
+            Click me!
           </motion.h1>
           <Link className={"mt-[14rem]"} to="/input">
             <motion.button
