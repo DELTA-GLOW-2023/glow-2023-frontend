@@ -29,32 +29,30 @@ export const DisplayPageDelayed: FC = () => {
         <div className="absolute w-screen h-screen">
           {/* Image */}
           <img
-              src={`data:image/png;base64,${imageData}`}
-              alt="Display Image"
-              className="object-contain w-full h-full"
+            src={`data:image/png;base64,${imageData}`}
+            alt="Display Image"
+            className="object-contain w-full h-full"
           />
 
           {/* Fontys logo overlay */}
-          <div
-              className={"absolute bottom-[40px] left-[10px]"}
-          >
+          <div className={"absolute bottom-[40px] left-[10px]"}>
             <img
-                src="/logos/fontys.png"
-                alt="Fontys"
-                style={{
-                  height: "100px",
-                }}
+              src="/logos/fontys.png"
+              alt="Fontys"
+              style={{
+                height: "100px",
+              }}
             />
           </div>
 
           {/* Second Image Overlay on the Right */}
-          <div className={'absolute bottom-[65px] right-[10px]'}>
+          <div className={"absolute bottom-[80px] right-[10px]"}>
             <img
-                src="/logos/delta.png"
-                alt="Delta"
-                style={{
-                  height: "30px",
-                }}
+              src="/logos/delta.png"
+              alt="Delta"
+              style={{
+                height: "30px",
+              }}
             />
           </div>
           <Marguee />
