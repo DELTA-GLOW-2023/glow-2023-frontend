@@ -7,15 +7,15 @@ export const StartPage: FC = () => {
   return (
     <BackgroundBlob>
       <div className={"grid h-screen"}>
-        <div className={"flex flex-col items-center mt-32"}>
+        <div className={"flex flex-col items-center mt-32 p-4"}>
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            className="basic-font text-[160px] text-white font-bold text-center"
+            className="basic-font text-[110px] text-white font-bold text-center"
           >
-            Click me!
+            Create the future of GLOW!
           </motion.h1>
-          <Link className={"mt-[14rem]"} to="/input">
+          <Link className={"mt-[10rem]"} to="/input">
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -28,7 +28,7 @@ export const StartPage: FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="secondary-font text-7xl text-white text-center"
               >
-                Start
+                TAP HERE!
               </motion.p>
             </motion.button>
           </Link>

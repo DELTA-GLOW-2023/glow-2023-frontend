@@ -113,7 +113,7 @@ export const InputPage: FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="basic-font text-[160px] text-white font-bold text-center"
             >
-              Follow the lights!
+              Go outside to see!
             </motion.h1>
             <motion.div className={"rotate-90 mt-96"}>
               <svg
@@ -141,7 +141,6 @@ export const InputPage: FC = () => {
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
           className="basic-font text-6xl text-white font-bold text-center mt-32 mb-4"
         >
           What would you like to add?
@@ -161,7 +160,7 @@ export const InputPage: FC = () => {
                   }
                   onClick={() => activateKeyBoard()}
                 >
-                  Write your own prompt here...
+                  Click here to write your own idea...
                 </button>
               ) : (
                 <div className={"flex flex-col items-center"}>
@@ -199,7 +198,9 @@ export const InputPage: FC = () => {
                             : "")
                         }
                         readOnly={true}
-                        placeholder={"Write your own prompt here..."}
+                        placeholder={
+                          "Use the keyboard to type your idea for example: 'A T-Rex on Roller Skates'"
+                        }
                         value={customPrompt}
                       />
                       <div className={"  text-white text-4xl mt-4"}>
@@ -247,7 +248,7 @@ export const InputPage: FC = () => {
                       await handleClick(customPrompt, "text");
                     }}
                   >
-                    ENTER
+                    CONFIRM
                   </button>
                 </div>
               )}
