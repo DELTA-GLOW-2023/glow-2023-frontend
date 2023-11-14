@@ -3,7 +3,6 @@ import AlienMonster from "../assets/emoji/alien-monster.png";
 import Umbrella from "../assets/emoji/umbrella.png";
 import Yarn from "../assets/emoji/yarn.png";
 import Crown from "../assets/emoji/crown.png";
-import LightBulb from "../assets/emoji/light-bulb.png";
 import DogFace from "../assets/emoji/dog-face.png";
 import CatFace from "../assets/emoji/cat-face.png";
 import FerrisWheel from "../assets/emoji/ferris-wheel.png";
@@ -19,7 +18,6 @@ import Candy from "../assets/emoji/candy.png";
 import Castle from "../assets/emoji/castle.png";
 import Volcano from "../assets/emoji/volcano.png";
 import ClassicalBuilding from "../assets/emoji/classical-building.png";
-import CircusTent from "../assets/emoji/circus-tent.png";
 import ArtistPalette from "../assets/emoji/artist-palette.png";
 import MusicalNotes from "../assets/emoji/musical-notes.png";
 import RollerSkate from "../assets/emoji/roller-skate.png";
@@ -38,44 +36,45 @@ import Science from "../assets/emoji/science.png";
 import Devil from "../assets/emoji/devil.png";
 import Illusion from "../assets/emoji/magician.png";
 import Plug from "../assets/emoji/plug.png";
-import Laser from "../assets/emoji/laser.png";
+import CircusTent from "../assets/emoji/circus-tent.png";
+import LightBulb from "../assets/emoji/light-bulb.png";
 
 export const options: OptionType[] = [
-  {
-    emoji: AlienMonster,
-    prompt: "Pixel Art",
-  },
   {
     text: "Health",
     prompt: "Jogging people", // TODO Works fine for now. Check more times
   },
   {
-    emoji: Car,
-    prompt: "Neon Car",
-  },
-  {
-    emoji: Magic,
-    prompt: "Magic mana",
+    emoji: MusicalNotes,
+    prompt: "Musical notes",
   },
   {
     emoji: Umbrella,
     prompt: "umbrella",
   },
   {
-    text: "Public Transport",
-    prompt: "Tram",
+    text: "Stone now, Green later",
+    prompt: "Building Overgrown vegetation",
   },
   {
-    emoji: Yarn,
-    prompt: "Yarn",
+    emoji: Science,
+    prompt: "Science",
+  },
+  {
+    emoji: RollerSkate,
+    prompt: "Roller skate",
+  },
+  {
+    emoji: CircusTent,
+    prompt: "Cirque Du Soleil",
   },
   {
     emoji: Crown,
-    prompt: "golden crown",
+    prompt: "golden kings crown",
   },
   {
-    emoji: LightBulb,
-    prompt: "Light bulb",
+    emoji: Illusion,
+    prompt: "Tophat",
   },
   {
     text: "Walking",
@@ -114,14 +113,6 @@ export const options: OptionType[] = [
     prompt: "Cityscape",
   },
   {
-    emoji: Laser,
-    prompt: "Laser Show",
-  },
-  {
-    emoji: Science,
-    prompt: "Science",
-  },
-  {
     emoji: Butterfly,
     prompt: "Butterfly",
   },
@@ -154,9 +145,10 @@ export const options: OptionType[] = [
     prompt: "Tropical island",
   },
   {
-    text: "Stone now, Green later",
-    prompt: "Building Overgrown vegetation",
+    text: "Public Transport",
+    prompt: "Tram",
   },
+
   {
     emoji: Milkyway,
     prompt: "Aurora borealis", // TODO double check
@@ -177,10 +169,7 @@ export const options: OptionType[] = [
     text: "Mobility",
     prompt: "Flying cars",
   },
-  {
-    emoji: Illusion,
-    prompt: "Illusion",
-  },
+
   {
     emoji: Candy,
     prompt: "Candyland",
@@ -198,8 +187,8 @@ export const options: OptionType[] = [
     prompt: "Ancient Greece",
   },
   {
-    emoji: CircusTent,
-    prompt: "Cirque Du Soleil",
+    emoji: Yarn,
+    prompt: "Yarn",
   },
   {
     text: "Innovation",
@@ -208,14 +197,6 @@ export const options: OptionType[] = [
   {
     emoji: ArtistPalette,
     prompt: "Colorful",
-  },
-  {
-    emoji: MusicalNotes,
-    prompt: "Musical notes",
-  },
-  {
-    emoji: RollerSkate,
-    prompt: "Roller skate",
   },
   {
     emoji: MirrorBall,
@@ -230,11 +211,27 @@ export const options: OptionType[] = [
     prompt: "Cloud",
   },
   {
+    emoji: Car,
+    prompt: "Neon Car",
+  },
+  {
+    emoji: Magic,
+    prompt: "Magic mana",
+  },
+  {
     emoji: Fireworks,
     prompt: "Fireworks",
   },
   {
+    emoji: LightBulb,
+    prompt: "Light bulb",
+  },
+  {
     text: "Accessibility",
     prompt: "Barrier-free",
+  },
+  {
+    emoji: AlienMonster,
+    prompt: "space invaders",
   },
 ];
