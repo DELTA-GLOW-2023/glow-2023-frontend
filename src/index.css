@@ -131,15 +131,20 @@ body {
 }
 
 .arrow-movement {
-    animation: arrow 1.5s ease-out infinite
+    animation: arrow 1.5s ease-in-out infinite
 
 }
 
 @keyframes arrow {
     0% {
-        translate: -200px 0
+        translate: -225px 0;
+        opacity: 0;
+    }
+    30%, 70% {
+        opacity: 100%;
     }
     100% {
-        translate: 200px 0
+        translate: 225px 0;
+        opacity: 0;
     }
 }
