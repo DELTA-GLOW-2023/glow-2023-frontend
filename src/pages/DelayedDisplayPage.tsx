@@ -35,7 +35,13 @@ export const DisplayPageDelayed: FC = () => {
           />
 
           {/* Fontys logo overlay */}
-          <div className={"absolute bottom-[40px] left-[10px]"}>
+          <div
+            style={{
+              position: "absolute",
+              top: "40px",
+              left: "10px",
+            }}
+          >
             <img
               src="/logos/fontys.png"
               alt="Fontys"
@@ -46,7 +52,13 @@ export const DisplayPageDelayed: FC = () => {
           </div>
 
           {/* Second Image Overlay on the Right */}
-          <div className={"absolute bottom-[80px] right-[10px]"}>
+          <div
+            style={{
+              position: "absolute",
+              top: "65px",
+              right: "10px",
+            }}
+          >
             <img
               src="/logos/delta.png"
               alt="Delta"
