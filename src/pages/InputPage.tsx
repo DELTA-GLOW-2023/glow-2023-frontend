@@ -144,7 +144,7 @@ export const InputPage: FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="basic-font text-6xl text-white font-bold text-center mt-32 mb-4"
         >
-          What will you add to Glow?
+          What would you like add to Glow?
         </motion.h1>
 
         <div
@@ -161,7 +161,7 @@ export const InputPage: FC = () => {
                   }
                   onClick={() => activateKeyBoard()}
                 >
-                  Click here to write your own concept...
+                  Click here to write your own idea...
                 </button>
               ) : (
                 <div className={"flex flex-col items-center"}>
