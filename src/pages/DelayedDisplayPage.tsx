@@ -25,7 +25,7 @@ export const DisplayPageDelayed: FC = () => {
 
     return (
         <div className={"relative pulsing-gradient overflow-hidden"}>
-            {(
+            {imageData && (
                 <div className="absolute w-screen h-screen">
                     {/* Image */}
                     <img
