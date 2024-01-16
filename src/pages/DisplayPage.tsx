@@ -29,7 +29,8 @@ export const DisplayPage: FC = () => {
           <img
             src={`data:image/png;base64,${imageData}`}
             alt="Display Image"
-            className="object-contain w-full h-full"
+            style={{ width: '100%', height: '100%' }}
+            // className="object-contain w-full h-full"
           />
         </div>
       )}
