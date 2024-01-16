@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 
-import blobVideo from "../../assets/blob.mp4"; // Import the MP4 video
+import blobVideo from "../../assets/blob_horizontal.mp4"; // Import the MP4 video
 
 export const BackgroundBlob: React.FC<{
   children?: ReactNode;
