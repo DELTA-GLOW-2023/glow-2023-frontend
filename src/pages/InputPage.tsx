@@ -107,29 +107,14 @@ export const InputPage: FC = () => {
     return (
       <BackgroundBlob>
         <div className={"flex flex-col h-screen"}>
-          <div className={"flex flex-col mt-[200px]"}>
+          <div className={"flex flex-col mt-[400px]"}>
             <motion.h1
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               className="basic-font text-[160px] text-white font-bold text-center"
             >
-              Go outside to see!
+              Look up!
             </motion.h1>
-            <motion.div className={"mt-96"}>
-              <svg
-                className={"arrow-movement w-fit m-auto"}
-                width="240"
-                height="210"
-                viewBox="0 0 240 210"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.0018729 89.9981L0.00187159 119.998L180.001 119.998L180.001 149.998L210.001 149.998L210.001 119.998L240.001 119.998L240.001 89.9981L210.001 89.9981L210.001 59.998L180.001 59.998L180.001 89.9981L0.0018729 89.9981ZM150.001 29.9982L180.001 29.9982L180.001 59.998L150.001 59.998L150.001 29.9982ZM150.001 29.9982L120.001 29.9982L120.001 -0.00186682L150.001 -0.00186551L150.001 29.9982ZM150.001 179.998L180.001 179.998L180.001 149.998L150.001 149.998L150.001 179.998ZM150.001 179.998L120.001 179.998L120.001 209.999L150.001 209.999L150.001 179.998Z"
-                  fill="white"
-                />
-              </svg>
-            </motion.div>
           </div>
         </div>
       </BackgroundBlob>
